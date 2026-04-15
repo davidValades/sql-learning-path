@@ -1,7 +1,7 @@
 # 🚀 Mi Ruta Autodidacta en SQL: De Cero a Experto
 
 ![Estado](https://img.shields.io/badge/Estado-En_Proceso-blue?style=for-the-badge)
-![Progreso](https://progress-bar.dev/7/?title=Progreso)
+![Progreso](https://geps.dev/progress/7)
 
 ## 📝 Descripción
 
