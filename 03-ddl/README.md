@@ -112,3 +112,41 @@ ALTER TABLE libros MODIFY (titulo VARCHAR2(255));
 ```
 
 </details>
+
+---
+
+---
+
+## 3.3 DDL: DROP (Eliminando Estructuras)
+
+### 📘 El Concepto
+
+El comando `DROP` se utiliza para eliminar completamente un objeto estructural de la base de datos, como una tabla entera, un índice o incluso la propia base de datos. Es una operación DDL pura.
+
+Es fundamental entender que `DROP` no solo borra la información que contiene la tabla, sino que **destruye la estructura misma**. Una vez ejecutado, la tabla deja de existir en el esquema y, por lo general, es una acción irreversible.
+
+### 🏗️ La Analogía
+
+Si `CREATE` es construir un edificio desde los cimientos y `ALTER` es llamar al carpintero para añadir una ventana, `DROP` es llamar al equipo de demolición con la bola de acero.
+
+No estás simplemente vaciando el edificio de muebles e inquilinos; estás echando abajo las paredes, el techo y los pilares. El espacio vuelve a quedar como un solar vacío.
+
+### 💻 El Código
+
+La sintaxis es directa, lo cual la hace muy fácil de escribir pero peligrosa si no se usa con precaución:
+
+```sql
+-- Eliminar una tabla por completo
+DROP TABLE nombre_de_la_tabla;
+```
+
+### 🎯 El Reto
+
+Imagina que ayer estuviste haciendo pruebas y creaste una tabla temporal llamada autores_borrador en tu base de datos. Hoy ya has terminado tus pruebas y necesitas mantener tu entorno limpio y ordenado.
+
+Tu tarea: Escribe la sentencia SQL exacta para demoler y hacer desaparecer por completo la tabla autores_borrador.
+
+<details>
+<summary>👉 <b>Haz clic aquí SOLO cuando tengas tu respuesta para comprobarla</b></summary>
+
+<b>Respuesta del Profesor:</b>

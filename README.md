@@ -1,7 +1,7 @@
 # 🚀 Mi Ruta Autodidacta en SQL: De Cero a Experto
 
 ![Estado](https://img.shields.io/badge/Estado-En_Proceso-blue?style=for-the-badge)
-![Progreso](https://geps.dev/progress/12)
+![Progreso](https://geps.dev/progress/20)
 
 ## 📝 Descripción
 
@@ -45,10 +45,10 @@ A través de este repositorio iré documentando mi progreso teóricamente y adju
 
 ### 3. DDL (Lenguaje de Definición de Datos)
 
-- [ ] CREATE (Crear base de datos, tabla, índice)
-- [ ] ALTER (Añadir, modificar o eliminar columnas)
-- [ ] DROP (Eliminar base de datos o tabla)
-- [ ] TRUNCATE (Vaciar tabla)
+- [x] CREATE (Crear base de datos, tabla, índice)
+- [x] ALTER (Añadir, modificar o eliminar columnas)
+- [x] DROP (Eliminar base de datos o tabla)
+- [x] TRUNCATE (Vaciar tabla)
 
 ### 4. DML (Lenguaje de Manipulación de Datos)
 
