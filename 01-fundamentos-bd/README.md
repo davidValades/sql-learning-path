@@ -304,3 +304,96 @@ Ten en cuenta esta regla de negocio de la universidad: Un alumno solo puede tene
 La combinación perfecta sería <code>ID_Alumno</code> + <code>ID_Asignatura</code>. Así aseguramos que un mismo alumno no pueda tener dos notas finales en la misma materia, pero le permitimos tener notas en distintas materias, y que distintos alumnos tengan nota en la misma materia.
 
 </details>
+
+---
+
+---
+
+## 1.7 Restricciones (Constraints)
+
+### 📘 El Concepto
+
+Las restricciones o _Constraints_ son **reglas estrictas** que aplicamos a las columnas de una tabla. Su trabajo es vigilar cada dato que intenta entrar. Si el dato cumple la regla, entra. Si el dato rompe la regla, la base de datos lo bloquea, lanza un error de inmediato y protege la tabla.
+Hay 6 restricciones principales:
+
+1. **NOT NULL:** Obliga a que la celda no pueda estar vacía.
+2. **UNIQUE:** Obliga a que el dato no se repita en toda la columna.
+3. **PRIMARY KEY:** Es la fusión de NOT NULL + UNIQUE.
+4. **FOREIGN KEY:** Obliga a que el dato que intentas meter exista previamente en otra tabla.
+5. **CHECK:** Aplica una condición lógica o matemática (ej. que un número sea mayor que cero).
+6. **DEFAULT:** Si al insertar una fila no proporcionas ningún dato para esa columna, el sistema pondrá un valor por "defecto" en lugar de dejarlo nulo.
+
+### 🏠 La Analogía
+
+Piensa en las restricciones como **el portero de seguridad de una discoteca** muy estricta:
+
+- `NOT NULL`: "Si no llevas tu DNI, no entras."
+- `UNIQUE`: "No puedes entrar si llevas la misma camiseta que alguien que ya está dentro."
+- `CHECK`: "Solo entras si tienes 18 años o más."
+- `DEFAULT`: "Si al pedir en la barra no me dices qué quieres beber, te pongo agua por defecto."
+- `FOREIGN KEY`: "Solo entras si estás en la lista VIP de invitados (la otra tabla)."
+
+### 💻 El Código
+
+En SQL, estas reglas se ponen justo al lado del tipo de dato al crear la tabla.
+
+```sql
+CREATE TABLE usuarios_app (
+    id_usuario INT PRIMARY KEY,                   -- Regla 3: Único y no vacío
+    email VARCHAR UNIQUE NOT NULL,                -- Regla 2 y 1: Único y no vacío
+    edad INT CHECK (edad >= 18),                  -- Regla 5: Matemáticamente mayor o igual a 18
+    estado_cuenta VARCHAR DEFAULT 'Activo'        -- Regla 6: Si no digo nada, pon 'Activo'
+);
+
+### 🧠 El Reto de la Lección
+
+Estás diseñando la base de datos de una tienda online. Tienes una tabla llamada Productos con una columna para el Precio.
+
+En las primeras semanas de pruebas, te das cuenta de que a veces los empleados se equivocan al teclear y, en lugar de poner 50.00, ponen -50.00 (un precio negativo). Esto rompe la contabilidad de la tienda.
+
+**Pregunta:** De las 6 restricciones que hemos visto... ¿Cuál utilizarías exactamente en la columna Precio para evitar que vuelva a entrar un precio negativo, y cómo escribirías la regla?
+
+<details>
+<summary>👉 <b>Haz clic aquí SOLO cuando tengas tu respuesta para comprobarla</b></summary>
+
+
+<b>Respuesta del Profesor:</b>
+
+
+La restricción ideal es <b>CHECK</b>. La escribiríamos así: <code>CHECK (Precio >= 0)</code>. De esta forma, el motor de la base de datos rechazará automáticamente cualquier número negativo (como -50.00) antes de que se guarde en la tabla, protegiendo así la contabilidad.
+</details>
+
+```
+
+## 1.8 Integridad de los Datos
+
+### 📘 El Concepto
+
+La Integridad de los Datos no es un comando ni una herramienta, es **el objetivo final** de todo buen diseñador de bases de datos. Significa garantizar que la información almacenada sea precisa, válida, consistente y confiable a lo largo de todo su ciclo de vida.
+
+Existen tres tipos principales de integridad que hemos aprendido a proteger con las herramientas anteriores:
+
+1. **Integridad de Entidad:** Nos aseguramos de que no haya filas duplicadas y que cada registro sea único (Lo logramos usando _Primary Keys_).
+2. **Integridad Referencial:** Nos aseguramos de que las relaciones entre tablas sean válidas y no apunten a datos que no existen, evitando registros "huérfanos" (Lo logramos usando _Foreign Keys_).
+3. **Integridad de Dominio:** Nos aseguramos de que los datos de una columna cumplan con las reglas de negocio y formato correctos (Lo logramos usando _Constraints_ como `CHECK`, `NOT NULL` y los tipos de datos).
+
+### 🏠 La Analogía
+
+Imagina un hospital. La "Integridad de los Datos" significa que:
+
+1. No hay dos historiales médicos distintos para el mismo paciente (Integridad de Entidad).
+2. Si un historial indica que el paciente está en la "Cama 404", la Cama 404 realmente existe en el hospital (Integridad Referencial).
+3. En el campo "Grupo Sanguíneo" solo puede poner A, B, AB o O, nunca puede poner la palabra "Gato" o un número negativo (Integridad de Dominio).
+
+### 🧠 El Reto de la Lección
+
+En una app de envíos a domicilio, descubres que el sistema ha colapsado. Al investigar, ves que un cliente tiene un pedido registrado, pero el ID del restaurante al que apunta ese pedido ya no existe en la tabla `Restaurantes` (alguien lo borró). Ahora tienes un pedido "huérfano".
+
+**Pregunta:** De los tres tipos de integridad (Entidad, Referencial o de Dominio)... ¿Cuál se ha roto en este caso?
+
+<details>
+<summary>👉 <b>Haz clic aquí SOLO cuando tengas tu respuesta para comprobarla</b></summary>
+<br>
+<b>Respuesta del Profesor:</b><br>
+Se ha roto la <b>Integridad Referencial</b>. La tabla de Pedidos estaba haciendo referencia (mediante una Clave Foránea) a un restaurante que ya no existe. Un buen diseño habría bloqueado el borrado del restaurante o habría archivado el registro en lugar de eliminarlo.
+</details>

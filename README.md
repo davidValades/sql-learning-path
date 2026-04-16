@@ -28,13 +28,13 @@ A través de este repositorio iré documentando mi progreso teóricamente y adju
 - [x] Clave Candidata (Candidate Key)
 - [x] Clave Compuesta (Composite Key)
 - [ ] Restricciones (Constraints)
-  - [ ] NOT NULL
-  - [ ] UNIQUE
-  - [ ] PRIMARY KEY
-  - [ ] FOREIGN KEY
-  - [ ] CHECK
-  - [ ] DEFAULT
-- [ ] Integridad de los Datos
+  - [x] NOT NULL
+  - [x] UNIQUE
+  - [x] PRIMARY KEY
+  - [x] FOREIGN KEY
+  - [x] CHECK
+  - [x] DEFAULT
+- [x] Integridad de los Datos
 
 ### 2. Tipos de Datos en SQL
 
