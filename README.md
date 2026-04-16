@@ -1,7 +1,7 @@
 # 🚀 Mi Ruta Autodidacta en SQL: De Cero a Experto
 
 ![Estado](https://img.shields.io/badge/Estado-En_Proceso-blue?style=for-the-badge)
-![Progreso](https://geps.dev/progress/7)
+![Progreso](https://geps.dev/progress/12)
 
 ## 📝 Descripción
 
@@ -38,10 +38,10 @@ A través de este repositorio iré documentando mi progreso teóricamente y adju
 
 ### 2. Tipos de Datos en SQL
 
-- [ ] Numéricos (INT, BIGINT, DECIMAL, FLOAT)
-- [ ] Cadenas de Texto (CHAR, VARCHAR, TEXT)
-- [ ] Fecha y Hora (DATE, TIME, DATETIME, TIMESTAMP)
-- [ ] Booleanos / Binarios
+- [x] Numéricos (INT, BIGINT, DECIMAL, FLOAT)
+- [x] Cadenas de Texto (CHAR, VARCHAR, TEXT)
+- [x] Fecha y Hora (DATE, TIME, DATETIME, TIMESTAMP)
+- [x] Booleanos / Binarios
 
 ### 3. DDL (Lenguaje de Definición de Datos)
 

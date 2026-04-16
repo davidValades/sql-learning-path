@@ -102,3 +102,56 @@ Para la <code>Bio_Presentacion</code> usaríamos <b><code>VARCHAR2(500)</code></
 Para el <code>Codigo_Postal</code> usaríamos <b><code>CHAR(5)</code></b>, porque sabemos con absoluta certeza que siempre, sin excepción, va a medir 5 caracteres. Al ser de longitud fija, el motor de la base de datos lo procesará más rápido.
 
 </details>
+
+---
+
+---
+
+## 2.3 Fecha y Hora (DATE y TIMESTAMP)
+
+### 📘 El Concepto
+
+En las bases de datos no guardamos las fechas como si fueran texto (como "15 de mayo"). Necesitamos tipos especiales para poder hacer cálculos (ej: ¿cuántos días han pasado entre dos fechas?).
+
+En Oracle, los dos protagonistas son:
+
+1. **`DATE`**: Es el tipo más usado. Guarda **siglo, año, mes, día, hora, minuto y segundo**.
+2. **`TIMESTAMP`**: Es una evolución de DATE. Se usa cuando necesitas **precisión quirúrgica**, ya que guarda fracciones de segundo (milisegundos) y puede gestionar zonas horarias (_Time Zones_).
+
+### 🏠 La Analogía
+
+- **`DATE`** es como un **reloj de pulsera clásico**: te da la hora y el segundo exacto en el que estás. Es suficiente para casi todo (saber cuándo se hizo un pedido, la fecha de nacimiento de alguien, etc.).
+- **`TIMESTAMP`** es como el **cronómetro de la Fórmula 1**: te dice exactamente cuántas milésimas de segundo han pasado. Se usa en sistemas financieros donde cada milisegundo cuenta o en logs de servidores de alta velocidad.
+
+### 💻 El Código
+
+```sql
+CREATE TABLE registros_vuelos (
+    id_vuelo NUMBER(10) PRIMARY KEY,
+    fecha_salida DATE,                    -- Fecha y hora normal
+    momento_exacto_aterrizaje TIMESTAMP(6) -- Con 6 decimales de segundo
+);
+```
+
+### 🧠 El Reto de la Lección
+
+Trabajas en el departamento de datos de un Banco Central. Tienes que diseñar la tabla Transacciones_Bancarias. El Director de Seguridad te pide que la base de datos sea capaz de registrar el momento exacto de una transferencia con fracciones de segundo, para evitar fraudes que ocurren en millonésimas de segundo entre cuentas.
+
+**Pregunta:** ¿Qué tipo de dato elegirías para la columna Fecha_Transferencia y por qué no usarías el tipo DATE en este caso específico?
+
+<details>
+<summary>👉 <b>Haz clic aquí SOLO cuando tengas tu respuesta para comprobarla</b></summary>
+
+<b>Respuesta del Profesor:</b>
+
+Utilizaríamos <b><code>TIMESTAMP</code></b> (ej. <code>TIMESTAMP(6)</code>). El tipo <code>DATE</code> en Oracle se detiene en el nivel de los segundos, por lo que si dos transacciones ocurren en el mismo segundo exacto, registrarían la misma hora. <code>TIMESTAMP</code> guarda fracciones de segundo, garantizando la precisión necesaria para detectar el orden de operaciones ultrarrápidas.
+
+(Nota sobre Booleanos: Oracle no tiene un tipo de dato BOOLEAN estándar para las tablas. La práctica profesional es usar NUMBER(1) guardando 0 o 1, o CHAR(1) guardando 'Y' o 'N' y aplicando una restricción CHECK).
+
+</details>
+
+---
+
+---
+
+## 2.4 Gran Tamaño (LOBs)
