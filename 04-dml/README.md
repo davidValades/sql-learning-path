@@ -122,3 +122,73 @@ WHERE id_avion = 1;
 ```
 
 </details>
+
+---
+
+---
+
+## 4.3 DML: DELETE y Transacciones (El poder del Ctrl+Z)
+
+### 📘 El Concepto
+
+Aquí aprenderemos dos cosas que van de la mano:
+
+1. **`DELETE`**: Es el comando DML que usamos para eliminar filas completas de una tabla. Al igual que con el `UPDATE`, la **Regla de Oro** aplica aquí: NUNCA hagas un `DELETE` sin un `WHERE` (a menos que quieras vaciar la tabla por completo).
+2. **Transacciones (`COMMIT` y `ROLLBACK`)**: En Oracle, cuando haces un `INSERT`, `UPDATE` o `DELETE`, los cambios _no son definitivos inmediatamente_. Se quedan en una especie de "limbo" temporal en tu sesión.
+   - `COMMIT`: Le dice al motor "Estoy seguro, guarda estos cambios en el disco duro para siempre".
+   - `ROLLBACK`: Es el botón de pánico. Le dice al motor "Me he equivocado, deshace todo lo que he hecho desde el último COMMIT".
+
+### 🏠 La Analogía
+
+Imagina que estás escribiendo un documento importante en Word:
+
+- **`DELETE` con `WHERE`**: Es seleccionar un párrafo específico y pulsar la tecla borrar.
+- **Transacciones**: Mientras no le des a la opción "Guardar" (**`COMMIT`**), ese párrafo borrado o ese texto nuevo solo existe en la memoria RAM de tu ordenador. Si te das cuenta de que borraste el párrafo equivocado, simplemente pulsas "Ctrl+Z" (**`ROLLBACK`**) y todo vuelve a estar como antes. ¡Pero cuidado! Una vez que le das a Guardar (`COMMIT`), el Ctrl+Z ya no te salvará.
+
+### 💻 El Código
+
+La sintaxis del `DELETE` es la más sencilla de todas, pero la más peligrosa.
+
+```sql
+-- Sintaxis profesional: DELETE FROM nombre_tabla WHERE condicion;
+
+-- Ejemplo: Echamos a un paciente del hospital por mal comportamiento
+DELETE FROM pacientes
+WHERE id_paciente = 999;
+
+-- ¡Oh no! Era el paciente equivocado. Como aún no he guardado, lo deshago:
+ROLLBACK;
+
+-- Ahora sí, borro al correcto:
+DELETE FROM pacientes
+WHERE id_paciente = 888;
+
+-- Estoy seguro. Guardo los cambios para que el resto del hospital lo vea:
+COMMIT;
+```
+
+### 🧠 El Reto de la Lección
+
+Ha habido un error en el sistema de la aerolínea. Se ha creado una ruta fantasma que no va a ningún lado y está confundiendo a los pilotos.
+
+Tu Tarea en 2 pasos:
+
+Escribe la sentencia SQL para eliminar de la tabla rutas aquella ruta cuyo id_ruta sea exactamente 'XXXYYY'.
+
+Escribe el comando necesario para guardar este cambio de forma definitiva en la base de datos, para que tus compañeros no sigan viendo esa ruta fantasma.
+
+<details>
+<summary>👉 <b>Haz clic aquí SOLO cuando tengas tu respuesta para comprobarla</b></summary>
+
+<b>Respuesta del Profesor:</b>
+
+```sql
+DELETE FROM rutas
+WHERE id_ruta = 'XXXYYY';
+
+COMMIT;
+```
+
+</details>
+
+---
