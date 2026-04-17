@@ -66,7 +66,7 @@ VALUES (1, 'Boeing 787 Dreamliner', 296, 2022);
 
 ---
 
-## 3.2 DML: UPDATE (Modificando el presente)
+## 4.2 DML: UPDATE (Modificando el presente)
 
 ### 📘 El Concepto
 
