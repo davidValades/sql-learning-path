@@ -42,3 +42,43 @@ Actúa como el Arquitecto de Datos del "Hospital Central". Tu misión es escribi
 **6. La Limpieza (DROP)**:
 
 - Borra una tabla obsoleta llamada `registro_visitas_old` que el equipo anterior dejó abandonada en el servidor.
+
+<details>
+<summary>👉 <b>Haz clic aquí SOLO cuando tengas tu respuesta para comprobarla</b></summary>
+
+<b>Respuesta del Profesor:</b>
+
+```sql
+CREATE TABLE especialidades (
+    id_especialidad NUMBER(3) PRIMARY KEY,
+    nombre_especialidad VARCHAR2(50) NOT NULL UNIQUE
+);
+
+CREATE TABLE medicos (
+    id_medico NUMBER(4) PRIMARY KEY,
+    nombre_completo VARCHAR2(100) NOT NULL,
+    id_especialidad NUMBER REFERENCES especialidades(id_especialidad),
+    salario_base NUMBER(9,2) CHECK (salario_base > 0)
+);
+
+CREATE TABLE pacientes(
+    id_paciente NUMBER(6) PRIMARY KEY,
+    dni VARCHAR2(9) UNIQUE NOT NULL,
+    nombre VARCHAR2(100) NOT NULL,
+    fecha_nacimiento DATE
+);
+
+CREATE TABLE citas (
+    id_cita NUMBER(8) PRIMARY KEY,
+    id_paciente NUMBER(6) REFERENCES pacientes(id_paciente),
+    id_medico NUMBER(4) REFERENCES medicos(id_medico),
+    fecha_hora_cita TIMESTAMP,
+    estado VARCHAR2(1) DEFAULT 'P' CHECK (estado in('P','C','X'))
+);
+
+ALTER TABLE pacientes ADD (telefono VARCHAR2(15));
+
+DROP TABLE registro_visitas_old;
+```
+
+</details>
