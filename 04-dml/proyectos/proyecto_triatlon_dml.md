@@ -8,31 +8,31 @@ Hoy es el "Día Cero". El E-commerce, el Hospital y la Aerolínea salen a produc
 
 Crea un único script SQL gigante que ejecute todas estas tareas en orden. Tú inventas los datos (nombres, precios, DNIs...), pero debes cumplir estrictamente estas reglas de negocio:
 
-🛒 Misión 1: E-commerce (Creación y Ajuste de Inflación)
+- 🛒 Misión 1: E-commerce (Creación y Ajuste de Inflación)
 
-INSERT: Crea 2 Categorías (ej. 'Electrónica' y 'Hogar').
+1. INSERT: Crea 2 Categorías (ej. 'Electrónica' y 'Hogar').
 
-INSERT: Crea 4 Productos (2 para cada categoría). Ponles el precio y stock que quieras.
+2. INSERT: Crea 4 Productos (2 para cada categoría). Ponles el precio y stock que quieras.
 
-UPDATE: ¡Crisis de última hora! Los proveedores de tu primera categoría (ej. 'Electrónica') han subido los costes. Haz un UPDATE masivo para sumarle 20€ al precio de TODOS los productos que pertenezcan a esa categoría (Pista: Usa WHERE id_categoria = ..., no el id del producto).
+3. UPDATE: ¡Crisis de última hora! Los proveedores de tu primera categoría (ej. 'Electrónica') han subido los costes. Haz un UPDATE masivo para sumarle 20€ al precio de TODOS los productos que pertenezcan a esa categoría (Pista: Usa WHERE id_categoria = ..., no el id del producto).
 
-🏥 Misión 2: Hospital Central (Contratación y Despido)
+- 🏥 Misión 2: Hospital Central (Contratación y Despido)
 
-INSERT: Crea 3 Especialidades médicas.
+1. INSERT: Crea 3 Especialidades médicas.
 
-INSERT: Contrata a 3 Médicos (asígnales las especialidades que creaste).
+2. INSERT: Contrata a 3 Médicos (asígnales las especialidades que creaste).
 
-INSERT: Registra a 2 Pacientes nuevos.
+3. INSERT: Registra a 2 Pacientes nuevos.
 
-DELETE: ¡Escándalo! Has descubierto que uno de tus médicos falsificó su título universitario. Bórralo de la base de datos inmediatamente usando su id_medico.
+4. DELETE: ¡Escándalo! Has descubierto que uno de tus médicos falsificó su título universitario. Bórralo de la base de datos inmediatamente usando su id_medico.
 
-✈️ Misión 3: Aerolínea (Operativa y Guardado)
+- ✈️ Misión 3: Aerolínea (Operativa y Guardado)
 
-INSERT: Compra y registra 3 Aviones nuevos en tu flota.
+1. INSERT: Compra y registra 3 Aviones nuevos en tu flota.
 
-INSERT: Abre 2 Rutas comerciales (recuerda que el id_ruta son 6 letras, ej. 'MADPAR').
+2. INSERT: Abre 2 Rutas comerciales (recuerda que el id_ruta son 6 letras, ej. 'MADPAR').
 
-TRANSACTION: Has trabajado muy duro. Escribe el comando final y definitivo que asegure que todos estos Inserts, Updates y Deletes se guarden en el disco duro del servidor para siempre.
+3. TRANSACTION: Has trabajado muy duro. Escribe el comando final y definitivo que asegure que todos estos Inserts, Updates y Deletes se guarden en el disco duro del servidor para siempre.
 
 <details>
 <summary>👉 <b>Haz clic aquí SOLO cuando tengas tu script completo para compararlo con un ejemplo de solución</b></summary>
