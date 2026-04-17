@@ -36,7 +36,10 @@ Necesitas traducir las siguientes reglas de negocio a código DDL:
 
 - Ayer estuviste haciendo pruebas y quedó una tabla residual llamada `categorias_backup`. Escribe el comando para fulminarla del sistema.
 
-<summary>Ver respuesta</summary>
+<details>
+<summary>👉 <b>Haz clic aquí SOLO cuando tengas tu respuesta para comprobarla</b></summary>
+
+<b>Respuesta del Profesor:</b>
 
 ```sql
 CREATE TABLE clientes (
