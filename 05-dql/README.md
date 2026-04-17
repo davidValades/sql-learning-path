@@ -1,167 +1,168 @@
-﻿## 5.1 DQL Básico: El arte de preguntar (`SELECT` y `FROM`)
+﻿# 🚀 SQL Learning Path: De Cero a DBA (Oracle SQL)
 
-### 📘 El Concepto
+¡Bienvenido a mi ruta de aprendizaje de Bases de Datos Relacionales y SQL! 📊
 
-**DQL** significa _Data Query Language_ (Lenguaje de Consulta de Datos). Mientras que el DML altera la información, el DQL es de **solo lectura**. Su objetivo es extraer la información exacta que necesitas, de la forma en la que la necesitas, sin tocar un solo dato original de la base de datos.
+Este repositorio es una bitácora viva de mi evolución como Data Engineer / DBA. Aquí no solo encontrarás teoría, sino **proyectos prácticos, retos gamificados y scripts reales** basados en la sintaxis de Oracle SQL.
 
-La herramienta absoluta y rey indiscutible del DQL es el comando **`SELECT`**.
-Para hacer una consulta básica necesitas obligatoriamente dos partes:
+## 🛠️ Metodología de Aprendizaje
 
-1. **`SELECT`**: ¿Qué columnas quiero ver? (Si quieres todas, usamos el comodín `*`).
-2. **`FROM`**: ¿De qué tabla voy a sacar esos datos?
+Cada lección en este repositorio está estructurada de forma rigurosa para garantizar la comprensión profunda de los datos:
 
-### 🏠 La Analogía
+1. **📘 El Concepto:** Explicación técnica directa y sin rodeos.
+2. **🏠 La Analogía:** Traslación del concepto técnico a situaciones de la vida cotidiana.
+3. **💻 El Código:** Sintaxis real en Oracle SQL.
+4. **🧠 El Reto:** Ejercicios prácticos con soluciones ocultas para fomentar el aprendizaje activo (_Hands-On_).
 
-Imagina que estás en un restaurante de lujo y llamas al camarero:
+---
 
-- **`SELECT nombre_plato, precio`**: Le dices al camarero: _"Solo me interesa saber el nombre del plato y cuánto cuesta, no me leas la lista de ingredientes"_.
-- **`FROM menu_cenas`**: _"Búscalo en la carta de cenas, no me traigas la de desayunos"_.
+## 🗺️ Índice del Curso
 
-El camarero (el motor de Oracle) va a la cocina (la base de datos) y te trae una bandeja (el resultado) solo con lo que pediste.
-
-### 💻 El Código
-
-Vamos a ver cómo se ve esto con la sintaxis de SQL:
-
-```sql
--- Opción 1: Traer absolutamente TODAS las columnas y filas de la tabla
-SELECT * FROM productos;
-
--- Opción 2: Traer solo columnas específicas (Mucho más eficiente)
-SELECT nombre, precio
-FROM productos;
-```
-
-### 🧠 El Reto de la Lección
-
-Eres el encargado de inventario del E-commerce. Necesitas hacer un conteo rápido, por lo que los precios y las categorías no te interesan en absoluto para esta tarea.
-
-**Pregunta:** Escribe la consulta SQL exacta para obtener un listado que muestre **únicamente** el nombre del producto y su cantidad en stock.
+_Haz clic en cada sección para desplegar los detalles y acceder al material._
 
 <details>
-<summary>👉 <b>Haz clic aquí SOLO cuando tengas tu respuesta para comprobarla</b></summary>
+<summary><b>📦 Tema 01: Fundamentos de Bases de Datos</b></summary>
+<br>
+Conceptos clave sobre qué es una Base de Datos, SGBD, SGBDR, el modelo relacional, Tablas, Filas, Columnas y los diferentes tipos de Claves (Primarias, Foráneas, Candidatas, Compuestas).
+<br><br>
+👉 <b><a href="./01-fundamentos-bd">Ir a la carpeta del Tema 1</a></b>
+</details>
 
-<b>Respuesta del Profesor:</b>
+<details>
+<summary><b>🧩 Tema 02: Tipos de Datos (Oracle)</b></summary>
+<br>
+Domina cómo almacenar la información de forma eficiente. Diferencias entre <code>NUMBER</code>, <code>VARCHAR2</code>, <code>CHAR</code>, <code>DATE</code> y <code>TIMESTAMP</code> en el ecosistema Oracle.
+<br><br>
+👉 <b><a href="./02-tipos-de-datos">Ir a la carpeta del Tema 2</a></b>
+</details>
 
-```sql
-SELECT nombre, stock
-FROM productos;
-```
+<details>
+<summary><b>🏗️ Tema 03: DDL (Data Definition Language)</b></summary>
+<br>
+El arte de construir los cimientos. Creación, modificación y destrucción de estructuras con <code>CREATE</code>, <code>ALTER</code>, <code>DROP</code> y <code>TRUNCATE</code>.
+<br><br>
+👉 <b><a href="./03-ddl">Ir a la carpeta del Tema 3</a></b> | 🏆 <b><a href="./03-ddl/proyectos">Ver Proyectos DDL</a></b>
+</details>
 
+<details>
+<summary><b>📝 Tema 04: DML (Data Manipulation Language)</b></summary>
+<br>
+Cómo inyectar vida a las tablas. Inserción, actualización y borrado de registros usando <code>INSERT</code>, <code>UPDATE</code> y <code>DELETE</code>.
+<br><br>
+👉 <b><a href="./04-dml">Ir a la carpeta del Tema 4</a></b> | 🏆 <b><a href="./04-dml/proyectos">Ver Proyectos DML</a></b>
+</details>
+
+<details>
+<summary><b>🔍 Tema 05: DQL Básico (Data Query Language) 📍 <i>[¡Estamos aquí!]</i></b></summary>
+<br>
+El poder de la extracción de datos. Primeros pasos con <code>SELECT</code>, <code>FROM</code> y buenas prácticas de consulta.
+<br><br>
+👉 <b><a href="./05-dql">Ir a la carpeta del Tema 5</a></b>
+</details>
+
+<details>
+<summary><b>🎛️ Tema 06: Operadores Lógicos y Filtros</b></summary>
+<br>
+Afinando las búsquedas con la cláusula <code>WHERE</code>, operadores lógicos (<code>AND</code>, <code>OR</code>, <code>NOT</code>) y ordenación con <code>ORDER BY</code>.
+<br><br>
+👉 <b><a href="./06-operadores">Ir a la carpeta del Tema 6</a></b>
+</details>
+
+<details>
+<summary><b>🛠️ Tema 07: Funciones Nativas de Oracle</b></summary>
+<br>
+Manipulación avanzada en vuelo: funciones de texto, fechas, conversión (<code>TO_CHAR</code>, <code>TO_DATE</code>) y manejo de nulos (<code>NVL</code>, <code>COALESCE</code>).
+<br><br>
+👉 <b><a href="./07-funciones">Ir a la carpeta del Tema 7</a></b>
+</details>
+
+<details>
+<summary><b>🔗 Tema 08: Relaciones y JOINs</b></summary>
+<br>
+Cruzando datos de múltiples tablas. Dominio absoluto de <code>INNER JOIN</code>, <code>LEFT/RIGHT JOIN</code>, <code>FULL OUTER JOIN</code> y <code>CROSS JOIN</code>.
+<br><br>
+👉 <b><a href="./08-joins">Ir a la carpeta del Tema 8</a></b>
+</details>
+
+<details>
+<summary><b>🪆 Tema 09: Subconsultas</b></summary>
+<br>
+Consultas anidadas dentro de otras consultas. Uso de subconsultas escalares, correlacionadas y operadores <code>IN</code>, <code>EXISTS</code>, <code>ANY</code>, <code>ALL</code>.
+<br><br>
+👉 <b><a href="./09-subconsultas">Ir a la carpeta del Tema 9</a></b>
+</details>
+
+<details>
+<summary><b>🖼️ Tema 10: Vistas y Objetos de BD</b></summary>
+<br>
+Creación de Vistas (<code>VIEWS</code>), Secuencias (<code>SEQUENCES</code>) para autoincrementales, y Sinónimos para simplificar la arquitectura.
+<br><br>
+👉 <b><a href="./10-vistas">Ir a la carpeta del Tema 10</a></b>
+</details>
+
+<details>
+<summary><b>⚡ Tema 11: Indexación</b></summary>
+<br>
+Optimizando la velocidad de lectura. Creación y funcionamiento de Índices (B-Tree, Bitmap) y cuándo no usarlos.
+<br><br>
+👉 <b><a href="./11-indexacion">Ir a la carpeta del Tema 11</a></b>
+</details>
+
+<details>
+<summary><b>🛡️ Tema 12: Transacciones</b></summary>
+<br>
+Gestión de bloques de operaciones seguras con <code>COMMIT</code>, <code>ROLLBACK</code> y <code>SAVEPOINT</code>.
+<br><br>
+👉 <b><a href="./12-transacciones">Ir a la carpeta del Tema 12</a></b>
+</details>
+
+<details>
+<summary><b>🧪 Tema 13: Propiedades ACID</b></summary>
+<br>
+Teoría avanzada: Atomicidad, Consistencia, Aislamiento (Isolation) y Durabilidad. El corazón de los motores relacionales.
+<br><br>
+👉 <b><a href="./13-propiedades-acid">Ir a la carpeta del Tema 13</a></b>
+</details>
+
+<details>
+<summary><b>📐 Tema 14: Normalización</b></summary>
+<br>
+Diseño eficiente de bases de datos para evitar redundancias (1NF, 2NF, 3NF y BCNF).
+<br><br>
+👉 <b><a href="./14-normalizacion">Ir a la carpeta del Tema 14</a></b>
+</details>
+
+<details>
+<summary><b>🚀 Tema 15: SQL Avanzado (Window Functions y CTEs)</b></summary>
+<br>
+Consultas de nivel analítico: Funciones de ventana (<code>ROW_NUMBER</code>, <code>RANK</code>, <code>OVER</code>), CTEs con la cláusula <code>WITH</code> y operadores de conjuntos (<code>UNION</code>, <code>INTERSECT</code>, <code>MINUS</code>).
+<br><br>
+👉 <b><a href="./15-sql-avanzado">Ir a la carpeta del Tema 15</a></b>
+</details>
+
+<details>
+<summary><b>🏎️ Tema 16: Optimización de Consultas</b></summary>
+<br>
+Planes de ejecución (Explain Plan), cuellos de botella y mejores prácticas para que el SQL "vuele".
+<br><br>
+👉 <b><a href="./16-optimizacion">Ir a la carpeta del Tema 16</a></b>
+</details>
+
+<details>
+<summary><b>🌐 Tema 17: Ecosistema SQL</b></summary>
+<br>
+Diferencias entre motores (Oracle, PostgreSQL, SQL Server, MySQL) y herramientas de mercado.
+<br><br>
+👉 <b><a href="./17-ecosistema-sql">Ir a la carpeta del Tema 17</a></b>
+</details>
+
+<details>
+<summary><b>💼 Tema 18: Casos Reales y Proyectos Finales</b></summary>
+<br>
+Desafíos complejos que simulan el día a día de un Data Engineer y un DBA en producción.
+<br><br>
+👉 <b><a href="./18-casos-reales">Ir a la carpeta del Tema 18</a></b>
 </details>
 
 ---
 
----
-
-## 5.2 Filtros con `WHERE` y Operadores Lógicos
-
-### 📘 El Concepto
-
-Rara vez queremos ver _todos_ los registros de una tabla. Para limitar las filas que nos devuelve el `SELECT`, utilizamos la cláusula **`WHERE`**. Esta cláusula actúa como un colador, permitiendo que solo pasen las filas que cumplen una condición verdadera.
-
-Para crear estas condiciones usamos **Operadores Relacionales**:
-
-- `=`: Igual a.
-- `!=` o `<>`: Diferente de.
-- `>`, `<`, `>=`, `<=`: Mayor que, menor que, etc.
-
-Y **Operadores Lógicos** (para combinar varias condiciones):
-
-- `AND`: Se deben cumplir TODAS las condiciones.
-- `OR`: Se debe cumplir AL MENOS UNA de las condiciones.
-
-### 🏠 La Analogía
-
-Piensa en el `WHERE` como el **portero de una discoteca VIP**.
-El portero tiene instrucciones estrictas:
-
-- _"Solo entran los que tengan entrada VIP"_ (`WHERE tipo_entrada = 'VIP'`).
-- _"Oye, que entren los que tengan entrada VIP **Y** sean mayores de 18 años"_ (`WHERE tipo_entrada = 'VIP' AND edad >= 18`).
-
-Si no cumples la regla del portero, te quedas fuera del resultado de la consulta.
-
-### 💻 El Código
-
-```sql
--- Filtro simple usando =
-SELECT nombre_completo, salario_base
-FROM medicos
-WHERE id_especialidad = 100;
-
--- Filtro compuesto usando >= y AND
-SELECT nombre, precio
-FROM productos
-WHERE id_categoria = 1 AND precio >= 1000;
-```
-
-### 🧠 El Reto de la Lección
-
-El director del Hospital Central necesita contactar urgentemente a los pacientes nacidos antes del año 1990, pero solo si no tienen el teléfono vacío.
-_(Nota: Asume que si el teléfono no está vacío, es diferente de null o tiene algún valor, pero para simplificar, busquemos a la paciente que sabemos que nació antes de 1990 en nuestros datos)_.
-
-**Pregunta:** Escribe la consulta SQL para obtener el nombre y el teléfono de los pacientes cuya fecha de nacimiento sea anterior (`<`) al 1 de enero de 1990. Recuerda usar `TO_DATE()`.
-
-<details>
-<summary>👉 <b>Haz clic aquí SOLO cuando tengas tu respuesta para comprobarla</b></summary>
-
-<b>Respuesta del Profesor:</b>
-
-```sql
-SELECT nombre, telefono
-FROM pacientes
-WHERE fecha_nacimiento < TO_DATE('1990-01-01', 'YYYY-MM-DD');
-```
-
-</details>
-
----
-
----
-
-## 5.3 Ordenando los resultados con `ORDER BY`
-
-### 📘 El Concepto
-
-Por defecto, la base de datos te escupe las filas en el orden en el que las encuentra en el disco duro (lo cual suele ser un caos). Para presentar la información de forma humana y estructurada, usamos **`ORDER BY`**. Esta siempre será la **última cláusula** de tu consulta `SELECT`.
-
-Puedes ordenar por una o varias columnas, en dos direcciones:
-
-- **`ASC`**: Ascendente (De A-Z, de menor a mayor). Es el valor por defecto si no pones nada.
-- **`DESC`**: Descendente (De Z-A, de mayor a menor).
-
-### 🏠 La Analogía
-
-Es igual que cuando entras a buscar un hotel en Booking o Amazon. Has buscado "Hoteles en Madrid" (`SELECT` y `FROM`) que tengan "Piscina" (`WHERE`). Tienes 100 resultados desordenados. Al final, haces clic en el desplegable de arriba a la derecha y seleccionas: **"Ordenar por: Precio, del más barato al más caro"** (`ORDER BY precio ASC`).
-
-### 💻 El Código
-
-```sql
--- Ordenar un listado de aviones desde el más nuevo al más antiguo
-SELECT modelo, anio_fabricacion
-FROM aviones
-ORDER BY anio_fabricacion DESC;
-
--- Ordenar por múltiples columnas (Primero por categoría, luego por precio de más caro a barato)
-SELECT nombre, id_categoria, precio
-FROM productos
-ORDER BY id_categoria ASC, precio DESC;
-```
-
-### 🧠 El Reto de la Lección
-
-El CEO de la Aerolínea quiere un informe para ver qué rutas gastan más combustible.
-
-**Pregunta:** Genera una consulta que devuelva todas las columnas de la tabla `rutas`, pero ordenadas de forma que la ruta con mayor `distancia_km` aparezca en la primera fila.
-
-<details>
-<summary>👉 <b>Haz clic aquí SOLO cuando tengas tu respuesta para comprobarla</b></summary>
-
-<b>Respuesta del Profesor:</b>
-
-```sql
-SELECT * FROM rutas
-ORDER BY distancia_km DESC;
-```
-
-</details>
+_Este repositorio es un proyecto personal en constante crecimiento. ¡Siente libre de explorar!_
