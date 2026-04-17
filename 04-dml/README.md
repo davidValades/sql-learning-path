@@ -1,52 +1,54 @@
-﻿## 4.1 DML: INSERT (Llenando la tienda)
+﻿## 4.1 DML: INSERT (Poblando las Tablas)
 
 ### 📘 El Concepto
 
-**DML** significa _Data Manipulation Language_ (Lenguaje de Manipulación de Datos). Mientras que el DDL construía la estructura (las tablas), el DML se encarga exclusivamente de la información que va **dentro** de esas tablas.
+**DML** significa _Data Manipulation Language_ (Lenguaje de Manipulación de Datos). A diferencia del DDL (que toca la estructura), el DML interactúa exclusivamente con los **datos** que viven dentro de las tablas.
 
-El primer comando fundamental del DML es **`INSERT`**. Como su nombre indica, sirve para crear nuevas filas (registros) dentro de una tabla que ya existe.
+El comando **`INSERT`** es la puerta de entrada. Se utiliza para añadir nuevas filas (registros) a una tabla existente.
+
+**Reglas de Oro del INSERT en Oracle:**
+
+1. Los textos (`VARCHAR2`, `CHAR`) y las fechas (`DATE`) SIEMPRE van entre **comillas simples** (`'texto'`).
+2. Los números (`NUMBER`) NUNCA llevan comillas.
+3. El orden de los valores que insertas debe coincidir exactamente con el orden de las columnas que declaras.
 
 ### 🏠 La Analogía
 
-Si usar DDL (CREATE TABLE) era construir un bloque de apartamentos vacío, usar DML (`INSERT`) es **entregar las llaves para que los inquilinos se muden**.
-
-El comando `INSERT` es como el camión de mudanzas. Tú le dices al camión a qué edificio ir (la tabla), qué inquilino llevar y en qué habitación poner cada mueble (las columnas).
+Imagina que el **DDL** fue el proceso de construir una enorme estantería de madera (la tabla) y etiquetar cada balda: "Aquí van novelas", "Aquí van cómics".
+El **DML (`INSERT`)** es el momento en el que llegas con una caja llena de libros (datos) y empiezas a colocarlos, uno por uno, en su balda correspondiente respetando las etiquetas.
 
 ### 💻 El Código
 
-Existen dos formas principales de hacer un `INSERT` en Oracle SQL.
-
-**Forma 1: Declarativa (La más profesional y segura)**
-Aquí le decimos explícitamente al motor en qué columnas vamos a insertar los datos. Si en el futuro alguien añade una columna nueva a la tabla, este código no se romperá.
+La forma más segura y profesional de insertar datos es nombrando explícitamente las columnas. De esta manera, si la tabla cambia en el futuro, tu código no se romperá.
 
 ```sql
--- Sintaxis: INSERT INTO tabla (columna1, columna2) VALUES (valor1, valor2);
+-- Sintaxis profesional: INSERT INTO nombre_tabla (columnas) VALUES (datos);
+
+-- Usando la tabla 'especialidades' de nuestro Hospital:
+INSERT INTO especialidades (id_especialidad, nombre_especialidad)
+VALUES (101, 'Cardiología');
+
+INSERT INTO especialidades (id_especialidad, nombre_especialidad)
+VALUES (102, 'Pediatría');
 ```
 
-INSERT INTO categorias (id_categoria, nombre_categoria)
-VALUES (1, 'Electrónica');
+Nota Pro: En Oracle, cuando haces un INSERT, los datos se guardan temporalmente en tu sesión. Para que se guarden de forma definitiva en el disco duro del servidor para que todos los demás usuarios puedan verlos, necesitas ejecutar el comando COMMIT; (lo veremos en detalle muy pronto, pero es bueno que te suene).
 
-Nota: Fíjate que el texto ('Electrónica') va entre comillas simples. Los números (1) van sin comillas.
+### 🧠 El Reto de la Lección
 
-**Forma 2: Implícita (Rápida pero arriesgada)**
+Vamos a estrenar la base de datos de nuestra Aerolínea. Necesito que insertes el primer avión en tu tabla aviones.
 
-Aquí no escribimos el nombre de las columnas. Oracle asume que vas a meter un dato para CADA UNA de las columnas de la tabla, exactamente en el mismo orden en el que fueron creadas.
+Los datos del avión son:
 
-```sql
--- Nuestra tabla clientes tiene: id_cliente, nombre, email
-INSERT INTO clientes
-VALUES (101, 'David López', 'david.lopez@email.com');
-```
+ID del avión: 1
 
-### 🧠 El Reto y los Proyectos
+Modelo: 'Boeing 787 Dreamliner'
 
-Tu E-commerce global necesita abrir sus puertas hoy mismo. Necesitamos inaugurar la tienda con datos iniciales reales.
+Capacidad: 296 pasajeros
 
-Usando el esquema que acabas de crear, tu tarea es escribir las sentencias SQL para:
+Año de fabricación: 2022 (Recuerda que añadiste esta columna con un ALTER).
 
-Insertar dos categorías nuevas en tu tabla categorias (ej: 'Deportes' y 'Hogar').
-
-Insertar dos clientes nuevos en tu tabla clientes (invéntate los nombres y correos, pero recuerda que los correos no se pueden repetir por tu restricción UNIQUE).
+Tu Tarea: Escribe la sentencia SQL exacta para insertar esta fila en la tabla aviones.
 
 <details>
 <summary>👉 <b>Haz clic aquí SOLO cuando tengas tu respuesta para comprobarla</b></summary>
@@ -54,16 +56,12 @@ Insertar dos clientes nuevos en tu tabla clientes (invéntate los nombres y corr
 <b>Respuesta del Profesor:</b>
 
 ```sql
--- Insertando Categorías
-INSERT INTO categorias (id_categoria, nombre_categoria) VALUES (20, 'Deportes');
-INSERT INTO categorias (id_categoria, nombre_categoria) VALUES (21, 'Hogar');
-
--- Insertando Clientes
-INSERT INTO clientes (id_cliente, nombre, email)
-VALUES (1, 'Laura Martínez', 'laura.m@ecommerce.com');
-
-INSERT INTO clientes (id_cliente, nombre, email)
-VALUES (2, 'Carlos Ruiz', 'carlos.r@ecommerce.com');
+INSERT INTO aviones (id_avion, modelo, capacidad_pasajeros, anio_fabricacion)
+VALUES (1, 'Boeing 787 Dreamliner', 296, 2022);
 ```
 
 </details>
+
+---
+
+---

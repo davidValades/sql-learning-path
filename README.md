@@ -27,7 +27,7 @@ A través de este repositorio iré documentando mi progreso teóricamente y adju
 - [x] Clave Foránea (Foreign Key)
 - [x] Clave Candidata (Candidate Key)
 - [x] Clave Compuesta (Composite Key)
-- [ ] Restricciones (Constraints)
+- [x] Restricciones (Constraints)
   - [x] NOT NULL
   - [x] UNIQUE
   - [x] PRIMARY KEY
