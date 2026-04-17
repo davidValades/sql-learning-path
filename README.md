@@ -1,7 +1,7 @@
 # 🚀 Mi Ruta Autodidacta en SQL: De Cero a Experto
 
 ![Estado](https://img.shields.io/badge/Estado-En_Proceso-blue?style=for-the-badge)
-![Progreso](https://geps.dev/progress/20)
+![Progreso](https://geps.dev/progress/30)
 
 ## 📝 Descripción
 
@@ -52,10 +52,10 @@ A través de este repositorio iré documentando mi progreso teóricamente y adju
 
 ### 4. DML (Lenguaje de Manipulación de Datos)
 
-- [ ] INSERT (Insertar datos)
-- [ ] UPDATE (Actualizar datos)
-- [ ] DELETE (Eliminar datos)
-- [ ] MERGE / UPSERT (Insertar o actualizar)
+- [x] INSERT (Insertar datos)
+- [x] UPDATE (Actualizar datos)
+- [x] DELETE (Eliminar datos)
+- [x] MERGE / UPSERT (Insertar o actualizar)
 
 ### 5. DQL (Lenguaje de Consulta de Datos)
 
