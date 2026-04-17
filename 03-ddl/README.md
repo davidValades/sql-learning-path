@@ -150,3 +150,54 @@ Tu tarea: Escribe la sentencia SQL exacta para demoler y hacer desaparecer por c
 <summary>👉 <b>Haz clic aquí SOLO cuando tengas tu respuesta para comprobarla</b></summary>
 
 <b>Respuesta del Profesor:</b>
+
+```sql
+DROP TABLE autores_borrador;
+```
+
+</details>
+
+---
+
+---
+
+## 3.4 DDL: TRUNCATE (Vaciado Express)
+
+### 📘 El Concepto
+
+El comando `TRUNCATE` se utiliza para eliminar **todos los registros (filas)** de una tabla de forma inmediata, pero **conservando la estructura** de la tabla intacta (columnas, tipos de datos, restricciones).
+
+Aunque parezca que estamos manipulando datos y debería ser DML (como veremos con `DELETE`), `TRUNCATE` está clasificado como DDL en la mayoría de los motores. Esto se debe a cómo funciona internamente: no borra fila por fila, sino que desasigna las páginas de datos de la tabla de golpe. Por eso es extremadamente rápido, pero a menudo no se puede deshacer (no genera un registro de transacciones completo).
+
+### 🧹 La Analogía
+
+Volvamos a nuestra biblioteca.
+
+- `DROP` era llamar al equipo de demolición y destruir la estantería entera.
+- `TRUNCATE` es acercarte a la estantería y, con un solo movimiento de brazo, barrer absolutamente todos los libros y tirarlos a la basura de golpe. La estantería (la tabla) sigue ahí, vacía e intacta, lista para que pongas libros nuevos.
+
+### 💻 El Código
+
+La sintaxis es tan sencilla como la de `DROP`, pero el resultado es muy diferente:
+
+```sql
+-- Vaciar todos los datos de una tabla, manteniendo su estructura
+TRUNCATE TABLE nombre_de_la_tabla;
+```
+
+### 🎯 El Reto
+
+En tu base de datos tienes una tabla llamada logs_sistema que registra cada clic que hacen los usuarios. Ha estado acumulando datos durante un año y está saturando el disco. Quieres borrar toda esa información antigua para empezar de cero, pero necesitas que la tabla siga existiendo para que el sistema siga registrando los clics de mañana.
+
+Tu tarea: Escribe la sentencia SQL para limpiar completamente esa tabla sin destruirla.
+
+<details>
+<summary>👉 <b>Haz clic aquí SOLO cuando tengas tu respuesta para comprobarla</b></summary>
+
+<b>Respuesta del Profesor:</b>
+
+```sql
+TRUNCATE TABLE logs_sistema;
+```
+
+</details>

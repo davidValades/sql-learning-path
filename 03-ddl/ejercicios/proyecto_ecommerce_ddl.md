@@ -35,3 +35,33 @@ Necesitas traducir las siguientes reglas de negocio a código DDL:
 **5. La Limpieza (DROP)**:
 
 - Ayer estuviste haciendo pruebas y quedó una tabla residual llamada `categorias_backup`. Escribe el comando para fulminarla del sistema.
+
+Respuesta<details>
+
+<summary>Ver respuesta</summary>
+
+```sql
+CREATE TABLE clientes (
+    id_cliente NUMBER(10) PRIMARY KEY,
+    nombre VARCHAR2(50) NOT NULL,
+    email VARCHAR2(100) UNIQUE NOT NULL
+);
+
+CREATE TABLE categorias (
+    id_categoria NUMBER(10) PRIMARY KEY,
+    nombre_categoria VARCHAR2(50) NOT NULL
+);
+
+CREATE TABLE productos (
+    id_producto NUMBER(10) PRIMARY KEY,
+    nombre VARCHAR2(100) NOT NULL,
+    precio NUMBER(5,2) NOT NULL,
+    id_categoria NUMBER(10) REFERENCES categorias(id_categoria)
+);
+
+ALTER TABLE productos ADD (stock number(5) default 0);
+
+drop TABLE categorias_backup;
+```
+
+</details>
