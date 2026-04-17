@@ -153,5 +153,3 @@ Utilizaríamos <b><code>TIMESTAMP</code></b> (ej. <code>TIMESTAMP(6)</code>). El
 ---
 
 ---
-
-## 2.4 Gran Tamaño (LOBs)
