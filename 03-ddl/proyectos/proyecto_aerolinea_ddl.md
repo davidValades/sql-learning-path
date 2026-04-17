@@ -36,3 +36,39 @@ Eres el DBA principal del aeropuerto. Diseña el script SQL (Oracle) para constr
 **5. El Vaciado Express (TRUNCATE)**:
 
 - Tienes una tabla llamada `vuelos_prueba_sistema` que utilizaste ayer para probar la carga de datos. Quieres vaciarla de golpe para las pruebas de hoy, pero sin destruir la tabla. Escribe el comando exacto.
+
+<details>
+<summary>👉 <b>Haz clic aquí SOLO cuando tengas tu respuesta para comprobarla</b></summary>
+
+<b>Respuesta del Profesor:</b>
+
+```sql
+CREATE TABLE aviones(
+    id_avion NUMBER(4) PRIMARY KEY,
+    modelo VARCHAR2(50) NOT NULL,
+    capacidad_pasajeros NUMBER(3) CHECK (capacidad_pasajeros > 0 AND capacidad_pasajeros <= 853)
+);
+
+CREATE TABLE rutas(
+    id_ruta CHAR(6) PRIMARY KEY,
+    aeropuerto_origen CHAR(3) NOT NULL,
+    aeropuerto_destino CHAR(3) NOT NULL,
+    distancia_km NUMBER(5) CHECK (distancia_km > 0)
+);
+
+CREATE TABLE vuelos(
+    id_vuelo NUMBER(6) PRIMARY KEY,
+    id_ruta CHAR(6) REFERENCES rutas(id_ruta),
+    id_avion NUMBER(4) REFERENCES aviones(id_avion),
+    fecha_salida TIMESTAMP,
+    puerta_embarque VARCHAR2(5)
+);
+
+ALTER TABLE aviones ADD (
+    anio_fabricacion NUMBER(4)
+);
+
+TRUNCATE TABLE vuelos_prueba_sistema;
+```
+
+</details>
