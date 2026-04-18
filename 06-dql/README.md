@@ -1,4 +1,4 @@
-## 5.1 DQL Básico: El arte de preguntar (`SELECT` y `FROM`)
+## 6.1 DQL Básico: El arte de preguntar (`SELECT` y `FROM`)
 
 ### 📘 El Concepto
 
@@ -54,7 +54,7 @@ FROM productos;
 
 ---
 
-## 5.2 Filtros con `WHERE` y Operadores Lógicos
+## 6.2 Filtros con `WHERE` y Operadores Lógicos
 
 ### 📘 El Concepto
 
@@ -119,7 +119,7 @@ WHERE fecha_nacimiento < TO_DATE('1990-01-01', 'YYYY-MM-DD');
 
 ---
 
-## 5.3 Ordenando los resultados con `ORDER BY`
+## 6.3 Ordenando los resultados con `ORDER BY`
 
 ### 📘 El Concepto
 
@@ -169,7 +169,7 @@ ORDER BY distancia_km DESC;
 
 <div align="center">
 
-### 🗺️ Ruta de Aprendizaje — Tema 05
+### 🗺️ Ruta de Aprendizaje — Tema 06
 
 </div>
 
@@ -177,12 +177,12 @@ ORDER BY distancia_km DESC;
 |:-:|------|---------|
 | 1️⃣ | Estudiar el temario | 📖 _Estás aquí_ |
 | 2️⃣ | Completar los proyectos | 🏆 [Ir a Proyectos →](./proyectos) |
-| 3️⃣ | Avanzar al siguiente tema | ➡️ [Tema 06: Operadores Lógicos y Filtros](../06-operadores) |
+| 3️⃣ | Avanzar al siguiente tema | ➡️ [Tema 07: Operadores Lógicos y Filtros](../07-operadores) |
 
 ---
 
 <div align="center">
 
-⬅️ [**Tema 04: DML (Data Manipulation Language)**](../04-dml) · 🏠 [**Índice del Curso**](../README.md) · [**🏆 Proyectos →**](./proyectos/proyecto_dql_basico.md)
+⬅️ [**Tema 05: DML (Data Manipulation Language)**](../05-dml) · 🏠 [**Índice del Curso**](../README.md) · [**🏆 Proyectos →**](./proyectos/proyecto_dql_basico.md)
 
 </div>

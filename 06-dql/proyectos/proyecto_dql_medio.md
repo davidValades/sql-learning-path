@@ -55,8 +55,8 @@ ORDER BY distancia_km DESC;
 
 <div align="center">
 
-### ✅ ¡Has completado los proyectos del Tema 05!
+### ✅ ¡Has completado los proyectos del Tema 06!
 
-⬅️ [**Proyecto Anterior**](./proyecto_dql_basico.md) · 🏠 [**Índice del Curso**](../../README.md) · [**Tema 06: Operadores Lógicos y Filtros →**](../../06-operadores)
+⬅️ [**Proyecto Anterior**](./proyecto_dql_basico.md) · 🏠 [**Índice del Curso**](../../README.md) · [**Tema 07: Operadores Lógicos y Filtros →**](../../07-operadores)
 
 </div>

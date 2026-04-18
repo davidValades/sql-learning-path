@@ -1,4 +1,4 @@
-## 4.1 DML: INSERT (Poblando las Tablas)
+## 5.1 DML: INSERT (Poblando las Tablas)
 
 ### 📘 El Concepto
 
@@ -66,7 +66,7 @@ VALUES (1, 'Boeing 787 Dreamliner', 296, 2022);
 
 ---
 
-## 4.2 DML: UPDATE (Modificando el presente)
+## 5.2 DML: UPDATE (Modificando el presente)
 
 ### 📘 El Concepto
 
@@ -127,7 +127,7 @@ WHERE id_avion = 1;
 
 ---
 
-## 4.3 DML: DELETE y Transacciones (El poder del Ctrl+Z)
+## 5.3 DML: DELETE y Transacciones (El poder del Ctrl+Z)
 
 ### 📘 El Concepto
 
@@ -195,7 +195,7 @@ COMMIT;
 
 <div align="center">
 
-### 🗺️ Ruta de Aprendizaje — Tema 04
+### 🗺️ Ruta de Aprendizaje — Tema 05
 
 </div>
 
@@ -203,12 +203,12 @@ COMMIT;
 |:-:|------|---------|
 | 1️⃣ | Estudiar el temario | 📖 _Estás aquí_ |
 | 2️⃣ | Completar los proyectos | 🏆 [Ir a Proyectos →](./proyectos) |
-| 3️⃣ | Avanzar al siguiente tema | ➡️ [Tema 05: DQL Básico (Data Query Language)](../05-dql) |
+| 3️⃣ | Avanzar al siguiente tema | ➡️ [Tema 06: DQL Básico (Data Query Language)](../06-dql) |
 
 ---
 
 <div align="center">
 
-⬅️ [**Tema 03: DDL (Data Definition Language)**](../03-ddl) · 🏠 [**Índice del Curso**](../README.md) · [**🏆 Proyectos →**](./proyectos/proyecto_triatlon_dml.md)
+⬅️ [**Tema 04: DDL (Data Definition Language)**](../04-ddl) · 🏠 [**Índice del Curso**](../README.md) · [**🏆 Proyectos →**](./proyectos/proyecto_triatlon_dml.md)
 
 </div>

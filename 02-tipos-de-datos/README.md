@@ -161,12 +161,12 @@ Utilizaríamos <b><code>TIMESTAMP</code></b> (ej. <code>TIMESTAMP(6)</code>). El
 | # | Paso | Recurso |
 |:-:|------|---------|
 | 1️⃣ | Estudiar el temario | 📖 _Estás aquí_ |
-| 2️⃣ | Avanzar al siguiente tema | ➡️ [Tema 03: DDL (Data Definition Language)](../03-ddl) |
+| 2️⃣ | Avanzar al siguiente tema | ➡️ [Tema 03: Normalización y Modelado ER](../03-normalizacion) |
 
 ---
 
 <div align="center">
 
-⬅️ [**Tema 01: Fundamentos de Bases de Datos**](../01-fundamentos-bd) · 🏠 [**Índice del Curso**](../README.md) · [**Tema 03: DDL (Data Definition Language) →**](../03-ddl)
+⬅️ [**Tema 01: Fundamentos de Bases de Datos**](../01-fundamentos-bd) · 🏠 [**Índice del Curso**](../README.md) · [**Tema 03: Normalización y Modelado ER →**](../03-normalizacion)
 
 </div>

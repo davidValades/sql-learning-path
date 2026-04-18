@@ -1,4 +1,4 @@
-## 3.1 DDL: CREATE (Construyendo los Cimientos)
+## 4.1 DDL: CREATE (Construyendo los Cimientos)
 
 ### 📘 El Concepto
 
@@ -59,7 +59,7 @@ CREATE TABLE app_productos (
 
 ---
 
-## 3.2 ALTER TABLE (Modificar estructuras)
+## 4.2 ALTER TABLE (Modificar estructuras)
 
 ### 📖 El Concepto
 
@@ -117,7 +117,7 @@ ALTER TABLE libros MODIFY (titulo VARCHAR2(255));
 
 ---
 
-## 3.3 DDL: DROP (Eliminando Estructuras)
+## 4.3 DDL: DROP (Eliminando Estructuras)
 
 ### 📘 El Concepto
 
@@ -161,7 +161,7 @@ DROP TABLE autores_borrador;
 
 ---
 
-## 3.4 DDL: TRUNCATE (Vaciado Express)
+## 4.4 DDL: TRUNCATE (Vaciado Express)
 
 ### 📘 El Concepto
 
@@ -205,7 +205,7 @@ TRUNCATE TABLE logs_sistema;
 
 <div align="center">
 
-### 🗺️ Ruta de Aprendizaje — Tema 03
+### 🗺️ Ruta de Aprendizaje — Tema 04
 
 </div>
 
@@ -213,12 +213,12 @@ TRUNCATE TABLE logs_sistema;
 |:-:|------|---------|
 | 1️⃣ | Estudiar el temario | 📖 _Estás aquí_ |
 | 2️⃣ | Completar los proyectos | 🏆 [Ir a Proyectos →](./proyectos) |
-| 3️⃣ | Avanzar al siguiente tema | ➡️ [Tema 04: DML (Data Manipulation Language)](../04-dml) |
+| 3️⃣ | Avanzar al siguiente tema | ➡️ [Tema 05: DML (Data Manipulation Language)](../05-dml) |
 
 ---
 
 <div align="center">
 
-⬅️ [**Tema 02: Tipos de Datos (Oracle)**](../02-tipos-de-datos) · 🏠 [**Índice del Curso**](../README.md) · [**🏆 Proyectos →**](./proyectos/proyecto_ecommerce_ddl.md)
+⬅️ [**Tema 03: Normalización y Modelado ER**](../03-normalizacion) · 🏠 [**Índice del Curso**](../README.md) · [**🏆 Proyectos →**](./proyectos/proyecto_ecommerce_ddl.md)
 
 </div>

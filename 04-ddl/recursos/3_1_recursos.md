@@ -1,4 +1,4 @@
-# 🔗 Recursos del Tema 3.1: CREATE TABLE (Oracle SQL)
+# 🔗 Recursos del Tema 4.1: CREATE TABLE (Oracle SQL)
 
 Para practicar la creación de tablas y ejecutar consultas con sintaxis nativa de Oracle sin necesidad de instalar bases de datos locales:
 
