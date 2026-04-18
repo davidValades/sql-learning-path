@@ -62,10 +62,11 @@ GROUP BY NVL2(codigo_barras, 'Con código', 'Sin código');
 Resultado:
 | estado_codigo | num_productos | valor_inventario |
 |---------------|---------------|------------------|
-| Con código | 4 | 71,265.00 € |
-| Sin código | 4 | 20,826.50 € |
+| Con código | 4 | 71,315.00 € |
+| Sin código | 4 | 20,776.50 € |
 
-Detalle: Con código = Laptop Pro(61000) + Ratón(9100) + Sofá(0) + Lámpara(1215) = 71315... Los valores exactos dependen de los datos. El alumno debe verificar.
+Detalle Con código: Laptop Pro(1220×50=61000) + Ratón(45.50×200=9100) + Sofá(405×0=0) + Lámpara(40.50×30=1215) = 71,315.
+Detalle Sin código: Camiseta(19.99×100=1999) + Zapatillas(89.50×45=4027.50) + Monitor(350×25=8750) + Teclado(75×80=6000) = 20,776.50.
 
 </details>
 
