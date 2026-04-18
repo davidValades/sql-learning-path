@@ -1,4 +1,4 @@
-﻿## 4.1 DML: INSERT (Poblando las Tablas)
+## 4.1 DML: INSERT (Poblando las Tablas)
 
 ### 📘 El Concepto
 
@@ -192,3 +192,23 @@ COMMIT;
 </details>
 
 ---
+
+<div align="center">
+
+### 🗺️ Ruta de Aprendizaje — Tema 04
+
+</div>
+
+| # | Paso | Recurso |
+|:-:|------|---------|
+| 1️⃣ | Estudiar el temario | 📖 _Estás aquí_ |
+| 2️⃣ | Completar los proyectos | 🏆 [Ir a Proyectos →](./proyectos) |
+| 3️⃣ | Avanzar al siguiente tema | ➡️ [Tema 05: DQL Básico (Data Query Language)](../05-dql) |
+
+---
+
+<div align="center">
+
+⬅️ [**Tema 03: DDL (Data Definition Language)**](../03-ddl) · 🏠 [**Índice del Curso**](../README.md) · [**🏆 Proyectos →**](./proyectos/proyecto_triatlon_dml.md)
+
+</div>

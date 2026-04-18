@@ -66,3 +66,10 @@ drop TABLE categorias_backup;
 ```
 
 </details>
+---
+
+<div align="center">
+
+⬅️ [**Volver al Temario**](../README.md) · 🏠 [**Índice del Curso**](../../README.md) · [**Siguiente Proyecto →**](./proyecto_hospital_ddl.md)
+
+</div>

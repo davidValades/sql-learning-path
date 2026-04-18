@@ -54,3 +54,10 @@ ORDER BY anio_fabricacion ASC;
 ```
 
 </details>
+---
+
+<div align="center">
+
+⬅️ [**Volver al Temario**](../README.md) · 🏠 [**Índice del Curso**](../../README.md) · [**Siguiente Proyecto →**](./proyecto_dql_medio.md)
+
+</div>

@@ -1,4 +1,4 @@
-﻿## 3.1 DDL: CREATE (Construyendo los Cimientos)
+## 3.1 DDL: CREATE (Construyendo los Cimientos)
 
 ### 📘 El Concepto
 
@@ -201,3 +201,24 @@ TRUNCATE TABLE logs_sistema;
 ```
 
 </details>
+---
+
+<div align="center">
+
+### 🗺️ Ruta de Aprendizaje — Tema 03
+
+</div>
+
+| # | Paso | Recurso |
+|:-:|------|---------|
+| 1️⃣ | Estudiar el temario | 📖 _Estás aquí_ |
+| 2️⃣ | Completar los proyectos | 🏆 [Ir a Proyectos →](./proyectos) |
+| 3️⃣ | Avanzar al siguiente tema | ➡️ [Tema 04: DML (Data Manipulation Language)](../04-dml) |
+
+---
+
+<div align="center">
+
+⬅️ [**Tema 02: Tipos de Datos (Oracle)**](../02-tipos-de-datos) · 🏠 [**Índice del Curso**](../README.md) · [**🏆 Proyectos →**](./proyectos/proyecto_ecommerce_ddl.md)
+
+</div>

@@ -72,3 +72,12 @@ TRUNCATE TABLE vuelos_prueba_sistema;
 ```
 
 </details>
+---
+
+<div align="center">
+
+### ✅ ¡Has completado los proyectos del Tema 03!
+
+⬅️ [**Proyecto Anterior**](./proyecto_hospital_ddl.md) · 🏠 [**Índice del Curso**](../../README.md) · [**Tema 04: DML (Data Manipulation Language) →**](../../04-dml)
+
+</div>

@@ -51,3 +51,12 @@ ORDER BY distancia_km DESC;
 ```
 
 </details>
+---
+
+<div align="center">
+
+### ✅ ¡Has completado los proyectos del Tema 05!
+
+⬅️ [**Proyecto Anterior**](./proyecto_dql_basico.md) · 🏠 [**Índice del Curso**](../../README.md) · [**Tema 06: Operadores Lógicos y Filtros →**](../../06-operadores)
+
+</div>
