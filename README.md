@@ -59,7 +59,7 @@ Cómo inyectar vida a las tablas. Inserción, actualización y borrado de regist
 </details>
 
 <details>
-<summary><b>🔍 Tema 05: DQL Básico (Data Query Language) 📍 <i>[¡Estamos aquí!]</i></b></summary>
+<summary><b>🔍 Tema 05: DQL Básico (Data Query Language)</b></summary>
 <br>
 El poder de la extracción de datos. Primeros pasos con <code>SELECT</code>, <code>FROM</code> y buenas prácticas de consulta.
 <br><br>
