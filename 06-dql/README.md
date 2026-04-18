@@ -176,8 +176,9 @@ ORDER BY distancia_km DESC;
 | # | Paso | Recurso |
 |:-:|------|---------|
 | 1️⃣ | Estudiar el temario | 📖 _Estás aquí_ |
-| 2️⃣ | Completar los proyectos | 🏆 [Ir a Proyectos →](./proyectos) |
-| 3️⃣ | Avanzar al siguiente tema | ➡️ [Tema 07: Operadores Lógicos y Filtros](../07-operadores) |
+| 2️⃣ | Practicar ejercicios | 📝 [Ejercicios de DQL](./ejercicios/ejercicios_dql.md) |
+| 3️⃣ | Completar los proyectos | 🏆 [Ir a Proyectos →](./proyectos) |
+| 4️⃣ | Avanzar al siguiente tema | ➡️ [Tema 07: Operadores Lógicos y Filtros](../07-operadores) |
 
 ---
 

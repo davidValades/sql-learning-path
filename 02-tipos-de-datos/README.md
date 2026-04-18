@@ -161,7 +161,9 @@ Utilizaríamos <b><code>TIMESTAMP</code></b> (ej. <code>TIMESTAMP(6)</code>). El
 | # | Paso | Recurso |
 |:-:|------|---------|
 | 1️⃣ | Estudiar el temario | 📖 _Estás aquí_ |
-| 2️⃣ | Avanzar al siguiente tema | ➡️ [Tema 03: Normalización y Modelado ER](../03-normalizacion) |
+| 2️⃣ | Practicar ejercicios | 📝 [Ejercicios de Tipos de Datos](./ejercicios/ejercicios_tipos_datos.md) |
+| 3️⃣ | Completar el proyecto | 🏆 [Proyecto de Tipos de Datos](./proyectos/proyecto_tipos_datos.md) |
+| 4️⃣ | Avanzar al siguiente tema | ➡️ [Tema 03: Normalización y Modelado ER](../03-normalizacion) |
 
 ---
 

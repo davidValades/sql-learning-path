@@ -40,7 +40,9 @@
 | # | Paso | Recurso |
 |:-:|------|---------|
 | 1️⃣ | Estudiar el temario | 📖 _Estás aquí_ |
-| 2️⃣ | Avanzar al siguiente tema | ➡️ [Tema 15: SQL Avanzado (Window Functions y CTEs)](../15-sql-avanzado) |
+| 2️⃣ | Practicar ejercicios | 📝 [Ejercicios de DCL y Seguridad](./ejercicios/ejercicios_dcl_seguridad.md) |
+| 3️⃣ | Completar el proyecto | 🏆 [Proyecto de DCL y Seguridad](./proyectos/proyecto_dcl_seguridad.md) |
+| 4️⃣ | Avanzar al siguiente tema | ➡️ [Tema 15: SQL Avanzado (Window Functions y CTEs)](../15-sql-avanzado) |
 
 ---
 

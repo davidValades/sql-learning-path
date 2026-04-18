@@ -408,7 +408,9 @@ Se ha roto la <b>Integridad Referencial</b>. La tabla de Pedidos estaba haciendo
 | # | Paso | Recurso |
 |:-:|------|---------|
 | 1️⃣ | Estudiar el temario | 📖 _Estás aquí_ |
-| 2️⃣ | Avanzar al siguiente tema | ➡️ [Tema 02: Tipos de Datos (Oracle)](../02-tipos-de-datos) |
+| 2️⃣ | Practicar ejercicios | 📝 [Ejercicios de Fundamentos](./ejercicios/ejercicios_fundamentos_bd.md) |
+| 3️⃣ | Completar el proyecto | 🏆 [Proyecto de Fundamentos](./proyectos/proyecto_fundamentos_bd.md) |
+| 4️⃣ | Avanzar al siguiente tema | ➡️ [Tema 02: Tipos de Datos (Oracle)](../02-tipos-de-datos) |
 
 ---
 
