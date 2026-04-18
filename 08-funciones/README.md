@@ -1,21 +1,21 @@
-# 🛠️ Tema 07: Funciones Nativas de Oracle
+# 🛠️ Tema 08: Funciones Nativas de Oracle
 
 > **"Los datos crudos son diamantes sin pulir."** Las funciones de Oracle son tus herramientas de joyero: transforman, formatean, calculan y resumen la información para que brille con todo su potencial.
 
 ## 📋 Índice
 
-- [7.1 Funciones de Cadena](#71-funciones-de-cadena)
-- [7.2 Funciones Numéricas](#72-funciones-numéricas)
-- [7.3 Funciones de Fecha](#73-funciones-de-fecha)
-- [7.4 Funciones de Conversión](#74-funciones-de-conversión)
-- [7.5 Manejo de Nulos](#75-manejo-de-nulos)
-- [7.6 Funciones de Agregación y GROUP BY](#76-funciones-de-agregación-y-group-by)
+- [8.1 Funciones de Cadena](#81-funciones-de-cadena)
+- [8.2 Funciones Numéricas](#82-funciones-numéricas)
+- [8.3 Funciones de Fecha](#83-funciones-de-fecha)
+- [8.4 Funciones de Conversión](#84-funciones-de-conversión)
+- [8.5 Manejo de Nulos](#85-manejo-de-nulos)
+- [8.6 Funciones de Agregación y GROUP BY](#86-funciones-de-agregación-y-group-by)
 
 ---
 
 ---
 
-## 7.1 Funciones de Cadena
+## 8.1 Funciones de Cadena
 
 ### 📘 El Concepto
 
@@ -104,7 +104,7 @@ WHERE p.id_categoria = c.id_categoria;
 
 ---
 
-## 7.2 Funciones Numéricas
+## 8.2 Funciones Numéricas
 
 ### 📘 El Concepto
 
@@ -184,7 +184,7 @@ Resultado: Ratón Inalámbrico (45.50→46), Lámpara LED (40.50→41), Camiseta
 
 ---
 
-## 7.3 Funciones de Fecha
+## 8.3 Funciones de Fecha
 
 ### 📘 El Concepto
 
@@ -264,7 +264,7 @@ El resultado variará según la fecha actual. Por ejemplo, para Laura Martinez (
 
 ---
 
-## 7.4 Funciones de Conversión
+## 8.4 Funciones de Conversión
 
 ### 📘 El Concepto
 
@@ -362,7 +362,7 @@ Resultado:
 
 ---
 
-## 7.5 Manejo de Nulos
+## 8.5 Manejo de Nulos
 
 ### 📘 El Concepto
 
@@ -441,7 +441,7 @@ Resultado:
 
 ---
 
-## 7.6 Funciones de Agregación y GROUP BY
+## 8.6 Funciones de Agregación y GROUP BY
 
 ### 📘 El Concepto
 
@@ -578,7 +578,7 @@ Cat 2 (Hogar) no supera 5000: (405*0) + (40.50*30) = 0 + 1215 = 1215.00
 
 <div align="center">
 
-### 🗺️ Ruta de Aprendizaje — Tema 07
+### 🗺️ Ruta de Aprendizaje — Tema 08
 
 </div>
 
@@ -587,12 +587,12 @@ Cat 2 (Hogar) no supera 5000: (405*0) + (40.50*30) = 0 + 1215 = 1215.00
 | 1️⃣ | Estudiar el temario | 📖 _Estás aquí_ |
 | 2️⃣ | Completar los ejercicios | 🏋️ [Ir a Ejercicios →](./ejercicios/ejercicios_funciones.md) |
 | 3️⃣ | Completar el proyecto | 🏆 [Ir a Proyecto →](./proyectos/proyecto_funciones.md) |
-| 4️⃣ | Avanzar al siguiente tema | ➡️ [Tema 08: Relaciones y JOINs](../08-joins) |
+| 4️⃣ | Avanzar al siguiente tema | ➡️ [Tema 09: Relaciones y JOINs](../09-joins) |
 
 ---
 
 <div align="center">
 
-⬅️ [**Tema 06: Operadores Lógicos y Filtros**](../06-operadores) · 🏠 [**Índice del Curso**](../README.md) · [**Tema 08 →**](../08-joins)
+⬅️ [**Tema 07: Operadores Lógicos y Filtros**](../07-operadores) · 🏠 [**Índice del Curso**](../README.md) · [**Tema 09 →**](../09-joins)
 
 </div>

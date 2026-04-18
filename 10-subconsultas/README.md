@@ -1,21 +1,21 @@
-# 🪆 Tema 09: Subconsultas
+# 🪆 Tema 10: Subconsultas
 
 > **"Una pregunta dentro de otra pregunta."** Las subconsultas son consultas anidadas que resuelven un problema paso a paso: primero averiguas algo y luego usas ese resultado para filtrar, comparar o calcular. Son el arma secreta del analista SQL avanzado.
 
 ## 📋 Índice
 
-- [9.1 Subconsultas Escalares](#91-subconsultas-escalares)
-- [9.2 Subconsultas en WHERE con IN / NOT IN](#92-subconsultas-en-where-con-in--not-in)
-- [9.3 Subconsultas Correlacionadas](#93-subconsultas-correlacionadas)
-- [9.4 EXISTS / NOT EXISTS](#94-exists--not-exists)
-- [9.5 ANY / ALL](#95-any--all)
-- [9.6 Subconsultas en FROM (Inline Views)](#96-subconsultas-en-from-inline-views)
+- [10.1 Subconsultas Escalares](#101-subconsultas-escalares)
+- [10.2 Subconsultas en WHERE con IN / NOT IN](#102-subconsultas-en-where-con-in--not-in)
+- [10.3 Subconsultas Correlacionadas](#103-subconsultas-correlacionadas)
+- [10.4 EXISTS / NOT EXISTS](#104-exists--not-exists)
+- [10.5 ANY / ALL](#105-any--all)
+- [10.6 Subconsultas en FROM (Inline Views)](#106-subconsultas-en-from-inline-views)
 
 ---
 
 ---
 
-## 9.1 Subconsultas Escalares
+## 10.1 Subconsultas Escalares
 
 ### 📘 El Concepto
 
@@ -95,7 +95,7 @@ Resultado:
 
 ---
 
-## 9.2 Subconsultas en WHERE con IN / NOT IN
+## 10.2 Subconsultas en WHERE con IN / NOT IN
 
 ### 📘 El Concepto
 
@@ -186,7 +186,7 @@ Resultado:
 
 ---
 
-## 9.3 Subconsultas Correlacionadas
+## 10.3 Subconsultas Correlacionadas
 
 ### 📘 El Concepto
 
@@ -275,7 +275,7 @@ Resultado:
 
 ---
 
-## 9.4 EXISTS / NOT EXISTS
+## 10.4 EXISTS / NOT EXISTS
 
 ### 📘 El Concepto
 
@@ -375,7 +375,7 @@ Resultado:
 
 ---
 
-## 9.5 ANY / ALL
+## 10.5 ANY / ALL
 
 ### 📘 El Concepto
 
@@ -473,7 +473,7 @@ Resultado:
 
 ---
 
-## 9.6 Subconsultas en FROM (Inline Views)
+## 10.6 Subconsultas en FROM (Inline Views)
 
 ### 📘 El Concepto
 
@@ -578,7 +578,7 @@ Resultado:
 
 <div align="center">
 
-### 🗺️ Ruta de Aprendizaje — Tema 09
+### 🗺️ Ruta de Aprendizaje — Tema 10
 
 </div>
 
@@ -587,12 +587,12 @@ Resultado:
 | 1️⃣ | Estudiar el temario | 📖 _Estás aquí_ |
 | 2️⃣ | Practicar ejercicios | 📝 [Ejercicios de Subconsultas](ejercicios/ejercicios_subconsultas.md) |
 | 3️⃣ | Completar el proyecto | 🏆 [Proyecto: La Investigación Interna](proyectos/proyecto_subconsultas.md) |
-| 4️⃣ | Avanzar al siguiente tema | ➡️ [Tema 10: Vistas y Objetos de BD](../10-vistas) |
+| 4️⃣ | Avanzar al siguiente tema | ➡️ [Tema 11: Vistas y Objetos de BD](../11-vistas) |
 
 ---
 
 <div align="center">
 
-⬅️ [**Tema 08: Relaciones y JOINs**](../08-joins) · 🏠 [**Índice del Curso**](../README.md) · [**Tema 10: Vistas y Objetos de BD →**](../10-vistas)
+⬅️ [**Tema 09: Relaciones y JOINs**](../09-joins) · 🏠 [**Índice del Curso**](../README.md) · [**Tema 11: Vistas y Objetos de BD →**](../11-vistas)
 
 </div>

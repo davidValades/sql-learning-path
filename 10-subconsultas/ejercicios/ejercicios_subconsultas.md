@@ -1,6 +1,6 @@
-# 🏋️ Ejercicios — Tema 09: Subconsultas
+# 🏋️ Ejercicios — Tema 10: Subconsultas
 
-> 💡 **Instrucciones:** Resuelve cada ejercicio escribiendo la consulta SQL completa. Todos los ejercicios usan el estado acumulado de la base de datos, incluyendo la tabla `pedidos`, `citas` y `vuelos` del Tema 08.
+> 💡 **Instrucciones:** Resuelve cada ejercicio escribiendo la consulta SQL completa. Todos los ejercicios usan el estado acumulado de la base de datos, incluyendo la tabla `pedidos`, `citas` y `vuelos` del Tema 09.
 
 ---
 
@@ -343,6 +343,6 @@ Resultado:
 
 <div align="center">
 
-⬅️ [**Volver al Tema 09**](../README.md) · 🏠 [**Índice del Curso**](../../README.md) · [**Proyecto Subconsultas →**](../proyectos/proyecto_subconsultas.md)
+⬅️ [**Volver al Tema 10**](../README.md) · 🏠 [**Índice del Curso**](../../README.md) · [**Proyecto Subconsultas →**](../proyectos/proyecto_subconsultas.md)
 
 </div>

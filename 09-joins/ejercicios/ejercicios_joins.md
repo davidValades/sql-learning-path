@@ -1,6 +1,6 @@
-# 🏋️ Ejercicios — Tema 08: Relaciones y JOINs
+# 🏋️ Ejercicios — Tema 09: Relaciones y JOINs
 
-> 💡 **Instrucciones:** Resuelve cada ejercicio escribiendo la consulta SQL completa. Todos los ejercicios usan el estado acumulado de la base de datos, incluyendo la expansión de datos del Tema 08 (tabla `pedidos`, `citas` y `vuelos`).
+> 💡 **Instrucciones:** Resuelve cada ejercicio escribiendo la consulta SQL completa. Todos los ejercicios usan el estado acumulado de la base de datos, incluyendo la expansión de datos del Tema 09 (tabla `pedidos`, `citas` y `vuelos`).
 
 ---
 
@@ -427,6 +427,6 @@ Resultado:
 
 <div align="center">
 
-⬅️ [**Volver al Tema 08**](../README.md) · 🏠 [**Índice del Curso**](../../README.md) · [**Proyecto JOINs →**](../proyectos/proyecto_joins.md)
+⬅️ [**Volver al Tema 09**](../README.md) · 🏠 [**Índice del Curso**](../../README.md) · [**Proyecto JOINs →**](../proyectos/proyecto_joins.md)
 
 </div>

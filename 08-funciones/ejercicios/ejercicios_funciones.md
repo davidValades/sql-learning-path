@@ -1,6 +1,6 @@
-# 🏋️ Ejercicios — Tema 07: Funciones Nativas de Oracle
+# 🏋️ Ejercicios — Tema 08: Funciones Nativas de Oracle
 
-> 💡 **Instrucciones:** Resuelve cada ejercicio escribiendo la consulta SQL completa. Todos los ejercicios usan el estado acumulado de la base de datos (incluyendo la expansión de datos del Tema 06).
+> 💡 **Instrucciones:** Resuelve cada ejercicio escribiendo la consulta SQL completa. Todos los ejercicios usan el estado acumulado de la base de datos (incluyendo la expansión de datos del Tema 07).
 
 ---
 
@@ -416,7 +416,7 @@ Resultado:
 | 1️⃣ | Repasar la teoría | 📖 [Volver al Temario](../README.md) |
 | 2️⃣ | Completar los ejercicios | 🏋️ _Estás aquí_ |
 | 3️⃣ | Completar el proyecto | 🏆 [Ir a Proyecto →](../proyectos/proyecto_funciones.md) |
-| 4️⃣ | Avanzar al siguiente tema | ➡️ [Tema 08: Relaciones y JOINs](../../08-joins) |
+| 4️⃣ | Avanzar al siguiente tema | ➡️ [Tema 09: Relaciones y JOINs](../../09-joins) |
 
 ---
 

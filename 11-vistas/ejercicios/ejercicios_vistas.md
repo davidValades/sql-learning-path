@@ -1,6 +1,6 @@
-# 🏋️ Ejercicios — Tema 10: Vistas y Objetos de BD
+# 🏋️ Ejercicios — Tema 11: Vistas y Objetos de BD
 
-> 💡 **Instrucciones:** Resuelve cada ejercicio escribiendo la sentencia SQL completa. Todos los ejercicios usan el estado acumulado de la base de datos, incluyendo las tablas y datos creados en los temas 01-09.
+> 💡 **Instrucciones:** Resuelve cada ejercicio escribiendo la sentencia SQL completa. Todos los ejercicios usan el estado acumulado de la base de datos, incluyendo las tablas y datos creados en los temas 01-10.
 
 ---
 
@@ -269,6 +269,6 @@ Resultado:
 
 <div align="center">
 
-⬅️ [**Volver al Tema 10**](../README.md) · 🏠 [**Índice del Curso**](../../README.md) · [**Proyecto Vistas →**](../proyectos/proyecto_vistas.md)
+⬅️ [**Volver al Tema 11**](../README.md) · 🏠 [**Índice del Curso**](../../README.md) · [**Proyecto Vistas →**](../proyectos/proyecto_vistas.md)
 
 </div>

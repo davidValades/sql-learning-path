@@ -1,28 +1,28 @@
-# 🔗 Tema 08: Relaciones y JOINs
+# 🔗 Tema 09: Relaciones y JOINs
 
 > **"Una tabla sola cuenta una historia parcial. La magia ocurre cuando conectas varias tablas y descubres la historia completa."** Los JOINs son el pegamento del modelo relacional: permiten cruzar información de distintas tablas en una única consulta.
 
 ## 📋 Índice
 
-- [Expansión de Datos — Día 8](#-expansión-de-datos--día-8)
-- [8.1 INNER JOIN](#81-inner-join)
-- [8.2 LEFT JOIN (LEFT OUTER JOIN)](#82-left-join-left-outer-join)
-- [8.3 RIGHT JOIN (RIGHT OUTER JOIN)](#83-right-join-right-outer-join)
-- [8.4 FULL OUTER JOIN](#84-full-outer-join)
-- [8.5 CROSS JOIN (Producto Cartesiano)](#85-cross-join-producto-cartesiano)
-- [8.6 SELF JOIN](#86-self-join)
-- [8.7 Sintaxis Antigua Oracle (+) vs ANSI](#87-sintaxis-antigua-oracle--vs-ansi)
-- [8.8 Multi-table JOINs (3+ tablas)](#88-multi-table-joins-3-tablas)
+- [Expansión de Datos — Día 9](#-expansión-de-datos--día-9)
+- [9.1 INNER JOIN](#91-inner-join)
+- [9.2 LEFT JOIN (LEFT OUTER JOIN)](#92-left-join-left-outer-join)
+- [9.3 RIGHT JOIN (RIGHT OUTER JOIN)](#93-right-join-right-outer-join)
+- [9.4 FULL OUTER JOIN](#94-full-outer-join)
+- [9.5 CROSS JOIN (Producto Cartesiano)](#95-cross-join-producto-cartesiano)
+- [9.6 SELF JOIN](#96-self-join)
+- [9.7 Sintaxis Antigua Oracle (+) vs ANSI](#97-sintaxis-antigua-oracle--vs-ansi)
+- [9.8 Multi-table JOINs (3+ tablas)](#98-multi-table-joins-3-tablas)
 
 ---
 
-## 🗃️ Expansión de Datos — Día 8
+## 🗃️ Expansión de Datos — Día 9
 
 Antes de comenzar necesitamos datos en las tablas que aún están vacías y una nueva tabla de pedidos para practicar JOINs.
 
 ```sql
 -- ====================================================
--- EXPANSIÓN DE DATOS — TEMA 08
+-- EXPANSIÓN DE DATOS — TEMA 09
 -- Ejecutar ANTES de los ejercicios de este tema
 -- ====================================================
 
@@ -70,7 +70,7 @@ COMMIT;
 
 ---
 
-## 8.1 INNER JOIN
+## 9.1 INNER JOIN
 
 ### 📘 El Concepto
 
@@ -164,7 +164,7 @@ Resultado:
 
 ---
 
-## 8.2 LEFT JOIN (LEFT OUTER JOIN)
+## 9.2 LEFT JOIN (LEFT OUTER JOIN)
 
 ### 📘 El Concepto
 
@@ -254,7 +254,7 @@ Resultado: **0 filas** — en nuestros datos, todos los pacientes (1-5) tienen a
 
 ---
 
-## 8.3 RIGHT JOIN (RIGHT OUTER JOIN)
+## 9.3 RIGHT JOIN (RIGHT OUTER JOIN)
 
 ### 📘 El Concepto
 
@@ -344,7 +344,7 @@ Todas las rutas tienen al menos un vuelo asignado, así que no aparecen NULLs en
 
 ---
 
-## 8.4 FULL OUTER JOIN
+## 9.4 FULL OUTER JOIN
 
 ### 📘 El Concepto
 
@@ -438,7 +438,7 @@ Resultado:
 
 ---
 
-## 8.5 CROSS JOIN (Producto Cartesiano)
+## 9.5 CROSS JOIN (Producto Cartesiano)
 
 ### 📘 El Concepto
 
@@ -512,7 +512,7 @@ Resultado (9 filas):
 
 ---
 
-## 8.6 SELF JOIN
+## 9.6 SELF JOIN
 
 ### 📘 El Concepto
 
@@ -592,7 +592,7 @@ Resultado:
 
 ---
 
-## 8.7 Sintaxis Antigua Oracle (+) vs ANSI
+## 9.7 Sintaxis Antigua Oracle (+) vs ANSI
 
 ### 📘 El Concepto
 
@@ -666,7 +666,7 @@ Explicación: El `(+)` estaba en el lado de `pedidos`, lo que significa que `ped
 
 ---
 
-## 8.8 Multi-table JOINs (3+ tablas)
+## 9.8 Multi-table JOINs (3+ tablas)
 
 ### 📘 El Concepto
 
@@ -770,7 +770,7 @@ Resultado:
 
 <div align="center">
 
-### 🗺️ Ruta de Aprendizaje — Tema 08
+### 🗺️ Ruta de Aprendizaje — Tema 09
 
 </div>
 
@@ -779,12 +779,12 @@ Resultado:
 | 1️⃣ | Estudiar el temario | 📖 _Estás aquí_ |
 | 2️⃣ | Practicar ejercicios | 📝 [Ejercicios de JOINs](ejercicios/ejercicios_joins.md) |
 | 3️⃣ | Completar el proyecto | 🏆 [Proyecto: El Informe Trimestral](proyectos/proyecto_joins.md) |
-| 4️⃣ | Avanzar al siguiente tema | ➡️ [Tema 09: Subconsultas](../09-subconsultas) |
+| 4️⃣ | Avanzar al siguiente tema | ➡️ [Tema 10: Subconsultas](../10-subconsultas) |
 
 ---
 
 <div align="center">
 
-⬅️ [**Tema 07: Funciones Nativas de Oracle**](../07-funciones) · 🏠 [**Índice del Curso**](../README.md) · [**Tema 09: Subconsultas →**](../09-subconsultas)
+⬅️ [**Tema 08: Funciones Nativas de Oracle**](../08-funciones) · 🏠 [**Índice del Curso**](../README.md) · [**Tema 10: Subconsultas →**](../10-subconsultas)
 
 </div>

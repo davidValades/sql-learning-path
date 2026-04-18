@@ -238,12 +238,12 @@ Resultado:
 | 1️⃣ | Repasar la teoría | 📖 [Volver al Temario](../README.md) |
 | 2️⃣ | Completar los ejercicios | 🏋️ [Ir a Ejercicios](../ejercicios/ejercicios_operadores.md) |
 | 3️⃣ | Completar el proyecto | 🏆 _Estás aquí_ |
-| 4️⃣ | Avanzar al siguiente tema | ➡️ [Tema 07: Funciones Nativas de Oracle](../../07-funciones) |
+| 4️⃣ | Avanzar al siguiente tema | ➡️ [Tema 08: Funciones Nativas de Oracle](../../08-funciones) |
 
 ---
 
 <div align="center">
 
-⬅️ [**Volver a Ejercicios**](../ejercicios/ejercicios_operadores.md) · 🏠 [**Índice del Curso**](../../README.md) · [**Tema 07 →**](../../07-funciones)
+⬅️ [**Volver a Ejercicios**](../ejercicios/ejercicios_operadores.md) · 🏠 [**Índice del Curso**](../../README.md) · [**Tema 08 →**](../../08-funciones)
 
 </div>

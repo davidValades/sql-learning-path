@@ -1,21 +1,21 @@
-# ⚡ Tema 11: Indexación
+# ⚡ Tema 12: Indexación
 
 > **"Sin índices, buscar un dato en una tabla de un millón de filas es como buscar una palabra en un libro leyendo página por página."** Los índices son la diferencia entre una consulta que tarda 30 segundos y una que responde al instante. Dominarlos es dominar el rendimiento.
 
 ## 📋 Índice
 
-- [11.1 ¿Qué es un Índice?](#111-qué-es-un-índice)
-- [11.2 CREATE INDEX](#112-create-index)
-- [11.3 Tipos de Índices](#113-tipos-de-índices)
-- [11.4 Cuándo Crear y Cuándo NO Crear Índices](#114-cuándo-crear-y-cuándo-no-crear-índices)
-- [11.5 Impacto en INSERT/UPDATE/DELETE](#115-impacto-en-insertupdatedelete)
-- [11.6 DROP INDEX y REBUILD INDEX](#116-drop-index-y-rebuild-index)
+- [12.1 ¿Qué es un Índice?](#121-qué-es-un-índice)
+- [12.2 CREATE INDEX](#122-create-index)
+- [12.3 Tipos de Índices](#123-tipos-de-índices)
+- [12.4 Cuándo Crear y Cuándo NO Crear Índices](#124-cuándo-crear-y-cuándo-no-crear-índices)
+- [12.5 Impacto en INSERT/UPDATE/DELETE](#125-impacto-en-insertupdatedelete)
+- [12.6 DROP INDEX y REBUILD INDEX](#126-drop-index-y-rebuild-index)
 
 ---
 
 ---
 
-## 11.1 ¿Qué es un Índice?
+## 12.1 ¿Qué es un Índice?
 
 ### 📘 El Concepto
 
@@ -93,7 +93,7 @@ Si la tabla `pedidos` tiene 10 millones de filas y ejecutas `SELECT * FROM pedid
 
 ---
 
-## 11.2 CREATE INDEX
+## 12.2 CREATE INDEX
 
 ### 📘 El Concepto
 
@@ -173,7 +173,7 @@ CREATE INDEX idx_vuelos_fecha ON vuelos(fecha_salida);
 
 ---
 
-## 11.3 Tipos de Índices
+## 12.3 Tipos de Índices
 
 ### 📘 El Concepto
 
@@ -271,7 +271,7 @@ SELECT * FROM medicos WHERE UPPER(nombre_completo) = 'DRA. SARAH ADAMS';
 
 ---
 
-## 11.4 Cuándo Crear y Cuándo NO Crear Índices
+## 12.4 Cuándo Crear y Cuándo NO Crear Índices
 
 ### 📘 El Concepto
 
@@ -351,7 +351,7 @@ Un desarrollador junior ha creado estos 4 índices. ¿Cuáles mantendrías y cu�
 
 ---
 
-## 11.5 Impacto en INSERT/UPDATE/DELETE
+## 12.5 Impacto en INSERT/UPDATE/DELETE
 
 ### 📘 El Concepto
 
@@ -425,7 +425,7 @@ Razón:
 
 ---
 
-## 11.6 DROP INDEX y REBUILD INDEX
+## 12.6 DROP INDEX y REBUILD INDEX
 
 ### 📘 El Concepto
 
@@ -522,7 +522,7 @@ ALTER INDEX idx_citas_fecha REBUILD;
 
 <div align="center">
 
-### 🗺️ Ruta de Aprendizaje — Tema 11
+### 🗺️ Ruta de Aprendizaje — Tema 12
 
 </div>
 
@@ -530,12 +530,12 @@ ALTER INDEX idx_citas_fecha REBUILD;
 |:-:|------|---------|
 | 1️⃣ | Estudiar el temario | 📖 _Estás aquí_ |
 | 2️⃣ | Practicar ejercicios | 📝 [Ejercicios de Indexación](ejercicios/ejercicios_indexacion.md) |
-| 3️⃣ | Avanzar al siguiente tema | ➡️ [Tema 12: Transacciones](../12-transacciones) |
+| 3️⃣ | Avanzar al siguiente tema | ➡️ [Tema 13: Transacciones y Propiedades ACID](../13-transacciones-acid) |
 
 ---
 
 <div align="center">
 
-⬅️ [**Tema 10: Vistas y Objetos de BD**](../10-vistas) · 🏠 [**Índice del Curso**](../README.md) · [**Tema 12: Transacciones →**](../12-transacciones)
+⬅️ [**Tema 11: Vistas y Objetos de BD**](../11-vistas) · 🏠 [**Índice del Curso**](../README.md) · [**Tema 13: Transacciones y Propiedades ACID →**](../13-transacciones-acid)
 
 </div>

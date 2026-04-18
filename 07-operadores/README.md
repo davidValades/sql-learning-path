@@ -1,17 +1,17 @@
-# 🎛️ Tema 06: Operadores Lógicos y Filtros
+# 🎛️ Tema 07: Operadores Lógicos y Filtros
 
 > **"Preguntar es fácil. Preguntar lo correcto es un arte."** En este tema dominarás el arte de filtrar, buscar y ordenar datos con la precisión de un cirujano.
 
 ## 📋 Índice
 
 - [📦 Expansión de Datos](#-expansión-de-datos)
-- [6.1 WHERE y operadores de comparación](#61-where-y-operadores-de-comparación)
-- [6.2 BETWEEN para rangos](#62-between-para-rangos)
-- [6.3 IN para listas](#63-in-para-listas)
-- [6.4 LIKE y wildcards](#64-like-y-wildcards)
-- [6.5 IS NULL / IS NOT NULL](#65-is-null--is-not-null)
-- [6.6 AND, OR, NOT y precedencia](#66-and-or-not-y-precedencia-con-paréntesis)
-- [6.7 ORDER BY](#67-order-by-asc-desc-múltiples-columnas)
+- [7.1 WHERE y operadores de comparación](#71-where-y-operadores-de-comparación)
+- [7.2 BETWEEN para rangos](#72-between-para-rangos)
+- [7.3 IN para listas](#73-in-para-listas)
+- [7.4 LIKE y wildcards](#74-like-y-wildcards)
+- [7.5 IS NULL / IS NOT NULL](#75-is-null--is-not-null)
+- [7.6 AND, OR, NOT y precedencia](#76-and-or-not-y-precedencia-con-paréntesis)
+- [7.7 ORDER BY](#77-order-by-asc-desc-múltiples-columnas)
 
 ---
 
@@ -63,7 +63,7 @@ COMMIT;
 
 ---
 
-## 6.1 WHERE y operadores de comparación
+## 7.1 WHERE y operadores de comparación
 
 ### 📘 El Concepto
 
@@ -133,7 +133,7 @@ Resultado: 7 filas (todos menos Sofá de Cuero con stock 0).
 
 ---
 
-## 6.2 BETWEEN para rangos
+## 7.2 BETWEEN para rangos
 
 ### 📘 El Concepto
 
@@ -200,7 +200,7 @@ Resultado: Carlos Gomez (1985-05-05), Laura Martinez (1990-01-01), David Torres 
 
 ---
 
-## 6.3 IN para listas
+## 7.3 IN para listas
 
 ### 📘 El Concepto
 
@@ -272,7 +272,7 @@ Resultado: MADLHR, MADFRA, BCNCDG, BCNFCO (4 rutas).
 
 ---
 
-## 6.4 LIKE y wildcards
+## 7.4 LIKE y wildcards
 
 ### 📘 El Concepto
 
@@ -355,7 +355,7 @@ Resultado: Ana López, Pedro Ruiz, María García (los 3 clientes tienen '@email
 
 ---
 
-## 6.5 IS NULL / IS NOT NULL
+## 7.5 IS NULL / IS NOT NULL
 
 ### 📘 El Concepto
 
@@ -421,7 +421,7 @@ Resultado: Laptop Pro, Ratón Inalámbrico, Sofá de Cuero, Lámpara LED (los 4 
 
 ---
 
-## 6.6 AND, OR, NOT y precedencia con paréntesis
+## 7.6 AND, OR, NOT y precedencia con paréntesis
 
 ### 📘 El Concepto
 
@@ -513,7 +513,7 @@ Resultado: Dra. Marta López (200, 4500), Dr. Luis Moreno (300, 2600).
 
 ---
 
-## 6.7 ORDER BY (ASC, DESC, múltiples columnas)
+## 7.7 ORDER BY (ASC, DESC, múltiples columnas)
 
 ### 📘 El Concepto
 
@@ -597,7 +597,7 @@ Resultado:
 
 <div align="center">
 
-### 🗺️ Ruta de Aprendizaje — Tema 06
+### 🗺️ Ruta de Aprendizaje — Tema 07
 
 </div>
 
@@ -606,12 +606,12 @@ Resultado:
 | 1️⃣ | Estudiar el temario | 📖 _Estás aquí_ |
 | 2️⃣ | Completar los ejercicios | 🏋️ [Ir a Ejercicios →](./ejercicios/ejercicios_operadores.md) |
 | 3️⃣ | Completar el proyecto | 🏆 [Ir a Proyecto →](./proyectos/proyecto_operadores.md) |
-| 4️⃣ | Avanzar al siguiente tema | ➡️ [Tema 07: Funciones Nativas de Oracle](../07-funciones) |
+| 4️⃣ | Avanzar al siguiente tema | ➡️ [Tema 08: Funciones Nativas de Oracle](../08-funciones) |
 
 ---
 
 <div align="center">
 
-⬅️ [**Tema 05: DQL**](../05-dql) · 🏠 [**Índice del Curso**](../README.md) · [**Tema 07 →**](../07-funciones)
+⬅️ [**Tema 06: DQL**](../06-dql) · 🏠 [**Índice del Curso**](../README.md) · [**Tema 08 →**](../08-funciones)
 
 </div>

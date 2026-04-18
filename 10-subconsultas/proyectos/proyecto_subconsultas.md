@@ -417,6 +417,6 @@ Resultado:
 
 <div align="center">
 
-⬅️ [**Ejercicios Subconsultas**](../ejercicios/ejercicios_subconsultas.md) · 🏠 [**Volver al Tema 09**](../README.md) · [**Tema 10: Vistas →**](../../10-vistas)
+⬅️ [**Ejercicios Subconsultas**](../ejercicios/ejercicios_subconsultas.md) · 🏠 [**Volver al Tema 10**](../README.md) · [**Tema 11: Vistas →**](../../11-vistas)
 
 </div>

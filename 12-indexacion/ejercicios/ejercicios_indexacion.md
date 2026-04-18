@@ -1,4 +1,4 @@
-# 🏋️ Ejercicios — Tema 11: Indexación
+# 🏋️ Ejercicios — Tema 12: Indexación
 
 > 💡 **Instrucciones:** Resuelve cada ejercicio pensando en el rendimiento y la arquitectura de la base de datos. No todos los ejercicios requieren escribir código — algunos son de análisis y decisión.
 
@@ -210,6 +210,6 @@ ALTER INDEX idx_pedidos_producto REBUILD;
 
 <div align="center">
 
-⬅️ [**Volver al Tema 11**](../README.md) · 🏠 [**Índice del Curso**](../../README.md) · [**Tema 12: Transacciones →**](../../12-transacciones)
+⬅️ [**Volver al Tema 12**](../README.md) · 🏠 [**Índice del Curso**](../../README.md) · [**Tema 13: Transacciones y Propiedades ACID →**](../../13-transacciones-acid)
 
 </div>

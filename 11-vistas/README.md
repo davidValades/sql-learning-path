@@ -1,20 +1,20 @@
-# 🖼️ Tema 10: Vistas y Objetos de BD
+# 🖼️ Tema 11: Vistas y Objetos de BD
 
 > **"Si una consulta compleja la usas todos los días, no la reescribas: conviértela en una vista."** Las vistas, secuencias y sinónimos son objetos de base de datos que simplifican tu trabajo, protegen los datos y mantienen la arquitectura ordenada. Son el paso de escribir SQL a diseñar bases de datos profesionales.
 
 ## 📋 Índice
 
-- [10.1 ¿Qué es una Vista?](#101-qué-es-una-vista)
-- [10.2 Vistas Actualizables vs. Solo Lectura](#102-vistas-actualizables-vs-solo-lectura)
-- [10.3 Vistas Materializadas](#103-vistas-materializadas)
-- [10.4 Secuencias](#104-secuencias)
-- [10.5 Sinónimos](#105-sinónimos)
+- [11.1 ¿Qué es una Vista?](#111-qué-es-una-vista)
+- [11.2 Vistas Actualizables vs. Solo Lectura](#112-vistas-actualizables-vs-solo-lectura)
+- [11.3 Vistas Materializadas](#113-vistas-materializadas)
+- [11.4 Secuencias](#114-secuencias)
+- [11.5 Sinónimos](#115-sinónimos)
 
 ---
 
 ---
 
-## 10.1 ¿Qué es una Vista?
+## 11.1 ¿Qué es una Vista?
 
 ### 📘 El Concepto
 
@@ -33,7 +33,7 @@ WHERE condiciones;
 | Ocupa espacio en disco | Mínimo (solo metadatos) | Sí (datos reales) |
 | Se actualiza sola | ✅ Siempre muestra datos actuales | — |
 | Se puede hacer SELECT | ✅ Sí | ✅ Sí |
-| Se puede hacer INSERT/UPDATE | ⚠️ Depende (ver 10.2) | ✅ Sí |
+| Se puede hacer INSERT/UPDATE | ⚠️ Depende (ver 11.2) | ✅ Sí |
 
 > 📌 `OR REPLACE` permite modificar una vista existente sin tener que hacer `DROP` primero.
 
@@ -141,7 +141,7 @@ Resultado:
 
 ---
 
-## 10.2 Vistas Actualizables vs. Solo Lectura
+## 11.2 Vistas Actualizables vs. Solo Lectura
 
 ### 📘 El Concepto
 
@@ -270,7 +270,7 @@ SELECT * FROM v_pacientes_con_telefono;
 
 ---
 
-## 10.3 Vistas Materializadas
+## 11.3 Vistas Materializadas
 
 ### 📘 El Concepto
 
@@ -385,7 +385,7 @@ GROUP BY e.nombre_especialidad;
 
 ---
 
-## 10.4 Secuencias
+## 11.4 Secuencias
 
 ### 📘 El Concepto
 
@@ -495,7 +495,7 @@ Los tres valores son: **100, 110, 120**.
 
 ---
 
-## 10.5 Sinónimos
+## 11.5 Sinónimos
 
 ### 📘 El Concepto
 
@@ -576,7 +576,7 @@ SELECT * FROM pacientes;
 
 <div align="center">
 
-### 🗺️ Ruta de Aprendizaje — Tema 10
+### 🗺️ Ruta de Aprendizaje — Tema 11
 
 </div>
 
@@ -585,12 +585,12 @@ SELECT * FROM pacientes;
 | 1️⃣ | Estudiar el temario | 📖 _Estás aquí_ |
 | 2️⃣ | Practicar ejercicios | 📝 [Ejercicios de Vistas](ejercicios/ejercicios_vistas.md) |
 | 3️⃣ | Completar el proyecto | 🏆 [Proyecto: El Panel de Control Empresarial](proyectos/proyecto_vistas.md) |
-| 4️⃣ | Avanzar al siguiente tema | ➡️ [Tema 11: Indexación](../11-indexacion) |
+| 4️⃣ | Avanzar al siguiente tema | ➡️ [Tema 12: Indexación](../12-indexacion) |
 
 ---
 
 <div align="center">
 
-⬅️ [**Tema 09: Subconsultas**](../09-subconsultas) · 🏠 [**Índice del Curso**](../README.md) · [**Tema 11: Indexación →**](../11-indexacion)
+⬅️ [**Tema 10: Subconsultas**](../10-subconsultas) · 🏠 [**Índice del Curso**](../README.md) · [**Tema 12: Indexación →**](../12-indexacion)
 
 </div>

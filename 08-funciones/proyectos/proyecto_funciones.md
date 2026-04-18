@@ -344,12 +344,12 @@ Resultado (en 2025):
 | 1️⃣ | Repasar la teoría | 📖 [Volver al Temario](../README.md) |
 | 2️⃣ | Completar los ejercicios | 🏋️ [Ir a Ejercicios](../ejercicios/ejercicios_funciones.md) |
 | 3️⃣ | Completar el proyecto | 🏆 _Estás aquí_ |
-| 4️⃣ | Avanzar al siguiente tema | ➡️ [Tema 08: Relaciones y JOINs](../../08-joins) |
+| 4️⃣ | Avanzar al siguiente tema | ➡️ [Tema 09: Relaciones y JOINs](../../09-joins) |
 
 ---
 
 <div align="center">
 
-⬅️ [**Volver a Ejercicios**](../ejercicios/ejercicios_funciones.md) · 🏠 [**Índice del Curso**](../../README.md) · [**Tema 08 →**](../../08-joins)
+⬅️ [**Volver a Ejercicios**](../ejercicios/ejercicios_funciones.md) · 🏠 [**Índice del Curso**](../../README.md) · [**Tema 09 →**](../../09-joins)
 
 </div>
