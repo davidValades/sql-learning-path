@@ -66,7 +66,7 @@ Cada lección en este repositorio está estructurada de forma rigurosa para gara
 ### 📚 Bloque I — Los Cimientos
 
 <details>
-<summary>[x] <b>📦 Tema 01: Fundamentos de Bases de Datos</b></summary>
+<summary>✅ <b>📦 Tema 01: Fundamentos de Bases de Datos</b></summary>
 <br>
 Conceptos clave sobre qué es una Base de Datos, SGBD, SGBDR, el modelo relacional, Tablas, Filas, Columnas y los diferentes tipos de Claves (Primarias, Foráneas, Candidatas, Compuestas).
 <br><br>
@@ -78,7 +78,7 @@ Conceptos clave sobre qué es una Base de Datos, SGBD, SGBDR, el modelo relacion
 </details>
 
 <details>
-<summary>[x] <b>🧩 Tema 02: Tipos de Datos (Oracle)</b></summary>
+<summary>✅ <b>🧩 Tema 02: Tipos de Datos (Oracle)</b></summary>
 <br>
 Domina cómo almacenar la información de forma eficiente. Diferencias entre <code>NUMBER</code>, <code>VARCHAR2</code>, <code>CHAR</code>, <code>DATE</code> y <code>TIMESTAMP</code> en el ecosistema Oracle.
 <br><br>
@@ -91,7 +91,7 @@ Domina cómo almacenar la información de forma eficiente. Diferencias entre <co
 </details>
 
 <details>
-<summary>[x] <b>📐 Tema 03: Normalización y Modelado ER</b></summary>
+<summary>✅ <b>📐 Tema 03: Normalización y Modelado ER</b></summary>
 <br>
 Diseño eficiente de bases de datos para evitar redundancias (1NF, 2NF, 3NF y BCNF). Modelado Entidad-Relación: el plano arquitectónico que dibujas <b>antes</b> de construir tus tablas.
 <br><br>
@@ -105,7 +105,7 @@ Diseño eficiente de bases de datos para evitar redundancias (1NF, 2NF, 3NF y BC
 ### 🏗️ Bloque II — Construir y Manipular
 
 <details>
-<summary>[x] <b>🏗️ Tema 04: DDL (Data Definition Language)</b></summary>
+<summary>✅ <b>🏗️ Tema 04: DDL (Data Definition Language)</b></summary>
 <br>
 El arte de construir los cimientos. Creación, modificación y destrucción de estructuras con <code>CREATE</code>, <code>ALTER</code>, <code>DROP</code> y <code>TRUNCATE</code>.
 <br><br>
@@ -120,7 +120,7 @@ El arte de construir los cimientos. Creación, modificación y destrucción de e
 </details>
 
 <details>
-<summary>[x] <b>📝 Tema 05: DML (Data Manipulation Language)</b></summary>
+<summary>✅ <b>📝 Tema 05: DML (Data Manipulation Language)</b></summary>
 <br>
 Cómo inyectar vida a las tablas. Inserción, actualización y borrado de registros usando <code>INSERT</code>, <code>UPDATE</code> y <code>DELETE</code>.
 <br><br>
@@ -136,7 +136,7 @@ Cómo inyectar vida a las tablas. Inserción, actualización y borrado de regist
 ### 🔍 Bloque III — Consultar y Filtrar
 
 <details>
-<summary>[ ] <b>🔍 Tema 06: DQL Básico (Data Query Language)</b></summary>
+<summary>⬜ <b>🔍 Tema 06: DQL Básico (Data Query Language)</b></summary>
 <br>
 El poder de la extracción de datos. Primeros pasos con <code>SELECT</code>, <code>FROM</code> y buenas prácticas de consulta.
 <br><br>
@@ -150,7 +150,7 @@ El poder de la extracción de datos. Primeros pasos con <code>SELECT</code>, <co
 </details>
 
 <details>
-<summary>[ ] <b>🎛️ Tema 07: Operadores Lógicos y Filtros</b></summary>
+<summary>⬜ <b>🎛️ Tema 07: Operadores Lógicos y Filtros</b></summary>
 <br>
 Afinando las búsquedas con la cláusula <code>WHERE</code>, operadores lógicos (<code>AND</code>, <code>OR</code>, <code>NOT</code>) y ordenación con <code>ORDER BY</code>.
 <br><br>
@@ -162,7 +162,7 @@ Afinando las búsquedas con la cláusula <code>WHERE</code>, operadores lógicos
 </details>
 
 <details>
-<summary>[ ] <b>🛠️ Tema 08: Funciones Nativas de Oracle</b></summary>
+<summary>⬜ <b>🛠️ Tema 08: Funciones Nativas de Oracle</b></summary>
 <br>
 Manipulación avanzada en vuelo: funciones de texto, fechas, conversión (<code>TO_CHAR</code>, <code>TO_DATE</code>) y manejo de nulos (<code>NVL</code>, <code>COALESCE</code>).
 <br><br>
@@ -176,7 +176,7 @@ Manipulación avanzada en vuelo: funciones de texto, fechas, conversión (<code>
 ### 🔗 Bloque IV — Relaciones y Consultas Avanzadas
 
 <details>
-<summary>[ ] <b>🔗 Tema 09: Relaciones y JOINs</b></summary>
+<summary>⬜ <b>🔗 Tema 09: Relaciones y JOINs</b></summary>
 <br>
 Cruzando datos de múltiples tablas. Dominio absoluto de <code>INNER JOIN</code>, <code>LEFT/RIGHT JOIN</code>, <code>FULL OUTER JOIN</code> y <code>CROSS JOIN</code>.
 <br><br>
@@ -188,7 +188,7 @@ Cruzando datos de múltiples tablas. Dominio absoluto de <code>INNER JOIN</code>
 </details>
 
 <details>
-<summary>[ ] <b>🪆 Tema 10: Subconsultas</b></summary>
+<summary>⬜ <b>🪆 Tema 10: Subconsultas</b></summary>
 <br>
 Consultas anidadas dentro de otras consultas. Uso de subconsultas escalares, correlacionadas y operadores <code>IN</code>, <code>EXISTS</code>, <code>ANY</code>, <code>ALL</code>.
 <br><br>
@@ -200,7 +200,7 @@ Consultas anidadas dentro de otras consultas. Uso de subconsultas escalares, cor
 </details>
 
 <details>
-<summary>[ ] <b>🖼️ Tema 11: Vistas y Objetos de BD</b></summary>
+<summary>⬜ <b>🖼️ Tema 11: Vistas y Objetos de BD</b></summary>
 <br>
 Creación de Vistas (<code>VIEWS</code>), Secuencias (<code>SEQUENCES</code>) para autoincrementales, y Sinónimos para simplificar la arquitectura.
 <br><br>
@@ -214,7 +214,7 @@ Creación de Vistas (<code>VIEWS</code>), Secuencias (<code>SEQUENCES</code>) pa
 ### ⚙️ Bloque V — Rendimiento y Seguridad
 
 <details>
-<summary>[ ] <b>⚡ Tema 12: Indexación</b></summary>
+<summary>⬜ <b>⚡ Tema 12: Indexación</b></summary>
 <br>
 Optimizando la velocidad de lectura. Creación y funcionamiento de Índices (B-Tree, Bitmap) y cuándo no usarlos.
 <br><br>
@@ -226,7 +226,7 @@ Optimizando la velocidad de lectura. Creación y funcionamiento de Índices (B-T
 </details>
 
 <details>
-<summary>[ ] <b>🛡️ Tema 13: Transacciones y Propiedades ACID</b></summary>
+<summary>⬜ <b>🛡️ Tema 13: Transacciones y Propiedades ACID</b></summary>
 <br>
 Gestión de bloques de operaciones seguras con <code>COMMIT</code>, <code>ROLLBACK</code> y <code>SAVEPOINT</code>. Teoría avanzada: Atomicidad, Consistencia, Aislamiento (Isolation) y Durabilidad.
 <br><br>
@@ -238,7 +238,7 @@ Gestión de bloques de operaciones seguras con <code>COMMIT</code>, <code>ROLLBA
 </details>
 
 <details>
-<summary>[ ] <b>🔒 Tema 14: DCL y Seguridad (Data Control Language)</b></summary>
+<summary>⬜ <b>🔒 Tema 14: DCL y Seguridad (Data Control Language)</b></summary>
 <br>
 Control de acceso a la base de datos. <code>GRANT</code>, <code>REVOKE</code>, roles, privilegios de sistema y de objeto, y el principio de mínimo privilegio.
 <br><br>
@@ -252,7 +252,7 @@ Control de acceso a la base de datos. <code>GRANT</code>, <code>REVOKE</code>, r
 ### 🚀 Bloque VI — SQL de Élite
 
 <details>
-<summary>[ ] <b>🚀 Tema 15: SQL Avanzado (Window Functions y CTEs)</b></summary>
+<summary>⬜ <b>🚀 Tema 15: SQL Avanzado (Window Functions y CTEs)</b></summary>
 <br>
 Consultas de nivel analítico: Funciones de ventana (<code>ROW_NUMBER</code>, <code>RANK</code>, <code>OVER</code>), CTEs con la cláusula <code>WITH</code> y operadores de conjuntos (<code>UNION</code>, <code>INTERSECT</code>, <code>MINUS</code>).
 <br><br>
@@ -266,7 +266,7 @@ Consultas de nivel analítico: Funciones de ventana (<code>ROW_NUMBER</code>, <c
 ### 🧠 Bloque VII — Programación en la Base de Datos
 
 <details>
-<summary>[ ] <b>⚙️ Tema 16: PL/SQL (Programación Procedural)</b></summary>
+<summary>⬜ <b>⚙️ Tema 16: PL/SQL (Programación Procedural)</b></summary>
 <br>
 Programación dentro de la base de datos. Bloques anónimos, procedimientos almacenados (<code>STORED PROCEDURES</code>), funciones, cursores, manejo de excepciones y triggers.
 <br><br>
@@ -280,7 +280,7 @@ Programación dentro de la base de datos. Bloques anónimos, procedimientos alma
 ### 🌐 Bloque VIII — El Mundo Real (Capstone)
 
 <details>
-<summary>[ ] <b>🏎️ Tema 17: Optimización de Consultas</b></summary>
+<summary>⬜ <b>🏎️ Tema 17: Optimización de Consultas</b></summary>
 <br>
 Planes de ejecución (Explain Plan), cuellos de botella y mejores prácticas para que el SQL "vuele".
 <br><br>
@@ -292,7 +292,7 @@ Planes de ejecución (Explain Plan), cuellos de botella y mejores prácticas par
 </details>
 
 <details>
-<summary>[ ] <b>🌐 Tema 18: Ecosistema SQL</b></summary>
+<summary>⬜ <b>🌐 Tema 18: Ecosistema SQL</b></summary>
 <br>
 Diferencias entre motores (Oracle, PostgreSQL, SQL Server, MySQL) y herramientas de mercado.
 <br><br>
@@ -304,7 +304,7 @@ Diferencias entre motores (Oracle, PostgreSQL, SQL Server, MySQL) y herramientas
 </details>
 
 <details>
-<summary>[ ] <b>💼 Tema 19: Casos Reales y Proyectos Finales</b></summary>
+<summary>⬜ <b>💼 Tema 19: Casos Reales y Proyectos Finales</b></summary>
 <br>
 Desafíos complejos que simulan el día a día de un Data Engineer y un DBA en producción. El <b>capstone</b> que integra todo lo aprendido.
 <br><br>
