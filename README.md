@@ -3,7 +3,7 @@
 <div align="center">
 
 ![Estado](https://img.shields.io/badge/Estado-En_Proceso-blue?style=for-the-badge)
-![Progreso](https://geps.dev/progress/100)
+![Progreso](https://geps.dev/progress/26)
 
 **Una ruta de aprendizaje interactiva y práctica para dominar Bases de Datos Relacionales y SQL.**
 
@@ -33,7 +33,7 @@ Cada lección en este repositorio está estructurada de forma rigurosa para gara
 
 ## 📊 Cobertura actual por tema
 
-> Estado actualizado: los 19 temas ya incluyen temario y práctica (ejercicios + proyecto/s).
+> Estado actualizado: los temas 01–05 están completados (temario + ejercicios + proyecto/s). Los temas 06–19 están pendientes.
 
 | Tema                               | Temario | Ejercicios | Proyectos | Recursos extra |
 | ---------------------------------- | ------- | ---------- | --------- | -------------- |
@@ -42,26 +42,26 @@ Cada lección en este repositorio está estructurada de forma rigurosa para gara
 | [Tema 03](./03-normalizacion)      | ✅      | ✅ (1)     | ✅ (1)    | —              |
 | [Tema 04](./04-ddl)                | ✅      | ✅ (1)     | ✅ (3)    | ✅ (1)         |
 | [Tema 05](./05-dml)                | ✅      | ✅ (1)     | ✅ (2)    | —              |
-| [Tema 06](./06-dql)                | ✅      | ✅ (1)     | ✅ (2)    | —              |
-| [Tema 07](./07-operadores)         | ✅      | ✅ (1)     | ✅ (1)    | —              |
-| [Tema 08](./08-funciones)          | ✅      | ✅ (1)     | ✅ (1)    | —              |
-| [Tema 09](./09-joins)              | ✅      | ✅ (1)     | ✅ (1)    | —              |
-| [Tema 10](./10-subconsultas)       | ✅      | ✅ (1)     | ✅ (1)    | —              |
-| [Tema 11](./11-vistas)             | ✅      | ✅ (1)     | ✅ (1)    | —              |
-| [Tema 12](./12-indexacion)         | ✅      | ✅ (1)     | ✅ (1)    | —              |
-| [Tema 13](./13-transacciones-acid) | ✅      | ✅ (2)     | ✅ (1)    | —              |
-| [Tema 14](./14-dcl-seguridad)      | ✅      | ✅ (1)     | ✅ (1)    | —              |
-| [Tema 15](./15-sql-avanzado)       | ✅      | ✅ (1)     | ✅ (1)    | —              |
-| [Tema 16](./16-plsql)              | ✅      | ✅ (1)     | ✅ (1)    | —              |
-| [Tema 17](./17-optimizacion)       | ✅      | ✅ (1)     | ✅ (1)    | —              |
-| [Tema 18](./18-ecosistema-sql)     | ✅      | ✅ (1)     | ✅ (1)    | —              |
-| [Tema 19](./19-casos-reales)       | ✅      | ✅ (1)     | ✅ (1)    | —              |
+| [Tema 06](./06-dql)                | ⬜      | ⬜         | ⬜        | —              |
+| [Tema 07](./07-operadores)         | ⬜      | ⬜         | ⬜        | —              |
+| [Tema 08](./08-funciones)          | ⬜      | ⬜         | ⬜        | —              |
+| [Tema 09](./09-joins)              | ⬜      | ⬜         | ⬜        | —              |
+| [Tema 10](./10-subconsultas)       | ⬜      | ⬜         | ⬜        | —              |
+| [Tema 11](./11-vistas)             | ⬜      | ⬜         | ⬜        | —              |
+| [Tema 12](./12-indexacion)         | ⬜      | ⬜         | ⬜        | —              |
+| [Tema 13](./13-transacciones-acid) | ⬜      | ⬜         | ⬜        | —              |
+| [Tema 14](./14-dcl-seguridad)      | ⬜      | ⬜         | ⬜        | —              |
+| [Tema 15](./15-sql-avanzado)       | ⬜      | ⬜         | ⬜        | —              |
+| [Tema 16](./16-plsql)              | ⬜      | ⬜         | ⬜        | —              |
+| [Tema 17](./17-optimizacion)       | ⬜      | ⬜         | ⬜        | —              |
+| [Tema 18](./18-ecosistema-sql)     | ⬜      | ⬜         | ⬜        | —              |
+| [Tema 19](./19-casos-reales)       | ⬜      | ⬜         | ⬜        | —              |
 
 ---
 
 ## 🗺️ Índice del Curso
 
-> _Haz clic en cada sección para desplegar los detalles. Todos los temas tienen cobertura base completa._
+> _Haz clic en cada sección para desplegar los detalles._
 
 ### 📚 Bloque I — Los Cimientos
 
