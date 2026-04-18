@@ -30,6 +30,6 @@ Desafíos complejos que simulan el día a día de un Data Engineer y un DBA en p
 
 <div align="center">
 
-⬅️ [**Tema 17: Ecosistema SQL**](../17-ecosistema-sql) · 🏠 [**Índice del Curso**](../README.md)
+⬅️ [**Tema 17: Ecosistema SQL**](../17-ecosistema-sql) · 🏠 [**Índice del Curso**](../README.md) · ➡️ [**Tema 19: PL/SQL**](../19-plsql)
 
 </div>
