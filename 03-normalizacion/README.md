@@ -1,21 +1,22 @@
-# 📐 Tema 14: Normalización
+# 📐 Tema 03: Normalización y Modelado ER
 
 > **"Una base de datos mal diseñada es como una casa con los cimientos torcidos: por fuera puede parecer bonita, pero tarde o temprano se agrieta."** La normalización es el arte de organizar tus tablas para eliminar redundancias, evitar anomalías y construir bases de datos sólidas.
 
 ## 📋 Índice
 
-- [14.1 ¿Qué es la Normalización y por qué Importa?](#141-qué-es-la-normalización-y-por-qué-importa)
-- [14.2 Primera Forma Normal (1NF)](#142-primera-forma-normal-1nf)
-- [14.3 Segunda Forma Normal (2NF)](#143-segunda-forma-normal-2nf)
-- [14.4 Tercera Forma Normal (3NF)](#144-tercera-forma-normal-3nf)
-- [14.5 Forma Normal de Boyce-Codd (BCNF)](#145-forma-normal-de-boyce-codd-bcnf)
-- [14.6 Desnormalización: Cuándo y por qué Romper las Reglas](#146-desnormalización-cuándo-y-por-qué-romper-las-reglas)
+- [3.1 ¿Qué es la Normalización y por qué Importa?](#31-qué-es-la-normalización-y-por-qué-importa)
+- [3.2 Primera Forma Normal (1NF)](#32-primera-forma-normal-1nf)
+- [3.3 Segunda Forma Normal (2NF)](#33-segunda-forma-normal-2nf)
+- [3.4 Tercera Forma Normal (3NF)](#34-tercera-forma-normal-3nf)
+- [3.5 Forma Normal de Boyce-Codd (BCNF)](#35-forma-normal-de-boyce-codd-bcnf)
+- [3.6 Desnormalización: Cuándo y por qué Romper las Reglas](#36-desnormalización-cuándo-y-por-qué-romper-las-reglas)
+- [3.7 Modelado Entidad-Relación (ER)](#37-modelado-entidad-relación-er)
 
 ---
 
 ---
 
-## 14.1 ¿Qué es la Normalización y por qué Importa?
+## 3.1 ¿Qué es la Normalización y por qué Importa?
 
 ### 📘 El Concepto
 
@@ -119,7 +120,7 @@ UPDATE categorias SET nombre = 'Tecnología' WHERE id_categoria = 1;
 
 ---
 
-## 14.2 Primera Forma Normal (1NF)
+## 3.2 Primera Forma Normal (1NF)
 
 ### 📘 El Concepto
 
@@ -258,7 +259,7 @@ Ahora cada celda tiene un solo valor y puedes buscar rutas por día:
 
 ---
 
-## 14.3 Segunda Forma Normal (2NF)
+## 3.3 Segunda Forma Normal (2NF)
 
 ### 📘 El Concepto
 
@@ -368,7 +369,7 @@ La solución es eliminar esas columnas y obtenerlas vía JOIN (que es exactament
 
 ---
 
-## 14.4 Tercera Forma Normal (3NF)
+## 3.4 Tercera Forma Normal (3NF)
 
 ### 📘 El Concepto
 
@@ -470,7 +471,7 @@ Analiza nuestras 3 bases de datos actuales. ¿Están todas en 3NF? Verifica la t
 
 ---
 
-## 14.5 Forma Normal de Boyce-Codd (BCNF)
+## 3.5 Forma Normal de Boyce-Codd (BCNF)
 
 ### 📘 El Concepto
 
@@ -585,7 +586,7 @@ BCNF solo es problemática cuando hay claves compuestas y reglas de negocio espe
 
 ---
 
-## 14.6 Desnormalización: Cuándo y por qué Romper las Reglas
+## 3.6 Desnormalización: Cuándo y por qué Romper las Reglas
 
 ### 📘 El Concepto
 
@@ -726,11 +727,70 @@ DROP TABLE dashboard_rutas;
 
 ---
 
+## 3.7 Modelado Entidad-Relación (ER)
+
+### 📘 El Concepto
+
+El **Modelado Entidad-Relación (ER)** es una técnica de diseño de bases de datos que permite representar visualmente la estructura de los datos antes de implementarlos en SQL. Es el **plano arquitectónico** que dibujas antes de construir la casa.
+
+Los componentes fundamentales de un diagrama ER son:
+
+| Componente | Representación | Descripción |
+|------------|:-:|-------------|
+| **Entidad** | Rectángulo | Un objeto del mundo real (Cliente, Producto, Pedido) |
+| **Atributo** | Óvalo | Una propiedad de la entidad (nombre, email, precio) |
+| **Relación** | Rombo | La conexión entre entidades (compra, trabaja_en) |
+| **Clave Primaria** | Subrayado | El atributo que identifica de forma única a cada entidad |
+
+**Tipos de relaciones (cardinalidad):**
+
+| Cardinalidad | Ejemplo | Significado |
+|:------------:|---------|-------------|
+| **1:1** | Persona ↔ Pasaporte | Cada persona tiene un único pasaporte y viceversa |
+| **1:N** | Departamento → Empleados | Un departamento tiene muchos empleados, pero cada empleado pertenece a un solo departamento |
+| **N:M** | Estudiantes ↔ Cursos | Un estudiante puede inscribirse en muchos cursos y un curso puede tener muchos estudiantes |
+
+### 🏠 La Analogía
+
+Imagina que vas a construir una casa. **No empiezas poniendo ladrillos** — primero dibujas los planos:
+- ¿Cuántas habitaciones hay? → **Entidades** (tablas)
+- ¿Qué hay en cada habitación? → **Atributos** (columnas)
+- ¿Cómo se conectan las habitaciones? → **Relaciones** (claves foráneas)
+- ¿Cuál es la puerta principal de cada habitación? → **Clave primaria**
+
+El diagrama ER es tu plano. La normalización es el inspector que verifica que los planos cumplen las normas de construcción. Juntos, garantizan que tu base de datos será sólida.
+
+### 💻 El Proceso
+
+```
+Paso 1: Identificar Entidades
+   → ¿Qué "cosas" necesito almacenar? (Clientes, Productos, Pedidos...)
+
+Paso 2: Definir Atributos
+   → ¿Qué información necesito de cada entidad? (nombre, email, precio...)
+
+Paso 3: Identificar Relaciones
+   → ¿Cómo se conectan las entidades? (un cliente HACE pedidos...)
+
+Paso 4: Determinar Cardinalidad
+   → ¿Es 1:1, 1:N o N:M?
+
+Paso 5: Identificar Claves
+   → ¿Qué atributo identifica de forma única a cada entidad?
+
+Paso 6: Normalizar
+   → Aplicar 1NF, 2NF, 3NF para eliminar redundancias
+```
+
+> 💡 **Regla de oro:** Siempre modela primero en un diagrama ER y normaliza el diseño **antes** de escribir tu primera sentencia `CREATE TABLE`. Corregir un mal diseño después es mucho más costoso.
+
+---
+
 ---
 
 <div align="center">
 
-### 🗺️ Ruta de Aprendizaje — Tema 14
+### 🗺️ Ruta de Aprendizaje — Tema 03
 
 </div>
 
@@ -739,12 +799,12 @@ DROP TABLE dashboard_rutas;
 | 1️⃣ | Estudiar el temario | 📖 _Estás aquí_ |
 | 2️⃣ | Practicar ejercicios | 📝 [Ejercicios de Normalización](ejercicios/ejercicios_normalizacion.md) |
 | 3️⃣ | Completar el proyecto | 🏆 [Proyecto: Rescatando una BD Legacy](proyectos/proyecto_normalizacion.md) |
-| 4️⃣ | Avanzar al siguiente tema | ➡️ [Tema 15: SQL Avanzado (Window Functions y CTEs)](../15-sql-avanzado) |
+| 4️⃣ | Avanzar al siguiente tema | ➡️ [Tema 04: DDL (Data Definition Language)](../04-ddl) |
 
 ---
 
 <div align="center">
 
-⬅️ [**Tema 13: Propiedades ACID**](../13-propiedades-acid) · 🏠 [**Índice del Curso**](../README.md) · [**Tema 15: SQL Avanzado (Window Functions y CTEs) →**](../15-sql-avanzado)
+⬅️ [**Tema 02: Tipos de Datos**](../02-tipos-de-datos) · 🏠 [**Índice del Curso**](../README.md) · [**Tema 04: DDL →**](../04-ddl)
 
 </div>
