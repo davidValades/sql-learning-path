@@ -273,6 +273,20 @@ Desafíos complejos que simulan el día a día de un Data Engineer y un DBA en p
 
 </details>
 
+### 🧠 Bloque VIII — Programación en la Base de Datos
+
+<details>
+<summary>⬜ <b>⚙️ Tema 19: PL/SQL (Programación Procedural)</b></summary>
+<br>
+Programación dentro de la base de datos. Bloques anónimos, procedimientos almacenados (<code>STORED PROCEDURES</code>), funciones, cursores, manejo de excepciones y triggers.
+<br><br>
+
+| Recurso | Enlace |
+|---------|--------|
+| 📖 Temario | [**Ir al Tema 19 →**](./19-plsql) |
+
+</details>
+
 ---
 
 <div align="center">
