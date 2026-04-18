@@ -1,4 +1,19 @@
-# 16-optimizacion
+# 🏎️ Tema 16: Optimización de Consultas
+
+> 🚧 **Este tema está en construcción.** El contenido se irá completando próximamente.
+
+## 📋 Descripción
+
+Planes de ejecución (Explain Plan), cuellos de botella y mejores prácticas para que el SQL "vuele".
+
+## 🔮 Contenido Previsto
+
+- [ ] Planes de ejecución (`EXPLAIN PLAN`)
+- [ ] Lectura de planes: Full Table Scan vs. Index Scan
+- [ ] Hints de Oracle para forzar estrategias
+- [ ] Antipatrones comunes de rendimiento
+- [ ] Estadísticas y el optimizador de Oracle
+
 ---
 
 <div align="center">

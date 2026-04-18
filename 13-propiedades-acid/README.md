@@ -1,4 +1,19 @@
-# 13-propiedades-acid
+# 🧪 Tema 13: Propiedades ACID
+
+> 🚧 **Este tema está en construcción.** El contenido se irá completando próximamente.
+
+## 📋 Descripción
+
+Teoría avanzada: Atomicidad, Consistencia, Aislamiento (Isolation) y Durabilidad. El corazón de los motores relacionales.
+
+## 🔮 Contenido Previsto
+
+- [ ] **A**tomicidad — Todo o nada
+- [ ] **C**onsistencia — De un estado válido a otro estado válido
+- [ ] **I**solation (Aislamiento) — Transacciones independientes
+- [ ] **D**urabilidad — Los cambios persisten ante fallos
+- [ ] Niveles de aislamiento (Read Uncommitted, Read Committed, etc.)
+
 ---
 
 <div align="center">

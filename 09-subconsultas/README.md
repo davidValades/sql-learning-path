@@ -1,4 +1,21 @@
-# 09-subconsultas
+# 🪆 Tema 09: Subconsultas
+
+> 🚧 **Este tema está en construcción.** El contenido se irá completando próximamente.
+
+## 📋 Descripción
+
+Consultas anidadas dentro de otras consultas. Uso de subconsultas escalares, correlacionadas y operadores `IN`, `EXISTS`, `ANY`, `ALL`.
+
+## 🔮 Contenido Previsto
+
+- [ ] Subconsultas escalares (devuelven un solo valor)
+- [ ] Subconsultas de fila (devuelven una fila)
+- [ ] Subconsultas de tabla (devuelven múltiples filas)
+- [ ] Subconsultas correlacionadas
+- [ ] Operadores `IN`, `NOT IN`
+- [ ] Operadores `EXISTS`, `NOT EXISTS`
+- [ ] Operadores `ANY`, `ALL`
+
 ---
 
 <div align="center">

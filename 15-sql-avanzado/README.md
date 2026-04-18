@@ -1,4 +1,19 @@
-# 15-sql-avanzado
+# 🚀 Tema 15: SQL Avanzado (Window Functions y CTEs)
+
+> 🚧 **Este tema está en construcción.** El contenido se irá completando próximamente.
+
+## 📋 Descripción
+
+Consultas de nivel analítico: Funciones de ventana (`ROW_NUMBER`, `RANK`, `OVER`), CTEs con la cláusula `WITH` y operadores de conjuntos.
+
+## 🔮 Contenido Previsto
+
+- [ ] CTEs con la cláusula `WITH`
+- [ ] Funciones de ventana (`OVER`, `PARTITION BY`)
+- [ ] `ROW_NUMBER()`, `RANK()`, `DENSE_RANK()`
+- [ ] `LAG()`, `LEAD()` — Acceder a filas anteriores/siguientes
+- [ ] Operadores de conjuntos: `UNION`, `INTERSECT`, `MINUS`
+
 ---
 
 <div align="center">

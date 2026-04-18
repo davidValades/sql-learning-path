@@ -1,4 +1,20 @@
-# 12-transacciones
+# 🛡️ Tema 12: Transacciones
+
+> 🚧 **Este tema está en construcción.** El contenido se irá completando próximamente.
+
+## 📋 Descripción
+
+Gestión de bloques de operaciones seguras con `COMMIT`, `ROLLBACK` y `SAVEPOINT`.
+
+## 🔮 Contenido Previsto
+
+- [ ] ¿Qué es una transacción?
+- [ ] `COMMIT` — Confirmar cambios permanentemente
+- [ ] `ROLLBACK` — Revertir cambios
+- [ ] `SAVEPOINT` — Puntos de recuperación intermedios
+- [ ] Autocommit vs. transacciones explícitas
+- [ ] Bloqueos y concurrencia
+
 ---
 
 <div align="center">

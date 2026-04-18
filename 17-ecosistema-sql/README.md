@@ -1,4 +1,19 @@
-# 17-ecosistema-sql
+# 🌐 Tema 17: Ecosistema SQL
+
+> 🚧 **Este tema está en construcción.** El contenido se irá completando próximamente.
+
+## 📋 Descripción
+
+Diferencias entre motores (Oracle, PostgreSQL, SQL Server, MySQL) y herramientas de mercado.
+
+## 🔮 Contenido Previsto
+
+- [ ] Oracle vs. PostgreSQL vs. MySQL vs. SQL Server
+- [ ] Diferencias de sintaxis entre motores
+- [ ] Herramientas cliente: SQL Developer, DBeaver, DataGrip
+- [ ] SQL en la nube: AWS RDS, Azure SQL, Oracle Cloud
+- [ ] El papel del DBA en el ecosistema moderno
+
 ---
 
 <div align="center">

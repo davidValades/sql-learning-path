@@ -5,170 +5,283 @@
 ![Estado](https://img.shields.io/badge/Estado-En_Proceso-blue?style=for-the-badge)
 ![Progreso](https://geps.dev/progress/22)
 
+**Una ruta de aprendizaje interactiva y práctica para dominar Bases de Datos Relacionales y SQL.**
+
 </div>
+
+---
 
 ¡Bienvenido a mi ruta de aprendizaje de Bases de Datos Relacionales y SQL! 📊
 
 Este repositorio es una bitácora viva de mi evolución como Data Engineer / DBA. Aquí no solo encontrarás teoría, sino **proyectos prácticos, retos gamificados y scripts reales** basados en la sintaxis de Oracle SQL.
 
+> 💡 **¿Cómo usar esta guía?** Sigue los temas en orden. Cada tema tiene temario, ejercicios y/o proyectos. Al final de cada página encontrarás enlaces para avanzar al siguiente paso sin perderte.
+
 ## 🛠️ Metodología de Aprendizaje
 
 Cada lección en este repositorio está estructurada de forma rigurosa para garantizar la comprensión profunda de los datos:
 
-1. **📘 El Concepto:** Explicación técnica directa y sin rodeos.
-2. **🏠 La Analogía:** Traslación del concepto técnico a situaciones de la vida cotidiana.
-3. **💻 El Código:** Sintaxis real en Oracle SQL.
-4. **🧠 El Reto:** Ejercicios prácticos con soluciones ocultas para fomentar el aprendizaje activo (_Hands-On_).
+| Paso | Componente | Descripción |
+|:----:|------------|-------------|
+| 1️⃣ | **📘 El Concepto** | Explicación técnica directa y sin rodeos |
+| 2️⃣ | **🏠 La Analogía** | Traslación del concepto a situaciones de la vida cotidiana |
+| 3️⃣ | **💻 El Código** | Sintaxis real en Oracle SQL |
+| 4️⃣ | **🧠 El Reto** | Ejercicios prácticos con soluciones ocultas (_Hands-On_) |
+| 5️⃣ | **🏆 Proyectos** | Mini-proyectos para aplicar lo aprendido _(cuando aplique)_ |
 
 ---
 
 ## 🗺️ Índice del Curso
 
-_Haz clic en cada sección para desplegar los detalles y acceder al material._
+> _Haz clic en cada sección para desplegar los detalles. Los temas marcados con ✅ ya tienen contenido completo._
+
+### 📚 Bloque I — Los Cimientos
 
 <details>
-<summary><b>📦 Tema 01: Fundamentos de Bases de Datos</b></summary>
+<summary>✅ <b>📦 Tema 01: Fundamentos de Bases de Datos</b></summary>
 <br>
 Conceptos clave sobre qué es una Base de Datos, SGBD, SGBDR, el modelo relacional, Tablas, Filas, Columnas y los diferentes tipos de Claves (Primarias, Foráneas, Candidatas, Compuestas).
 <br><br>
-👉 <b><a href="./01-fundamentos-bd">Ir a la carpeta del Tema 1</a></b>
+
+| Recurso | Enlace |
+|---------|--------|
+| 📖 Temario | [**Ir al Tema 01 →**](./01-fundamentos-bd) |
+
 </details>
 
 <details>
-<summary><b>🧩 Tema 02: Tipos de Datos (Oracle)</b></summary>
+<summary>✅ <b>🧩 Tema 02: Tipos de Datos (Oracle)</b></summary>
 <br>
 Domina cómo almacenar la información de forma eficiente. Diferencias entre <code>NUMBER</code>, <code>VARCHAR2</code>, <code>CHAR</code>, <code>DATE</code> y <code>TIMESTAMP</code> en el ecosistema Oracle.
 <br><br>
-👉 <b><a href="./02-tipos-de-datos">Ir a la carpeta del Tema 2</a></b>
+
+| Recurso | Enlace |
+|---------|--------|
+| 📖 Temario | [**Ir al Tema 02 →**](./02-tipos-de-datos) |
+| 📑 Cheat Sheet | [Ver Cheat Sheet Oracle](./02-tipos-de-datos/recursos/cheat-sheet-oracle.md) |
+
 </details>
 
+### 🏗️ Bloque II — Construir y Manipular
+
 <details>
-<summary><b>🏗️ Tema 03: DDL (Data Definition Language)</b></summary>
+<summary>✅ <b>🏗️ Tema 03: DDL (Data Definition Language)</b></summary>
 <br>
 El arte de construir los cimientos. Creación, modificación y destrucción de estructuras con <code>CREATE</code>, <code>ALTER</code>, <code>DROP</code> y <code>TRUNCATE</code>.
 <br><br>
-👉 <b><a href="./03-ddl">Ir a la carpeta del Tema 3</a></b> | 🏆 <b><a href="./03-ddl/proyectos">Ver Proyectos DDL</a></b>
+
+| Recurso | Enlace |
+|---------|--------|
+| 📖 Temario | [**Ir al Tema 03 →**](./03-ddl) |
+| 🏆 Proyecto 1 | [E-commerce Global](./03-ddl/proyectos/proyecto_ecommerce_ddl.md) |
+| 🏆 Proyecto 2 | [Sistema Hospitalario](./03-ddl/proyectos/proyecto_hospital_ddl.md) |
+| 🏆 Proyecto 3 | [Gestión de Aerolíneas](./03-ddl/proyectos/proyecto_aerolinea_ddl.md) |
+
 </details>
 
 <details>
-<summary><b>📝 Tema 04: DML (Data Manipulation Language)</b></summary>
+<summary>✅ <b>📝 Tema 04: DML (Data Manipulation Language)</b></summary>
 <br>
 Cómo inyectar vida a las tablas. Inserción, actualización y borrado de registros usando <code>INSERT</code>, <code>UPDATE</code> y <code>DELETE</code>.
 <br><br>
-👉 <b><a href="./04-dml">Ir a la carpeta del Tema 4</a></b> | 🏆 <b><a href="./04-dml/proyectos">Ver Proyectos DML</a></b>
+
+| Recurso | Enlace |
+|---------|--------|
+| 📖 Temario | [**Ir al Tema 04 →**](./04-dml) |
+| 🏆 Proyecto 1 | [El Día Cero](./04-dml/proyectos/proyecto_triatlon_dml.md) |
+| 🏆 Proyecto 2 | [Día 30 en Producción](./04-dml/proyectos/proyecto_DML_parte2.md) |
+
 </details>
 
+### 🔍 Bloque III — Consultar y Filtrar
+
 <details>
-<summary><b>🔍 Tema 05: DQL Básico (Data Query Language)</b></summary>
+<summary>✅ <b>🔍 Tema 05: DQL Básico (Data Query Language)</b></summary>
 <br>
 El poder de la extracción de datos. Primeros pasos con <code>SELECT</code>, <code>FROM</code> y buenas prácticas de consulta.
 <br><br>
-👉 <b><a href="./05-dql">Ir a la carpeta del Tema 5</a></b>
+
+| Recurso | Enlace |
+|---------|--------|
+| 📖 Temario | [**Ir al Tema 05 →**](./05-dql) |
+| 🏆 Proyecto 1 | [Extracción de Inteligencia](./05-dql/proyectos/proyecto_dql_basico.md) |
+| 🏆 Proyecto 2 | [Reportes Gerenciales](./05-dql/proyectos/proyecto_dql_medio.md) |
+
 </details>
 
 <details>
-<summary><b>🎛️ Tema 06: Operadores Lógicos y Filtros</b></summary>
+<summary>⬜ <b>🎛️ Tema 06: Operadores Lógicos y Filtros</b></summary>
 <br>
 Afinando las búsquedas con la cláusula <code>WHERE</code>, operadores lógicos (<code>AND</code>, <code>OR</code>, <code>NOT</code>) y ordenación con <code>ORDER BY</code>.
 <br><br>
-👉 <b><a href="./06-operadores">Ir a la carpeta del Tema 6</a></b>
+
+| Recurso | Enlace |
+|---------|--------|
+| 📖 Temario | [**Ir al Tema 06 →**](./06-operadores) |
+
 </details>
 
 <details>
-<summary><b>🛠️ Tema 07: Funciones Nativas de Oracle</b></summary>
+<summary>⬜ <b>🛠️ Tema 07: Funciones Nativas de Oracle</b></summary>
 <br>
 Manipulación avanzada en vuelo: funciones de texto, fechas, conversión (<code>TO_CHAR</code>, <code>TO_DATE</code>) y manejo de nulos (<code>NVL</code>, <code>COALESCE</code>).
 <br><br>
-👉 <b><a href="./07-funciones">Ir a la carpeta del Tema 7</a></b>
+
+| Recurso | Enlace |
+|---------|--------|
+| 📖 Temario | [**Ir al Tema 07 →**](./07-funciones) |
+
 </details>
 
+### 🔗 Bloque IV — Relaciones y Consultas Avanzadas
+
 <details>
-<summary><b>🔗 Tema 08: Relaciones y JOINs</b></summary>
+<summary>⬜ <b>🔗 Tema 08: Relaciones y JOINs</b></summary>
 <br>
 Cruzando datos de múltiples tablas. Dominio absoluto de <code>INNER JOIN</code>, <code>LEFT/RIGHT JOIN</code>, <code>FULL OUTER JOIN</code> y <code>CROSS JOIN</code>.
 <br><br>
-👉 <b><a href="./08-joins">Ir a la carpeta del Tema 8</a></b>
+
+| Recurso | Enlace |
+|---------|--------|
+| 📖 Temario | [**Ir al Tema 08 →**](./08-joins) |
+
 </details>
 
 <details>
-<summary><b>🪆 Tema 09: Subconsultas</b></summary>
+<summary>⬜ <b>🪆 Tema 09: Subconsultas</b></summary>
 <br>
 Consultas anidadas dentro de otras consultas. Uso de subconsultas escalares, correlacionadas y operadores <code>IN</code>, <code>EXISTS</code>, <code>ANY</code>, <code>ALL</code>.
 <br><br>
-👉 <b><a href="./09-subconsultas">Ir a la carpeta del Tema 9</a></b>
+
+| Recurso | Enlace |
+|---------|--------|
+| 📖 Temario | [**Ir al Tema 09 →**](./09-subconsultas) |
+
 </details>
 
 <details>
-<summary><b>🖼️ Tema 10: Vistas y Objetos de BD</b></summary>
+<summary>⬜ <b>🖼️ Tema 10: Vistas y Objetos de BD</b></summary>
 <br>
 Creación de Vistas (<code>VIEWS</code>), Secuencias (<code>SEQUENCES</code>) para autoincrementales, y Sinónimos para simplificar la arquitectura.
 <br><br>
-👉 <b><a href="./10-vistas">Ir a la carpeta del Tema 10</a></b>
+
+| Recurso | Enlace |
+|---------|--------|
+| 📖 Temario | [**Ir al Tema 10 →**](./10-vistas) |
+
 </details>
 
+### ⚙️ Bloque V — Rendimiento y Seguridad
+
 <details>
-<summary><b>⚡ Tema 11: Indexación</b></summary>
+<summary>⬜ <b>⚡ Tema 11: Indexación</b></summary>
 <br>
 Optimizando la velocidad de lectura. Creación y funcionamiento de Índices (B-Tree, Bitmap) y cuándo no usarlos.
 <br><br>
-👉 <b><a href="./11-indexacion">Ir a la carpeta del Tema 11</a></b>
+
+| Recurso | Enlace |
+|---------|--------|
+| 📖 Temario | [**Ir al Tema 11 →**](./11-indexacion) |
+
 </details>
 
 <details>
-<summary><b>🛡️ Tema 12: Transacciones</b></summary>
+<summary>⬜ <b>🛡️ Tema 12: Transacciones</b></summary>
 <br>
 Gestión de bloques de operaciones seguras con <code>COMMIT</code>, <code>ROLLBACK</code> y <code>SAVEPOINT</code>.
 <br><br>
-👉 <b><a href="./12-transacciones">Ir a la carpeta del Tema 12</a></b>
+
+| Recurso | Enlace |
+|---------|--------|
+| 📖 Temario | [**Ir al Tema 12 →**](./12-transacciones) |
+
 </details>
 
 <details>
-<summary><b>🧪 Tema 13: Propiedades ACID</b></summary>
+<summary>⬜ <b>🧪 Tema 13: Propiedades ACID</b></summary>
 <br>
 Teoría avanzada: Atomicidad, Consistencia, Aislamiento (Isolation) y Durabilidad. El corazón de los motores relacionales.
 <br><br>
-👉 <b><a href="./13-propiedades-acid">Ir a la carpeta del Tema 13</a></b>
+
+| Recurso | Enlace |
+|---------|--------|
+| 📖 Temario | [**Ir al Tema 13 →**](./13-propiedades-acid) |
+
 </details>
 
+### 📐 Bloque VI — Diseño y SQL de Élite
+
 <details>
-<summary><b>📐 Tema 14: Normalización</b></summary>
+<summary>⬜ <b>📐 Tema 14: Normalización</b></summary>
 <br>
 Diseño eficiente de bases de datos para evitar redundancias (1NF, 2NF, 3NF y BCNF).
 <br><br>
-👉 <b><a href="./14-normalizacion">Ir a la carpeta del Tema 14</a></b>
+
+| Recurso | Enlace |
+|---------|--------|
+| 📖 Temario | [**Ir al Tema 14 →**](./14-normalizacion) |
+
 </details>
 
 <details>
-<summary><b>🚀 Tema 15: SQL Avanzado (Window Functions y CTEs)</b></summary>
+<summary>⬜ <b>🚀 Tema 15: SQL Avanzado (Window Functions y CTEs)</b></summary>
 <br>
 Consultas de nivel analítico: Funciones de ventana (<code>ROW_NUMBER</code>, <code>RANK</code>, <code>OVER</code>), CTEs con la cláusula <code>WITH</code> y operadores de conjuntos (<code>UNION</code>, <code>INTERSECT</code>, <code>MINUS</code>).
 <br><br>
-👉 <b><a href="./15-sql-avanzado">Ir a la carpeta del Tema 15</a></b>
+
+| Recurso | Enlace |
+|---------|--------|
+| 📖 Temario | [**Ir al Tema 15 →**](./15-sql-avanzado) |
+
 </details>
 
+### 🌐 Bloque VII — El Mundo Real
+
 <details>
-<summary><b>🏎️ Tema 16: Optimización de Consultas</b></summary>
+<summary>⬜ <b>🏎️ Tema 16: Optimización de Consultas</b></summary>
 <br>
 Planes de ejecución (Explain Plan), cuellos de botella y mejores prácticas para que el SQL "vuele".
 <br><br>
-👉 <b><a href="./16-optimizacion">Ir a la carpeta del Tema 16</a></b>
+
+| Recurso | Enlace |
+|---------|--------|
+| 📖 Temario | [**Ir al Tema 16 →**](./16-optimizacion) |
+
 </details>
 
 <details>
-<summary><b>🌐 Tema 17: Ecosistema SQL</b></summary>
+<summary>⬜ <b>🌐 Tema 17: Ecosistema SQL</b></summary>
 <br>
 Diferencias entre motores (Oracle, PostgreSQL, SQL Server, MySQL) y herramientas de mercado.
 <br><br>
-👉 <b><a href="./17-ecosistema-sql">Ir a la carpeta del Tema 17</a></b>
+
+| Recurso | Enlace |
+|---------|--------|
+| 📖 Temario | [**Ir al Tema 17 →**](./17-ecosistema-sql) |
+
 </details>
 
 <details>
-<summary><b>💼 Tema 18: Casos Reales y Proyectos Finales</b></summary>
+<summary>⬜ <b>💼 Tema 18: Casos Reales y Proyectos Finales</b></summary>
 <br>
 Desafíos complejos que simulan el día a día de un Data Engineer y un DBA en producción.
 <br><br>
-👉 <b><a href="./18-casos-reales">Ir a la carpeta del Tema 18</a></b>
+
+| Recurso | Enlace |
+|---------|--------|
+| 📖 Temario | [**Ir al Tema 18 →**](./18-casos-reales) |
+
 </details>
+
+---
+
+<div align="center">
+
+### 🎯 ¿Listo para empezar?
+
+[**📦 Comienza con el Tema 01: Fundamentos de Bases de Datos →**](./01-fundamentos-bd)
+
+</div>
 
 ---
 

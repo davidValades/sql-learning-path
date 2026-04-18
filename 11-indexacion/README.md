@@ -1,4 +1,21 @@
-# 11-indexacion
+# ⚡ Tema 11: Indexación
+
+> 🚧 **Este tema está en construcción.** El contenido se irá completando próximamente.
+
+## 📋 Descripción
+
+Optimizando la velocidad de lectura. Creación y funcionamiento de Índices (B-Tree, Bitmap) y cuándo no usarlos.
+
+## 🔮 Contenido Previsto
+
+- [ ] ¿Qué es un índice y cómo funciona?
+- [ ] Índices B-Tree (los más comunes)
+- [ ] Índices Bitmap (para columnas de baja cardinalidad)
+- [ ] Índices compuestos (multi-columna)
+- [ ] Índices únicos
+- [ ] Cuándo crear y cuándo NO crear índices
+- [ ] Impacto en `INSERT`, `UPDATE` y `DELETE`
+
 ---
 
 <div align="center">

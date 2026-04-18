@@ -1,4 +1,19 @@
-# 10-vistas
+# 🖼️ Tema 10: Vistas y Objetos de BD
+
+> 🚧 **Este tema está en construcción.** El contenido se irá completando próximamente.
+
+## 📋 Descripción
+
+Creación de Vistas (`VIEWS`), Secuencias (`SEQUENCES`) para autoincrementales, y Sinónimos para simplificar la arquitectura.
+
+## 🔮 Contenido Previsto
+
+- [ ] Creación de Vistas (`CREATE VIEW`)
+- [ ] Vistas actualizables vs. de solo lectura
+- [ ] Vistas materializadas
+- [ ] Secuencias (`CREATE SEQUENCE`) para IDs autoincrementales
+- [ ] Sinónimos (`CREATE SYNONYM`) para simplificar nombres
+
 ---
 
 <div align="center">

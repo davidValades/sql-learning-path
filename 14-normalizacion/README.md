@@ -1,4 +1,20 @@
-# 14-normalizacion
+# 📐 Tema 14: Normalización
+
+> 🚧 **Este tema está en construcción.** El contenido se irá completando próximamente.
+
+## 📋 Descripción
+
+Diseño eficiente de bases de datos para evitar redundancias (1NF, 2NF, 3NF y BCNF).
+
+## 🔮 Contenido Previsto
+
+- [ ] ¿Qué es la normalización y por qué importa?
+- [ ] Primera Forma Normal (1NF)
+- [ ] Segunda Forma Normal (2NF)
+- [ ] Tercera Forma Normal (3NF)
+- [ ] Forma Normal de Boyce-Codd (BCNF)
+- [ ] Desnormalización: cuándo y por qué romper las reglas
+
 ---
 
 <div align="center">
