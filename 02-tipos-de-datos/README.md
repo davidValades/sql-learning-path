@@ -152,9 +152,6 @@ Utilizaríamos <b><code>TIMESTAMP</code></b> (ej. <code>TIMESTAMP(6)</code>). El
 
 ---
 
----
----
-
 <div align="center">
 
 ### 🗺️ Ruta de Aprendizaje — Tema 02

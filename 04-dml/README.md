@@ -192,7 +192,6 @@ COMMIT;
 </details>
 
 ---
----
 
 <div align="center">
 
