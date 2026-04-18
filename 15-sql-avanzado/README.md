@@ -744,12 +744,12 @@ JOIN citas c ON m.id_medico = c.id_medico;
 | 1️⃣ | Estudiar el temario | 📖 _Estás aquí_ |
 | 2️⃣ | Practicar ejercicios | 📝 [Ejercicios de SQL Avanzado](ejercicios/ejercicios_sql_avanzado.md) |
 | 3️⃣ | Completar el proyecto | 🏆 [Proyecto: El Reporte Analítico Avanzado](proyectos/proyecto_sql_avanzado.md) |
-| 4️⃣ | Avanzar al siguiente tema | ➡️ [Tema 16: Optimización de Consultas](../16-optimizacion) |
+| 4️⃣ | Avanzar al siguiente tema | ➡️ [Tema 16: PL/SQL](../16-plsql) |
 
 ---
 
 <div align="center">
 
-⬅️ [**Tema 14: Normalización**](../14-normalizacion) · 🏠 [**Índice del Curso**](../README.md) · [**Tema 16: Optimización de Consultas →**](../16-optimizacion)
+⬅️ [**Tema 14: DCL y Seguridad**](../14-dcl-seguridad) · 🏠 [**Índice del Curso**](../README.md) · [**Tema 16: PL/SQL →**](../16-plsql)
 
 </div>

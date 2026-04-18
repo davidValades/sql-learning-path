@@ -1,4 +1,4 @@
-# 🏎️ Tema 16: Optimización de Consultas
+# 🏎️ Tema 17: Optimización de Consultas
 
 > 🚧 **Este tema está en construcción.** El contenido se irá completando próximamente.
 
@@ -18,19 +18,19 @@ Planes de ejecución (Explain Plan), cuellos de botella y mejores prácticas par
 
 <div align="center">
 
-### 🗺️ Ruta de Aprendizaje — Tema 16
+### 🗺️ Ruta de Aprendizaje — Tema 17
 
 </div>
 
 | # | Paso | Recurso |
 |:-:|------|---------|
 | 1️⃣ | Estudiar el temario | 📖 _Estás aquí_ |
-| 2️⃣ | Avanzar al siguiente tema | ➡️ [Tema 17: Ecosistema SQL](../17-ecosistema-sql) |
+| 2️⃣ | Avanzar al siguiente tema | ➡️ [Tema 18: Ecosistema SQL](../18-ecosistema-sql) |
 
 ---
 
 <div align="center">
 
-⬅️ [**Tema 15: SQL Avanzado (Window Functions y CTEs)**](../15-sql-avanzado) · 🏠 [**Índice del Curso**](../README.md) · [**Tema 17: Ecosistema SQL →**](../17-ecosistema-sql)
+⬅️ [**Tema 16: PL/SQL**](../16-plsql) · 🏠 [**Índice del Curso**](../README.md) · [**Tema 18: Ecosistema SQL →**](../18-ecosistema-sql)
 
 </div>

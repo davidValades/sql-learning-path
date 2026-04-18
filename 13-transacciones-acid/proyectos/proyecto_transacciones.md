@@ -356,6 +356,6 @@ COMMIT;
 
 <div align="center">
 
-⬅️ [**Ejercicios Transacciones**](../ejercicios/ejercicios_transacciones.md) · 🏠 [**Volver al Tema 12**](../README.md) · [**Tema 13: Propiedades ACID →**](../../13-propiedades-acid)
+⬅️ [**Ejercicios Transacciones**](../ejercicios/ejercicios_transacciones.md) · 🏠 [**Volver al Tema 13**](../README.md) · [**Tema 14: DCL y Seguridad →**](../../14-dcl-seguridad)
 
 </div>

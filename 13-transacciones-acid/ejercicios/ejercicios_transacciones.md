@@ -1,4 +1,4 @@
-# 🏋️ Ejercicios — Tema 12: Transacciones
+# 🏋️ Ejercicios — Tema 13: Transacciones
 
 > 💡 **Instrucciones:** Resuelve cada ejercicio razonando paso a paso. En ejercicios de SAVEPOINT/ROLLBACK, lo importante es predecir el estado final de los datos. Todos los ejercicios usan el estado acumulado de la base de datos.
 
@@ -370,6 +370,6 @@ COMMIT;
 
 <div align="center">
 
-⬅️ [**Volver al Tema 12**](../README.md) · 🏠 [**Índice del Curso**](../../README.md) · [**Proyecto Transacciones →**](../proyectos/proyecto_transacciones.md)
+⬅️ [**Volver al Tema 13**](../README.md) · 🏠 [**Índice del Curso**](../../README.md) · [**Proyecto Transacciones →**](../proyectos/proyecto_transacciones.md)
 
 </div>

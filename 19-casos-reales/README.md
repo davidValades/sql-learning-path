@@ -1,4 +1,4 @@
-# 💼 Tema 18: Casos Reales y Proyectos Finales
+# 💼 Tema 19: Casos Reales y Proyectos Finales
 
 > 🚧 **Este tema está en construcción.** El contenido se irá completando próximamente.
 
@@ -18,7 +18,7 @@ Desafíos complejos que simulan el día a día de un Data Engineer y un DBA en p
 
 <div align="center">
 
-### 🗺️ Ruta de Aprendizaje — Tema 18
+### 🗺️ Ruta de Aprendizaje — Tema 19
 
 </div>
 
@@ -30,6 +30,6 @@ Desafíos complejos que simulan el día a día de un Data Engineer y un DBA en p
 
 <div align="center">
 
-⬅️ [**Tema 17: Ecosistema SQL**](../17-ecosistema-sql) · 🏠 [**Índice del Curso**](../README.md) · ➡️ [**Tema 19: PL/SQL**](../19-plsql)
+⬅️ [**Tema 18: Ecosistema SQL**](../18-ecosistema-sql) · 🏠 [**Índice del Curso**](../README.md)
 
 </div>

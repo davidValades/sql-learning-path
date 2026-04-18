@@ -1,4 +1,4 @@
-# ⚙️ Tema 19: PL/SQL (Programación Procedural)
+# ⚙️ Tema 16: PL/SQL (Programación Procedural)
 
 > 🚧 **Este tema está en construcción.** El contenido se irá completando próximamente.
 
@@ -23,18 +23,19 @@ PL/SQL (Procedural Language/SQL) es el lenguaje de programación procedural de O
 
 <div align="center">
 
-### 🗺️ Ruta de Aprendizaje — Tema 19
+### 🗺️ Ruta de Aprendizaje — Tema 16
 
 </div>
 
 | # | Paso | Recurso |
 |:-:|------|---------|
 | 1️⃣ | Estudiar el temario | 📖 _Estás aquí_ |
+| 2️⃣ | Avanzar al siguiente tema | ➡️ [Tema 17: Optimización de Consultas](../17-optimizacion) |
 
 ---
 
 <div align="center">
 
-⬅️ [**Tema 18: Casos Reales**](../18-casos-reales) · 🏠 [**Índice del Curso**](../README.md)
+⬅️ [**Tema 15: SQL Avanzado**](../15-sql-avanzado) · 🏠 [**Índice del Curso**](../README.md) · [**Tema 17: Optimización de Consultas →**](../17-optimizacion)
 
 </div>
