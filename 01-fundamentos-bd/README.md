@@ -1,4 +1,4 @@
-﻿## 1.1 ¿Qué es una BD, SGBD y SGBDR? (DB / DBMS / RDBMS)
+## 1.1 ¿Qué es una BD, SGBD y SGBDR? (DB / DBMS / RDBMS)
 
 ### 📘 El Concepto
 
@@ -397,3 +397,23 @@ En una app de envíos a domicilio, descubres que el sistema ha colapsado. Al inv
 <b>Respuesta del Profesor:</b><br>
 Se ha roto la <b>Integridad Referencial</b>. La tabla de Pedidos estaba haciendo referencia (mediante una Clave Foránea) a un restaurante que ya no existe. Un buen diseño habría bloqueado el borrado del restaurante o habría archivado el registro en lugar de eliminarlo.
 </details>
+---
+
+<div align="center">
+
+### 🗺️ Ruta de Aprendizaje — Tema 01
+
+</div>
+
+| # | Paso | Recurso |
+|:-:|------|---------|
+| 1️⃣ | Estudiar el temario | 📖 _Estás aquí_ |
+| 2️⃣ | Avanzar al siguiente tema | ➡️ [Tema 02: Tipos de Datos (Oracle)](../02-tipos-de-datos) |
+
+---
+
+<div align="center">
+
+🏠 [**Índice del Curso**](../README.md) · [**Tema 02: Tipos de Datos (Oracle) →**](../02-tipos-de-datos)
+
+</div>

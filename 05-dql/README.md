@@ -1,4 +1,4 @@
-﻿## 5.1 DQL Básico: El arte de preguntar (`SELECT` y `FROM`)
+## 5.1 DQL Básico: El arte de preguntar (`SELECT` y `FROM`)
 
 ### 📘 El Concepto
 
@@ -165,3 +165,24 @@ ORDER BY distancia_km DESC;
 ```
 
 </details>
+---
+
+<div align="center">
+
+### 🗺️ Ruta de Aprendizaje — Tema 05
+
+</div>
+
+| # | Paso | Recurso |
+|:-:|------|---------|
+| 1️⃣ | Estudiar el temario | 📖 _Estás aquí_ |
+| 2️⃣ | Completar los proyectos | 🏆 [Ir a Proyectos →](./proyectos) |
+| 3️⃣ | Avanzar al siguiente tema | ➡️ [Tema 06: Operadores Lógicos y Filtros](../06-operadores) |
+
+---
+
+<div align="center">
+
+⬅️ [**Tema 04: DML (Data Manipulation Language)**](../04-dml) · 🏠 [**Índice del Curso**](../README.md) · [**🏆 Proyectos →**](./proyectos/proyecto_dql_basico.md)
+
+</div>

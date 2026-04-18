@@ -100,3 +100,10 @@ COMMIT;
 ```
 
 </details>
+---
+
+<div align="center">
+
+⬅️ [**Volver al Temario**](../README.md) · 🏠 [**Índice del Curso**](../../README.md) · [**Siguiente Proyecto →**](./proyecto_DML_parte2.md)
+
+</div>

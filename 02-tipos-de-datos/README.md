@@ -1,4 +1,4 @@
-﻿## 2.1 Tipos Numéricos (El poder de NUMBER en Oracle)
+## 2.1 Tipos Numéricos (El poder de NUMBER en Oracle)
 
 ### 📘 El Concepto
 
@@ -153,3 +153,23 @@ Utilizaríamos <b><code>TIMESTAMP</code></b> (ej. <code>TIMESTAMP(6)</code>). El
 ---
 
 ---
+---
+
+<div align="center">
+
+### 🗺️ Ruta de Aprendizaje — Tema 02
+
+</div>
+
+| # | Paso | Recurso |
+|:-:|------|---------|
+| 1️⃣ | Estudiar el temario | 📖 _Estás aquí_ |
+| 2️⃣ | Avanzar al siguiente tema | ➡️ [Tema 03: DDL (Data Definition Language)](../03-ddl) |
+
+---
+
+<div align="center">
+
+⬅️ [**Tema 01: Fundamentos de Bases de Datos**](../01-fundamentos-bd) · 🏠 [**Índice del Curso**](../README.md) · [**Tema 03: DDL (Data Definition Language) →**](../03-ddl)
+
+</div>
