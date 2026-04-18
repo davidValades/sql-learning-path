@@ -25,7 +25,9 @@ Planes de ejecución (Explain Plan), cuellos de botella y mejores prácticas par
 | # | Paso | Recurso |
 |:-:|------|---------|
 | 1️⃣ | Estudiar el temario | 📖 _Estás aquí_ |
-| 2️⃣ | Avanzar al siguiente tema | ➡️ [Tema 18: Ecosistema SQL](../18-ecosistema-sql) |
+| 2️⃣ | Practicar ejercicios | 📝 [Ejercicios de Optimización](./ejercicios/ejercicios_optimizacion.md) |
+| 3️⃣ | Completar el proyecto | 🏆 [Proyecto de Optimización](./proyectos/proyecto_optimizacion.md) |
+| 4️⃣ | Avanzar al siguiente tema | ➡️ [Tema 18: Ecosistema SQL](../18-ecosistema-sql) |
 
 ---
 

@@ -202,8 +202,9 @@ COMMIT;
 | # | Paso | Recurso |
 |:-:|------|---------|
 | 1️⃣ | Estudiar el temario | 📖 _Estás aquí_ |
-| 2️⃣ | Completar los proyectos | 🏆 [Ir a Proyectos →](./proyectos) |
-| 3️⃣ | Avanzar al siguiente tema | ➡️ [Tema 06: DQL Básico (Data Query Language)](../06-dql) |
+| 2️⃣ | Practicar ejercicios | 📝 [Ejercicios de DML](./ejercicios/ejercicios_dml.md) |
+| 3️⃣ | Completar los proyectos | 🏆 [Ir a Proyectos →](./proyectos) |
+| 4️⃣ | Avanzar al siguiente tema | ➡️ [Tema 06: DQL Básico (Data Query Language)](../06-dql) |
 
 ---
 

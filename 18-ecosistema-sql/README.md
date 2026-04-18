@@ -25,7 +25,9 @@ Diferencias entre motores (Oracle, PostgreSQL, SQL Server, MySQL) y herramientas
 | # | Paso | Recurso |
 |:-:|------|---------|
 | 1️⃣ | Estudiar el temario | 📖 _Estás aquí_ |
-| 2️⃣ | Avanzar al siguiente tema | ➡️ [Tema 19: Casos Reales y Proyectos Finales](../19-casos-reales) |
+| 2️⃣ | Practicar ejercicios | 📝 [Ejercicios del Ecosistema SQL](./ejercicios/ejercicios_ecosistema_sql.md) |
+| 3️⃣ | Completar el proyecto | 🏆 [Proyecto del Ecosistema SQL](./proyectos/proyecto_ecosistema_sql.md) |
+| 4️⃣ | Avanzar al siguiente tema | ➡️ [Tema 19: Casos Reales y Proyectos Finales](../19-casos-reales) |
 
 ---
 

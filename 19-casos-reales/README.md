@@ -25,6 +25,8 @@ Desafíos complejos que simulan el día a día de un Data Engineer y un DBA en p
 | # | Paso | Recurso |
 |:-:|------|---------|
 | 1️⃣ | Estudiar el temario | 📖 _Estás aquí_ |
+| 2️⃣ | Practicar ejercicios | 📝 [Ejercicios de Casos Reales](./ejercicios/ejercicios_casos_reales.md) |
+| 3️⃣ | Completar el proyecto final | 🏆 [Proyecto Final Capstone](./proyectos/proyecto_casos_reales.md) |
 
 ---
 

@@ -530,7 +530,8 @@ ALTER INDEX idx_citas_fecha REBUILD;
 |:-:|------|---------|
 | 1️⃣ | Estudiar el temario | 📖 _Estás aquí_ |
 | 2️⃣ | Practicar ejercicios | 📝 [Ejercicios de Indexación](ejercicios/ejercicios_indexacion.md) |
-| 3️⃣ | Avanzar al siguiente tema | ➡️ [Tema 13: Transacciones y Propiedades ACID](../13-transacciones-acid) |
+| 3️⃣ | Completar el proyecto | 🏆 [Proyecto de Indexación](proyectos/proyecto_indexacion.md) |
+| 4️⃣ | Avanzar al siguiente tema | ➡️ [Tema 13: Transacciones y Propiedades ACID](../13-transacciones-acid) |
 
 ---
 
