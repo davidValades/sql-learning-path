@@ -1,21 +1,22 @@
-# 🛡️ Tema 12: Transacciones
+# 🛡️ Tema 13: Transacciones y Propiedades ACID
 
 > **"En una base de datos, o todo sale bien, o nada cambia."** Las transacciones son el mecanismo que garantiza la integridad de los datos: si una operación falla a mitad de camino, puedes revertir **todo** como si nada hubiera pasado. Son la red de seguridad del mundo SQL.
 
 ## 📋 Índice
 
-- [12.1 ¿Qué es una Transacción?](#121-qué-es-una-transacción)
-- [12.2 COMMIT](#122-commit)
-- [12.3 ROLLBACK](#123-rollback)
-- [12.4 SAVEPOINT](#124-savepoint)
-- [12.5 Autocommit vs. Transacciones Explícitas](#125-autocommit-vs-transacciones-explícitas)
-- [12.6 Bloqueos y Concurrencia](#126-bloqueos-y-concurrencia)
+- [13.1 ¿Qué es una Transacción?](#131-qué-es-una-transacción)
+- [13.2 COMMIT](#132-commit)
+- [13.3 ROLLBACK](#133-rollback)
+- [13.4 SAVEPOINT](#134-savepoint)
+- [13.5 Autocommit vs. Transacciones Explícitas](#135-autocommit-vs-transacciones-explícitas)
+- [13.6 Bloqueos y Concurrencia](#136-bloqueos-y-concurrencia)
+- [Parte B: Propiedades ACID](#-parte-b-propiedades-acid)
 
 ---
 
 ---
 
-## 12.1 ¿Qué es una Transacción?
+## 13.1 ¿Qué es una Transacción?
 
 ### 📘 El Concepto
 
@@ -109,7 +110,7 @@ COMMIT;
 
 ---
 
-## 12.2 COMMIT
+## 13.2 COMMIT
 
 ### 📘 El Concepto
 
@@ -205,7 +206,7 @@ COMMIT;
 
 ---
 
-## 12.3 ROLLBACK
+## 13.3 ROLLBACK
 
 ### 📘 El Concepto
 
@@ -304,7 +305,7 @@ COMMIT;
 
 ---
 
-## 12.4 SAVEPOINT
+## 13.4 SAVEPOINT
 
 ### 📘 El Concepto
 
@@ -439,7 +440,7 @@ COMMIT;
 
 ---
 
-## 12.5 Autocommit vs. Transacciones Explícitas
+## 13.5 Autocommit vs. Transacciones Explícitas
 
 ### 📘 El Concepto
 
@@ -526,7 +527,7 @@ Con autocommit OFF, ambas sentencias forman parte de una transacción abierta qu
 
 ---
 
-## 12.6 Bloqueos y Concurrencia
+## 13.6 Bloqueos y Concurrencia
 
 ### 📘 El Concepto
 
@@ -628,25 +629,34 @@ Si A ejecuta primero (sin COMMIT), ¿qué le pasa a B? ¿Cuál es el estado fina
 
 ---
 
+## 📚 Parte B: Propiedades ACID
+
+> Para el contenido completo sobre las Propiedades ACID (Atomicidad, Consistencia, Aislamiento y Durabilidad), consulta los ejercicios específicos.
+
+📝 [Ejercicios de Propiedades ACID](ejercicios/ejercicios_acid.md)
+
+---
+
 ---
 
 <div align="center">
 
-### 🗺️ Ruta de Aprendizaje — Tema 12
+### 🗺️ Ruta de Aprendizaje — Tema 13
 
 </div>
 
 | # | Paso | Recurso |
 |:-:|------|---------|
 | 1️⃣ | Estudiar el temario | 📖 _Estás aquí_ |
-| 2️⃣ | Practicar ejercicios | 📝 [Ejercicios de Transacciones](ejercicios/ejercicios_transacciones.md) |
+| 2️⃣ | Practicar ejercicios de Transacciones | 📝 [Ejercicios de Transacciones](ejercicios/ejercicios_transacciones.md) |
 | 3️⃣ | Completar el proyecto | 🏆 [Proyecto: El Día del Desastre](proyectos/proyecto_transacciones.md) |
-| 4️⃣ | Avanzar al siguiente tema | ➡️ [Tema 13: Propiedades ACID](../13-propiedades-acid) |
+| 4️⃣ | Practicar ejercicios de ACID | 📝 [Ejercicios de Propiedades ACID](ejercicios/ejercicios_acid.md) |
+| 5️⃣ | Avanzar al siguiente tema | ➡️ [Tema 14: DCL y Seguridad](../14-dcl-seguridad) |
 
 ---
 
 <div align="center">
 
-⬅️ [**Tema 11: Indexación**](../11-indexacion) · 🏠 [**Índice del Curso**](../README.md) · [**Tema 13: Propiedades ACID →**](../13-propiedades-acid)
+⬅️ [**Tema 12: Indexación**](../12-indexacion) · 🏠 [**Índice del Curso**](../README.md) · [**Tema 14: DCL y Seguridad →**](../14-dcl-seguridad)
 
 </div>
