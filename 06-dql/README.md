@@ -48,6 +48,14 @@ SELECT nombre, stock
 FROM productos;
 ```
 
+Resultado:
+| nombre | stock |
+|--------|-------|
+| Laptop Pro | 50 |
+| Ratón Inalámbrico | 200 |
+| Sofá de Cuero | 0 |
+| Lámpara LED | 30 |
+
 </details>
 
 ---
@@ -113,6 +121,13 @@ FROM pacientes
 WHERE fecha_nacimiento < TO_DATE('1990-01-01', 'YYYY-MM-DD');
 ```
 
+Resultado:
+| nombre | telefono |
+|--------|----------|
+| Carlos Gomez | 555-0002 |
+
+> 💡 Laura Martinez nació el 1990-01-01, pero la condición es `<` (estrictamente menor), así que NO se incluye.
+
 </details>
 
 ---
@@ -163,6 +178,12 @@ El CEO de la Aerolínea quiere un informe para ver qué rutas gastan más combus
 SELECT * FROM rutas
 ORDER BY distancia_km DESC;
 ```
+
+Resultado:
+| id_ruta | aeropuerto_origen | aeropuerto_destino | distancia_km |
+|---------|------------------|-------------------|-------------|
+| JFKLAX | JFK | LAX | 4000 |
+| MADLHR | MAD | LHR | 1350 |
 
 </details>
 ---

@@ -41,6 +41,12 @@ Lo que permite esto es un "punto común" entre ambas listas. En bases de datos, 
 
 Decimos que es <b>Relacional</b> porque no guardamos toda la biografía de Rosalía en cada una de sus canciones (eso sería repetir datos). Simplemente guardamos su ID, creando una <b>relación</b> entre la tabla "Canciones" y la tabla "Artistas".
 
+Respuesta esperada:
+| Concepto | Explicación |
+|----------|-------------|
+| Punto común | La columna `ID_Artista` presente en ambas tablas |
+| ¿Por qué "Relacional"? | Se usan relaciones (claves foráneas) en lugar de duplicar datos |
+
 </details>
 
 ---
@@ -89,6 +95,12 @@ Imagina que en una tienda online creamos una tabla llamada Productos. En esa tab
 <b>Respuesta del Profesor:</b>
 La tabla tiene exactamente <b>4 columnas</b> (Código, Nombre, Precio, Stock) y <b>150 filas</b> (una fila por cada producto registrado en el inventario).
 
+Respuesta esperada:
+| Pregunta | Respuesta |
+|----------|-----------|
+| ¿Columnas? | 4 (Código, Nombre, Precio, Stock) |
+| ¿Filas? | 150 (una por producto registrado) |
+
 </details>
 
 ---
@@ -136,6 +148,14 @@ Estás diseñando la base de datos para una nueva red social. Tienes una tabla l
 La única opción válida de esa lista es el <b>Email_Registro</b>. Esto se debe a que es la única columna donde los datos nunca se van a repetir (dos personas no pueden compartir el mismo email) y no puede estar vacía al registrarse. A esto se le llama "Clave Natural".
 
 <i>Nota Pro: En la vida real, los ingenieros suelen inventar una columna nueva (ej. ID_Usuario numérico) para que las búsquedas sean más rápidas, lo que se conoce como "Clave Sustituta".</i>
+
+Respuesta esperada:
+| Columna | ¿Válida como PK? | Motivo |
+|---------|:-:|--------|
+| Nombre_Completo | ❌ | Puede repetirse (homónimos) |
+| Ciudad | ❌ | Se repite frecuentemente |
+| Email_Registro | ✅ | Único y no vacío → Clave Natural |
+| Edad | ❌ | Se repite (muchos usuarios con 25 años) |
 
 </details>
 
@@ -186,6 +206,13 @@ Para saber qué canción canta Rosalía, decidimos meter la columna ID_Artista d
 
 <b>Respuesta del Profesor:</b>
 Esa columna actúa como <b>Clave Foránea (Foreign Key)</b>. Es la clave primaria de otra tabla que está "de visita" en nuestra tabla de canciones para establecer la relación entre ambas.
+
+Respuesta esperada:
+| Tabla | Columna | Rol |
+|-------|---------|-----|
+| Artistas | ID_Artista | Clave Primaria (PK) |
+| Canciones | ID_Cancion | Clave Primaria (PK) |
+| Canciones | ID_Artista | **Clave Foránea (FK)** → referencia a Artistas |
 
 </details>
 
@@ -248,6 +275,14 @@ Estamos creando la base de datos de los empleados de nuestra empresa. Diseñamos
 
 <b>2. Clave Primaria Ideal:</b> <code>ID_Empleado</code>. Es la mejor práctica (Clave Sustituta) porque los números son más rápidos de procesar que los textos (Email), no cambia nunca (a diferencia de un email por cambio de apellido) y no expone datos sensibles (como la Seguridad Social).
 
+Respuesta esperada:
+| Columna | ¿Clave Candidata? | ¿PK ideal? | Motivo |
+|---------|:-:|:-:|--------|
+| ID_Empleado | ✅ | ✅ | Numérico, inmutable, sin datos sensibles |
+| Numero_Seguridad_Social | ✅ | ❌ | Dato sensible (privacidad) |
+| Email_Corporativo | ✅ | ❌ | Puede cambiar si cambia de apellido |
+| Color_Pelo | ❌ | ❌ | Se repite entre empleados |
+
 </details>
 
 ---
@@ -302,6 +337,13 @@ Ten en cuenta esta regla de negocio de la universidad: Un alumno solo puede tene
 <b>Respuesta del Profesor:</b>
 
 La combinación perfecta sería <code>ID_Alumno</code> + <code>ID_Asignatura</code>. Así aseguramos que un mismo alumno no pueda tener dos notas finales en la misma materia, pero le permitimos tener notas en distintas materias, y que distintos alumnos tengan nota en la misma materia.
+
+Respuesta esperada:
+| Clave Compuesta | Ejemplo válido | Ejemplo rechazado |
+|----------------|---------------|-------------------|
+| (ID_Alumno, ID_Asignatura) | (A-100, MAT-101, 8.5) | (A-100, MAT-101, 7.0) ← duplicado |
+| | (A-100, FIS-201, 9.0) ✅ | Mismo alumno, distinta asignatura |
+| | (A-200, MAT-101, 6.5) ✅ | Distinto alumno, misma asignatura |
 
 </details>
 
@@ -361,6 +403,18 @@ En las primeras semanas de pruebas, te das cuenta de que a veces los empleados s
 
 
 La restricción ideal es <b>CHECK</b>. La escribiríamos así: <code>CHECK (Precio >= 0)</code>. De esta forma, el motor de la base de datos rechazará automáticamente cualquier número negativo (como -50.00) antes de que se guarde en la tabla, protegiendo así la contabilidad.
+
+Respuesta esperada:
+| Restricción | Sintaxis SQL | Qué protege |
+|-------------|-------------|-------------|
+| CHECK | `CHECK (Precio >= 0)` | Impide precios negativos |
+
+Ejemplo de comportamiento:
+| Operación | Resultado |
+|-----------|-----------|
+| `INSERT INTO productos VALUES (1, 'Teclado', 50.00)` | ✅ Éxito |
+| `INSERT INTO productos VALUES (2, 'Ratón', -50.00)` | ❌ `ORA-02290: check constraint violated` |
+
 </details>
 
 ```
@@ -396,6 +450,14 @@ En una app de envíos a domicilio, descubres que el sistema ha colapsado. Al inv
 <br>
 <b>Respuesta del Profesor:</b><br>
 Se ha roto la <b>Integridad Referencial</b>. La tabla de Pedidos estaba haciendo referencia (mediante una Clave Foránea) a un restaurante que ya no existe. Un buen diseño habría bloqueado el borrado del restaurante o habría archivado el registro en lugar de eliminarlo.
+
+Respuesta esperada:
+| Tipo de integridad | ¿Se rompió? | Motivo |
+|-------------------|:-:|--------|
+| Entidad | ❌ | Las filas siguen siendo únicas |
+| **Referencial** | **✅** | FK apunta a un registro que ya no existe → pedido huérfano |
+| Dominio | ❌ | Los valores cumplen formato y tipo correcto |
+
 </details>
 ---
 

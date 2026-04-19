@@ -19,6 +19,11 @@ END;
 /
 ```
 
+Salida esperada por consola (DBMS_OUTPUT):
+```
+Total pedidos: 7
+```
+
 </details>
 
 ---
@@ -46,6 +51,13 @@ END;
 /
 ```
 
+Salida esperada por consola (DBMS_OUTPUT):
+```
+Cliente no encontrado
+```
+
+> 💡 Como no existe ningún cliente con id 99999, Oracle lanza `NO_DATA_FOUND` y el bloque `EXCEPTION` captura el error mostrando el mensaje personalizado.
+
 </details>
 
 ---
@@ -70,6 +82,16 @@ BEGIN
 END;
 /
 ```
+
+Salida esperada por consola (DBMS_OUTPUT):
+```
+Laptop Pro - 1220
+Ratón Inalámbrico - 45.5
+Monitor 4K - 350
+Teclado Mecánico - 75
+```
+
+> 💡 Se muestran los 4 productos de categoría 1 (Electrónica). El cursor recorre cada fila e imprime nombre y precio.
 
 </details>
 

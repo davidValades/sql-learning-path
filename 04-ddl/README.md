@@ -53,6 +53,21 @@ CREATE TABLE app_productos (
 );
 ```
 
+Salida esperada:
+```
+Table created.
+```
+
+Verificación:
+```sql
+DESCRIBE app_productos;
+```
+| Name | Null? | Type |
+|------|-------|------|
+| ID_PRODUCTO | NOT NULL | NUMBER(5) |
+| NOMBRE_PRODUCTO | NOT NULL | VARCHAR2(100) |
+| PRECIO_EUR | | NUMBER(6,2) |
+
 </details>
 
 ---
@@ -111,6 +126,18 @@ ALTER TABLE libros ADD (genero VARCHAR2(100));
 ALTER TABLE libros MODIFY (titulo VARCHAR2(255));
 ```
 
+Salida esperada:
+```
+Table altered.
+Table altered.
+```
+
+Verificación:
+```sql
+DESCRIBE libros;
+```
+La columna `genero` ahora aparece en la lista y `titulo` muestra `VARCHAR2(255)`.
+
 </details>
 
 ---
@@ -154,6 +181,17 @@ Tu tarea: Escribe la sentencia SQL exacta para demoler y hacer desaparecer por c
 ```sql
 DROP TABLE autores_borrador;
 ```
+
+Salida esperada:
+```
+Table dropped.
+```
+
+Verificación:
+```sql
+SELECT table_name FROM user_tables WHERE table_name = 'AUTORES_BORRADOR';
+```
+Resultado: no rows selected (la tabla ya no existe en el esquema).
 
 </details>
 
@@ -199,6 +237,21 @@ Tu tarea: Escribe la sentencia SQL para limpiar completamente esa tabla sin dest
 ```sql
 TRUNCATE TABLE logs_sistema;
 ```
+
+Salida esperada:
+```
+Table truncated.
+```
+
+Verificación:
+```sql
+SELECT COUNT(*) FROM logs_sistema;
+```
+| COUNT(*) |
+|----------|
+| 0 |
+
+> 💡 La tabla sigue existiendo (puedes hacer `DESCRIBE logs_sistema`), pero está completamente vacía.
 
 </details>
 ---
