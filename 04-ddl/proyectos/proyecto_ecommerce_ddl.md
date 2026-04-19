@@ -4,6 +4,14 @@
 
 Para dominar SQL, necesitamos un entorno de pruebas realista. Vamos a diseñar la arquitectura básica de una tienda en línea. Este esquema nos servirá para practicar inserciones (DML), consultas complejas (DQL) y cruces de datos (JOINs) en los próximos temas.
 
+Para ello podras utilizar bases de datos en linea como:
+
+https://freesql.com/
+
+o
+
+https://www.db-fiddle.com/
+
 ### 🏗️ La Arquitectura (El Reto)
 
 Tu objetivo es actuar como el Arquitecto de Datos y escribir un script SQL consecutivo que levante esta base de datos desde cero y realice algunos ajustes.
@@ -65,8 +73,7 @@ ALTER TABLE productos ADD (stock number(5) default 0);
 drop TABLE categorias_backup;
 ```
 
-</details>
----
+## </details>
 
 <div align="center">
 
