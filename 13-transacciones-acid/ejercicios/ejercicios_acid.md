@@ -35,9 +35,9 @@
 **Enunciado:** El departamento de logística necesita procesar 3 pedidos en una sola transacción. Pero el segundo pedido tiene un error (producto con stock insuficiente). Usa SAVEPOINT para confirmar los pedidos correctos y revertir solo el erróneo.
 
 Pedidos a procesar:
-1. Cliente Ana García (id 1) compra 1 Laptop Pro (id 10) → total 1200.00 (id_pedido = 93)
-2. Cliente Pedro Ruiz (id 2) compra 999 Camiseta Básica (id 16) → ¡stock insuficiente! (id_pedido = 94)
-3. Cliente María López (id 3) compra 2 Zapatillas Running (id 17) → total 179.00 (id_pedido = 95)
+1. Cliente Ana López (id 1) compra 1 Laptop Pro (id 10) → total 1220.00 (id_pedido = 93)
+2. Cliente Pedro Ruiz (id 2) compra 999 Camiseta Básica (id 14) → ¡stock insuficiente! (id_pedido = 94)
+3. Cliente María García (id 3) compra 2 Zapatillas Running (id 15) → total 179.00 (id_pedido = 95)
 
 Escribe la transacción completa con SAVEPOINT, ROLLBACK TO y COMMIT. Verifica el estado final.
 
@@ -47,24 +47,24 @@ Escribe la transacción completa con SAVEPOINT, ROLLBACK TO y COMMIT. Verifica e
 ```sql
 -- Pedido 1: correcto ✅
 INSERT INTO pedidos (id_pedido, id_cliente, id_producto, cantidad, fecha_pedido, total)
-VALUES (93, 1, 10, 1, SYSDATE, 1200.00);
+VALUES (93, 1, 10, 1, SYSDATE, 1220.00);
 UPDATE productos SET stock = stock - 1 WHERE id_producto = 10;
 
 SAVEPOINT despues_pedido1;
 
--- Pedido 2: ¡error! 999 unidades > stock disponible (500) ❌
+-- Pedido 2: ¡error! 999 unidades > stock disponible (100) ❌
 INSERT INTO pedidos (id_pedido, id_cliente, id_producto, cantidad, fecha_pedido, total)
-VALUES (94, 2, 16, 999, SYSDATE, 19990.01);
-UPDATE productos SET stock = stock - 999 WHERE id_producto = 16;
--- stock quedaría en -499 → detectamos el error
+VALUES (94, 2, 14, 999, SYSDATE, 19970.01);
+UPDATE productos SET stock = stock - 999 WHERE id_producto = 14;
+-- stock quedaría en -899 → detectamos el error
 
 -- Revertir solo el pedido 2
 ROLLBACK TO SAVEPOINT despues_pedido1;
 
 -- Pedido 3: correcto ✅
 INSERT INTO pedidos (id_pedido, id_cliente, id_producto, cantidad, fecha_pedido, total)
-VALUES (95, 3, 17, 2, SYSDATE, 179.00);
-UPDATE productos SET stock = stock - 2 WHERE id_producto = 17;
+VALUES (95, 3, 15, 2, SYSDATE, 179.00);
+UPDATE productos SET stock = stock - 2 WHERE id_producto = 15;
 
 COMMIT;
 
@@ -72,10 +72,10 @@ COMMIT;
 SELECT id_pedido, id_cliente, total FROM pedidos WHERE id_pedido IN (93, 94, 95);
 -- Resultado: pedidos 93 y 95 existen; pedido 94 NO existe
 
-SELECT nombre, stock FROM productos WHERE id_producto IN (10, 16, 17);
--- Laptop Pro: 99 (100-1)
--- Camiseta Básica: 500 (sin cambios — se revirtió)
--- Zapatillas Running: 498 (500-2)
+SELECT nombre, stock FROM productos WHERE id_producto IN (10, 14, 15);
+-- Laptop Pro: 49 (50-1)
+-- Camiseta Básica: 100 (sin cambios — se revirtió)
+-- Zapatillas Running: 43 (45-2)
 ```
 
 > 💡 La atomicidad parcial con SAVEPOINT nos permitió salvar los pedidos buenos sin perder toda la transacción.
@@ -83,8 +83,8 @@ SELECT nombre, stock FROM productos WHERE id_producto IN (10, 16, 17);
 ```sql
 -- Limpiar
 DELETE FROM pedidos WHERE id_pedido IN (93, 95);
-UPDATE productos SET stock = 100 WHERE id_producto = 10;
-UPDATE productos SET stock = 500 WHERE id_producto = 17;
+UPDATE productos SET stock = 50 WHERE id_producto = 10;
+UPDATE productos SET stock = 45 WHERE id_producto = 15;
 COMMIT;
 ```
 

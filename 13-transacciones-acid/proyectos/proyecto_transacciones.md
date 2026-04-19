@@ -24,7 +24,7 @@ Operación D: Actualizar stock de Laptop Pro a 20 unidades (correcto: reposició
 
 ```sql
 -- Operación A: ✅ correcta
-UPDATE productos SET precio = 22.99 WHERE id_producto = 16;
+UPDATE productos SET precio = 22.99 WHERE id_producto = 14;
 
 SAVEPOINT despues_A;
 
@@ -58,9 +58,9 @@ SELECT nombre, precio, stock FROM productos ORDER BY id_producto;
 
 ```sql
 -- Limpiar a estado original
-UPDATE productos SET precio = 19.99 WHERE id_producto = 16;
+UPDATE productos SET precio = 19.99 WHERE id_producto = 14;
 DELETE FROM productos WHERE id_producto = 25;
-UPDATE productos SET stock = 15 WHERE id_producto = 10;
+UPDATE productos SET stock = 50 WHERE id_producto = 10;
 COMMIT;
 ```
 
@@ -100,7 +100,7 @@ ROLLBACK TO SAVEPOINT pedido_90_ok;
 
 -- Otro pedido inválido (cantidad negativa)
 INSERT INTO pedidos (id_pedido, id_cliente, id_producto, cantidad, fecha_pedido, total)
-VALUES (92, 2, 12, -5, SYSDATE, -1750.00);
+VALUES (92, 2, 16, -5, SYSDATE, -1750.00);
 
 ROLLBACK TO SAVEPOINT pedido_90_ok;
 
@@ -115,7 +115,7 @@ SELECT * FROM pedidos WHERE id_pedido IN (90, 91, 92);
 ```sql
 -- Limpiar
 DELETE FROM pedidos WHERE id_pedido = 90;
-UPDATE productos SET stock = 15 WHERE id_producto = 10;
+UPDATE productos SET stock = 50 WHERE id_producto = 10;
 COMMIT;
 ```
 
@@ -292,7 +292,7 @@ COMMIT;
 
 Es el escenario final. Las tres bases de datos necesitan operaciones de emergencia coordinadas. Escribe UNA transacción que haga todo lo siguiente, con SAVEPOINT entre cada base de datos para poder revertir selectivamente:
 
-1. **E-commerce:** Poner stock = 0 en Sofá de Cuero (ya está en 0) y registrar un pedido de devolución (id 95, cliente 1, producto 14, cantidad -1, total -405.00).
+1. **E-commerce:** Poner stock = 0 en Sofá de Cuero (ya está en 0) y registrar un pedido de devolución (id 95, cliente 1, producto 12, cantidad -1, total -405.00).
 2. **SAVEPOINT ecommerce_ok**
 3. **Hospital:** Cancelar la cita pendiente del paciente David Torres (cita 6, cambiar estado a 'X').
 4. **SAVEPOINT hospital_ok**
@@ -305,7 +305,7 @@ Es el escenario final. Las tres bases de datos necesitan operaciones de emergenc
 ```sql
 -- 1. E-commerce: registrar devolución
 INSERT INTO pedidos (id_pedido, id_cliente, id_producto, cantidad, fecha_pedido, total)
-VALUES (95, 1, 14, -1, SYSDATE, -405.00);
+VALUES (95, 1, 12, -1, SYSDATE, -405.00);
 
 SAVEPOINT ecommerce_ok;
 

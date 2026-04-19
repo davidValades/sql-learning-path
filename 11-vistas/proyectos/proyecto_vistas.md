@@ -75,7 +75,6 @@ Resultado:
 | producto   | precio  | stock | alerta    |
 |------------|---------|-------|-----------|
 | Sofá de Cuero | 405.00 | 0   | SIN STOCK |
-| Laptop Pro    | 1220.00 | 15  | BAJO      |
 | Monitor 4K    | 350.00  | 25  | BAJO      |
 
 </details>
@@ -103,8 +102,8 @@ INSERT INTO log_alertas (id_alerta, producto, alerta, fecha_registro)
 SELECT seq_alertas.NEXTVAL, producto, alerta, SYSDATE
 FROM v_inventario_critico;
 
--- Resultado: 3 filas insertadas (Sofá, Laptop Pro, Monitor 4K)
--- con id_alerta = 1, 2, 3
+-- Resultado: 2 filas insertadas (Sofá de Cuero, Monitor 4K)
+-- con id_alerta = 1, 2
 ```
 
 > 💡 Este patrón (vista + secuencia + INSERT...SELECT) es muy común en sistemas de monitoreo y alertas automatizadas.
