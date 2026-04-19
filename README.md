@@ -52,7 +52,7 @@ Cada lección en este repositorio está estructurada de forma rigurosa para gara
 | [Tema 13](./13-transacciones-acid) | ⬜      | ⬜         | ⬜        | —              |
 | [Tema 14](./14-dcl-seguridad)      | ⬜      | ⬜         | ⬜        | —              |
 | [Tema 15](./15-sql-avanzado)       | ⬜      | ⬜         | ⬜        | —              |
-| [Tema 16](./16-plsql)              | ⬜      | ⬜         | ⬜        | —              |
+| [Tema 16](./16-plsql)              | ✅      | ✅ (1)     | ✅ (1)    | —              |
 | [Tema 17](./17-optimizacion)       | ⬜      | ⬜         | ⬜        | —              |
 | [Tema 18](./18-ecosistema-sql)     | ⬜      | ⬜         | ⬜        | —              |
 | [Tema 19](./19-casos-reales)       | ⬜      | ⬜         | ⬜        | —              |
@@ -266,14 +266,15 @@ Consultas de nivel analítico: Funciones de ventana (<code>ROW_NUMBER</code>, <c
 ### 🧠 Bloque VII — Programación en la Base de Datos
 
 <details>
-<summary>⬜ <b>⚙️ Tema 16: PL/SQL (Programación Procedural)</b></summary>
+<summary>✅ <b>⚙️ Tema 16: PL/SQL (Programación Procedural)</b></summary>
 <br>
-Programación dentro de la base de datos. Bloques anónimos, procedimientos almacenados (<code>STORED PROCEDURES</code>), funciones, cursores, manejo de excepciones y triggers.
+Programación dentro de la base de datos. Bloques anónimos, variables y <code>%TYPE/%ROWTYPE</code>, estructuras de control (<code>IF</code>, <code>CASE</code>, <code>LOOP</code>), cursores, manejo de excepciones, procedimientos almacenados (<code>STORED PROCEDURES</code>), funciones y triggers.
 <br><br>
 
-| Recurso    | Enlace                            |
-| ---------- | --------------------------------- |
-| 📖 Temario | [**Ir al Tema 16 →**](./16-plsql) |
+| Recurso       | Enlace                                                                              |
+| ------------- | ----------------------------------------------------------------------------------- |
+| 📖 Temario    | [**Ir al Tema 16 →**](./16-plsql)                                                   |
+| 🏆 Proyecto 1 | [Automatización Operativa con PL/SQL](./16-plsql/proyectos/proyecto_plsql.md)       |
 
 </details>
 
