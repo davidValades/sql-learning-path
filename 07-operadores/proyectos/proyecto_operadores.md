@@ -11,6 +11,7 @@ El director de logística necesita **tres informes** para la reunión trimestral
 ### Tarea 1.1 — Productos en riesgo
 
 Genera un listado de productos que cumplan **todas** estas condiciones:
+
 - Stock **menor o igual a 50** unidades.
 - Precio **mayor a 30** euros.
 - Que **no** sean de la categoría Ropa (id_categoria = 3).
@@ -32,6 +33,7 @@ ORDER BY stock ASC;
 ```
 
 Resultado:
+
 1. Sofá de Cuero (405.00, stock 0, cat 2)
 2. Monitor 4K (350.00, stock 25, cat 1)
 3. Lámpara LED (40.50, stock 30, cat 2)
@@ -57,6 +59,7 @@ ORDER BY nombre ASC;
 ```
 
 Resultado:
+
 1. Monitor 4K (350.00, NULL)
 2. Teclado Mecánico (75.00, NULL)
 3. Zapatillas Running (89.50, NULL)
@@ -81,6 +84,7 @@ ORDER BY precio DESC;
 ```
 
 Resultado:
+
 1. Zapatillas Running (89.50, cat 3)
 2. Teclado Mecánico (75.00, cat 1)
 3. Ratón Inalámbrico (45.50, cat 1)
@@ -96,6 +100,7 @@ La gerencia del hospital necesita dos informes para la auditoría sanitaria:
 ### Tarea 2.1 — Médicos para plan de incentivos
 
 RRHH necesita identificar a los médicos candidatos al bono trimestral. Los candidatos son aquellos que:
+
 - Sean de **Traumatología (100) o Medicina General (300)**.
 - Tengan un salario **menor a 3000**.
 
@@ -117,6 +122,7 @@ ORDER BY salario_base ASC;
 ```
 
 Resultado:
+
 1. Dr. Luis Moreno (300, 2600)
 2. Dr. Carlos Vega (100, 2800)
 3. Dra. Marta López (200, 4500)
@@ -126,6 +132,7 @@ Resultado:
 ### Tarea 2.2 — Pacientes con datos incompletos
 
 El departamento de calidad necesita un informe de pacientes que cumplan **al menos una** de estas condiciones:
+
 - **No tienen teléfono** registrado.
 - Su DNI **termina en 'A' o 'B'** (posible error de formato antiguo).
 
@@ -145,12 +152,14 @@ WHERE telefono IS NULL
 ```
 
 Resultado:
+
 1. Ana Ruiz (44444444D, NULL) — NO aparece porque su DNI termina en D, pero SÍ por NULL.
    Corrección: Ana Ruiz aparece por telefono IS NULL.
 2. Carlos Gomez (22222222B) — aparece por DNI terminado en B.
 3. Laura Martinez (11111111A) — aparece por DNI terminado en A.
 
 Ordenado:
+
 1. Ana Ruiz (44444444D, NULL)
 2. Carlos Gomez (22222222B, 555-0002)
 3. Laura Martinez (11111111A, 555-9999)
@@ -166,6 +175,7 @@ El director de operaciones necesita informes para la planificación del próximo
 ### Tarea 3.1 — Rutas europeas cortas y largas
 
 Genera dos listados en una sola consulta:
+
 - Rutas con distancia **menor a 900 km** (cortas) O rutas con distancia **mayor a 1400 km** (largas).
 - Excluye las rutas que pasen por **JFK** (ni como origen ni como destino).
 
@@ -186,6 +196,7 @@ ORDER BY distancia_km ASC;
 ```
 
 Resultado:
+
 1. BCNCDG (BCN→CDG, 830)
 2. BCNFCO (BCN→FCO, 850)
 3. MADFRA (MAD→FRA, 1420)
@@ -210,6 +221,7 @@ ORDER BY anio_fabricacion ASC;
 ```
 
 Resultado:
+
 1. Boeing 777 (350, 2016)
 2. Boeing 737 (180, 2018)
 
@@ -219,11 +231,11 @@ Resultado:
 
 ## ✅ Checklist de Completado
 
-- [ ] Misión 1: Las 3 tareas del E-commerce completadas
-- [ ] Misión 2: Las 2 tareas del Hospital completadas
-- [ ] Misión 3: Las 2 tareas de la Aerolínea completadas
-- [ ] Todas las consultas usan al menos 2 operadores distintos
-- [ ] `ORDER BY` utilizado en todas las consultas
+- [x] Misión 1: Las 3 tareas del E-commerce completadas
+- [x] Misión 2: Las 2 tareas del Hospital completadas
+- [x] Misión 3: Las 2 tareas de la Aerolínea completadas
+- [x] Todas las consultas usan al menos 2 operadores distintos
+- [x] `ORDER BY` utilizado en todas las consultas
 
 ---
 
@@ -233,12 +245,12 @@ Resultado:
 
 </div>
 
-| # | Paso | Recurso |
-|:-:|------|---------|
-| 1️⃣ | Repasar la teoría | 📖 [Volver al Temario](../README.md) |
-| 2️⃣ | Completar los ejercicios | 🏋️ [Ir a Ejercicios](../ejercicios/ejercicios_operadores.md) |
-| 3️⃣ | Completar el proyecto | 🏆 _Estás aquí_ |
-| 4️⃣ | Avanzar al siguiente tema | ➡️ [Tema 08: Funciones Nativas de Oracle](../../08-funciones) |
+|  #  | Paso                      | Recurso                                                       |
+| :-: | ------------------------- | ------------------------------------------------------------- |
+| 1️⃣  | Repasar la teoría         | 📖 [Volver al Temario](../README.md)                          |
+| 2️⃣  | Completar los ejercicios  | 🏋️ [Ir a Ejercicios](../ejercicios/ejercicios_operadores.md)  |
+| 3️⃣  | Completar el proyecto     | 🏆 _Estás aquí_                                               |
+| 4️⃣  | Avanzar al siguiente tema | ➡️ [Tema 08: Funciones Nativas de Oracle](../../08-funciones) |
 
 ---
 
