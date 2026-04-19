@@ -50,6 +50,12 @@ Necesitamos exactamente dos decimales de precisión para calcular bien los coste
 <br>
 <b>Respuesta del Profesor:</b><br>
 La opción más eficiente en Oracle es <code>NUMBER(5,2)</code>. Esto significa que el número tendrá 5 dígitos en total (precisión), de los cuales 2 serán decimales (escala). Esto permite guardar valores hasta <code>999.99</code>, cubriendo perfectamente el peso máximo de 950.50 kilos sin desperdiciar espacio en memoria.
+
+Respuesta esperada:
+| Tipo elegido | Rango permitido | Ejemplo válido | Ejemplo rechazado |
+|-------------|----------------|---------------|-------------------|
+| `NUMBER(5,2)` | 0.00 — 999.99 | 950.50 ✅ | 1000.00 ❌ (4 enteros + 2 dec = 6 > 5) |
+
 </details>
 
 ---
@@ -101,6 +107,12 @@ Para la <code>Bio_Presentacion</code> usaríamos <b><code>VARCHAR2(500)</code></
 
 Para el <code>Codigo_Postal</code> usaríamos <b><code>CHAR(5)</code></b>, porque sabemos con absoluta certeza que siempre, sin excepción, va a medir 5 caracteres. Al ser de longitud fija, el motor de la base de datos lo procesará más rápido.
 
+Respuesta esperada:
+| Columna | Tipo Oracle | Justificación |
+|---------|-------------|---------------|
+| Bio_Presentacion | `VARCHAR2(500)` | Longitud variable — ahorra espacio si la bio es corta |
+| Codigo_Postal | `CHAR(5)` | Longitud fija — siempre 5 dígitos, procesamiento más rápido |
+
 </details>
 
 ---
@@ -147,6 +159,12 @@ Trabajas en el departamento de datos de un Banco Central. Tienes que diseñar la
 Utilizaríamos <b><code>TIMESTAMP</code></b> (ej. <code>TIMESTAMP(6)</code>). El tipo <code>DATE</code> en Oracle se detiene en el nivel de los segundos, por lo que si dos transacciones ocurren en el mismo segundo exacto, registrarían la misma hora. <code>TIMESTAMP</code> guarda fracciones de segundo, garantizando la precisión necesaria para detectar el orden de operaciones ultrarrápidas.
 
 (Nota sobre Booleanos: Oracle no tiene un tipo de dato BOOLEAN estándar para las tablas. La práctica profesional es usar NUMBER(1) guardando 0 o 1, o CHAR(1) guardando 'Y' o 'N' y aplicando una restricción CHECK).
+
+Respuesta esperada:
+| Tipo | Precisión | ¿Adecuado para el banco? |
+|------|-----------|:------------------------:|
+| `DATE` | Hasta segundos (`14:30:45`) | ❌ |
+| `TIMESTAMP(6)` | Hasta microsegundos (`14:30:45.123456`) | ✅ |
 
 </details>
 

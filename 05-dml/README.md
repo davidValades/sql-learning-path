@@ -60,6 +60,19 @@ INSERT INTO aviones (id_avion, modelo, capacidad_pasajeros, anio_fabricacion)
 VALUES (1, 'Boeing 787 Dreamliner', 296, 2022);
 ```
 
+Salida esperada:
+```
+1 row(s) inserted.
+```
+
+Verificación:
+```sql
+SELECT * FROM aviones WHERE id_avion = 1;
+```
+| id_avion | modelo | capacidad_pasajeros | anio_fabricacion |
+|----------|--------|---------------------|------------------|
+| 1 | Boeing 787 Dreamliner | 296 | 2022 |
+
 </details>
 
 ---
@@ -120,6 +133,19 @@ UPDATE aviones
 SET capacidad_pasajeros = 250
 WHERE id_avion = 1;
 ```
+
+Salida esperada:
+```
+1 row(s) updated.
+```
+
+Verificación:
+```sql
+SELECT modelo, capacidad_pasajeros FROM aviones WHERE id_avion = 1;
+```
+| modelo | capacidad_pasajeros |
+|--------|---------------------|
+| Boeing 787 Dreamliner | 250 |
 
 </details>
 
@@ -188,6 +214,18 @@ WHERE id_ruta = 'XXXYYY';
 
 COMMIT;
 ```
+
+Salida esperada:
+```
+1 row(s) deleted.
+Commit complete.
+```
+
+Verificación:
+```sql
+SELECT * FROM rutas WHERE id_ruta = 'XXXYYY';
+```
+Resultado: no rows selected (la ruta fantasma ha sido eliminada permanentemente).
 
 </details>
 
