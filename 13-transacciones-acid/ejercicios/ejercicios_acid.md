@@ -123,7 +123,7 @@ UPDATE pacientes SET nombre = NULL WHERE id_paciente = 1;
 |-----------|-----------|------------|-------------|
 | **A** | ✅ Éxito | — | Todos los valores son válidos: paciente 1 y médico 2 existen. |
 | **B** | ❌ Error | `PRIMARY KEY` | El `id_cita = 70` ya fue insertado por la operación A. ORA-00001: unique constraint violated. |
-| **C** | ❌ Error | `FOREIGN KEY` | La especialidad 100 no existe o tiene médicos que la referencian. Si no existe, el DELETE afecta 0 filas (no es un error técnico); si existe con hijos, ORA-02292: integrity constraint violated. |
+| **C** | ❌ Error | `FOREIGN KEY` | Hay médicos que referencian la especialidad 100 (Traumatología). ORA-02292: integrity constraint violated - child record found. |
 | **D** | ❌ Error | `FOREIGN KEY` | La especialidad 99 no existe en la tabla especialidades. ORA-02291: parent key not found. |
 | **E** | ❌ Error | `NOT NULL` | El campo nombre no permite valores nulos. ORA-01407: cannot update to NULL. |
 

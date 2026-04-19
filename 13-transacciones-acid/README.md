@@ -78,7 +78,7 @@ COMMIT;
 ¿Qué pasa si ejecutas estas sentencias en orden?
 
 ```sql
-INSERT INTO pacientes (id_paciente, nombre, telefono) VALUES (10, 'Test', '000');
+INSERT INTO pacientes (id_paciente, dni, nombre, telefono) VALUES (10, '99999999Z', 'Test', '000');
 CREATE TABLE prueba (id NUMBER);    -- ← sentencia DDL
 ROLLBACK;
 SELECT * FROM pacientes WHERE id_paciente = 10;
