@@ -34,6 +34,13 @@ JOIN clientes c ON c.id_cliente = rc.id_cliente
 ORDER BY rc.gasto_total DESC;
 ```
 
+Resultado:
+| nombre | total_pedidos | gasto_total | ticket_medio |
+|--------|---------------|-------------|--------------|
+| Ana López | 3 | 1376.00 | 458.67 |
+| Pedro Ruiz | 2 | 486.50 | 243.25 |
+| María García | 2 | 278.95 | 139.48 |
+
 </details>
 
 ---
@@ -62,6 +69,22 @@ USING (
 ON (c.id_cliente = s.id_cliente)
 WHEN MATCHED THEN UPDATE SET c.segmento_cliente = s.segmento;
 ```
+
+Resultado del ALTER: `Table altered.`
+
+Resultado del MERGE: `3 rows merged.`
+
+Verificación:
+```sql
+SELECT nombre, segmento_cliente FROM clientes ORDER BY nombre;
+```
+| nombre | segmento_cliente |
+|--------|------------------|
+| Ana López | ALTO_VALOR |
+| María García | BASE |
+| Pedro Ruiz | MEDIO_VALOR |
+
+> 💡 Ana López (1376.00€) queda en ALTO_VALOR, Pedro Ruiz (486.50€) en MEDIO_VALOR y María García (278.95€) en BASE.
 
 ✅ **Esta columna queda incorporada al estado acumulado.**
 
@@ -100,6 +123,22 @@ FROM ranking
 WHERE rn <= 3;
 ```
 
+Resultado: `View created.`
+
+Consulta de verificación:
+```sql
+SELECT mes, producto, id_categoria, facturacion, rn FROM vw_top_productos_mes ORDER BY mes, id_categoria, rn;
+```
+| mes | producto | id_categoria | facturacion | rn |
+|-----|----------|-------------|-------------|-----|
+| 2025-01-01 | Laptop Pro | 1 | 1220.00 | 1 |
+| 2025-01-01 | Ratón Inalámbrico | 1 | 136.50 | 2 |
+| 2025-01-01 | Lámpara LED | 2 | 81.00 | 1 |
+| 2025-01-01 | Camiseta Básica | 3 | 99.95 | 1 |
+| 2025-02-01 | Monitor 4K | 1 | 350.00 | 1 |
+| 2025-02-01 | Teclado Mecánico | 1 | 75.00 | 2 |
+| 2025-02-01 | Zapatillas Running | 3 | 179.00 | 1 |
+
 </details>
 
 ---
@@ -128,6 +167,10 @@ FROM comparativa
 WHERE ventas_mes_anterior IS NOT NULL
   AND ventas < ventas_mes_anterior * 0.70;
 ```
+
+Resultado: no rows selected.
+
+> 💡 Con los datos actuales del curso (solo 2 meses de pedidos: enero y febrero 2025), ningún producto muestra una caída superior al 30%. Si un producto vendiera 1000€ en enero y 600€ en febrero (caída del 40%), sí aparecería.
 
 </details>
 

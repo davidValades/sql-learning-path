@@ -51,8 +51,23 @@ CREATE TABLE pedidos (
 );
 ```
 
-</details>
+Salida esperada al ejecutar en orden:
+```
+Table created.  -- clientes
+Table created.  -- categorias
+Table created.  -- productos
+Table created.  -- pedidos
+```
 
+Modelo resultante (4 tablas en 3NF):
+| Tabla | PK | FK | Dependencias eliminadas |
+|-------|----|----|------------------------|
+| clientes | id_cliente | — | Datos de cliente separados |
+| categorias | id_categoria | — | Nombre categoría no se repite |
+| productos | id_producto | id_categoria → categorias | Categoría referenciada, no duplicada |
+| pedidos | id_pedido | id_cliente → clientes, id_producto → productos | Sin datos redundantes de cliente ni producto |
+
+</details>
 ---
 
 ## Ejercicio 2 — Evolución de esquema con ALTER TABLE
@@ -73,6 +88,23 @@ ALTER TABLE clientes
   ADD CONSTRAINT ck_clientes_email_basico
   CHECK (INSTR(email, '@') > 1);
 ```
+
+Salida esperada:
+```
+Table altered.
+Table altered.
+```
+
+Verificación:
+```sql
+SELECT column_name, data_default FROM user_tab_columns
+WHERE table_name = 'CLIENTES' AND column_name = 'FECHA_ALTA';
+```
+| column_name | data_default |
+|-------------|-------------|
+| FECHA_ALTA | SYSDATE |
+
+> 💡 Si intentas insertar un email sin '@' (ej: `'correo_invalido'`), Oracle rechazará el INSERT con `ORA-02290: check constraint violated`.
 
 ✅ **Este cambio queda vigente para todos los temas posteriores.**
 
@@ -100,6 +132,23 @@ CREATE TABLE direcciones_cliente (
 );
 ```
 
+Salida esperada:
+```
+Table created.
+```
+
+Estructura de la nueva tabla:
+| Columna | Tipo | Restricción |
+|---------|------|-------------|
+| id_direccion | NUMBER | PRIMARY KEY |
+| id_cliente | NUMBER | FK → clientes, NOT NULL |
+| direccion | VARCHAR2(200) | NOT NULL |
+| ciudad | VARCHAR2(80) | NOT NULL |
+| cp | VARCHAR2(10) | (opcional) |
+| principal | CHAR(1) | DEFAULT 'N', CHECK ('S'/'N') |
+
+> 💡 Cada cliente puede tener múltiples filas en `direcciones_cliente`, resolviendo el atributo multivalor sin violar 1NF.
+
 </details>
 
 ---
@@ -117,6 +166,20 @@ Orden recomendado:
 3. `productos`
 4. `pedidos`
 5. `direcciones_cliente`
+
+Salida esperada (ejecución en orden correcto):
+```
+Table created.  -- 1. clientes (sin dependencias)
+Table created.  -- 2. categorias (sin dependencias)
+Table created.  -- 3. productos (FK → categorias ✅ ya existe)
+Table created.  -- 4. pedidos (FK → clientes ✅, FK → productos ✅)
+Table created.  -- 5. direcciones_cliente (FK → clientes ✅)
+```
+
+Si se intenta crear `pedidos` antes que `clientes`:
+```
+ORA-02270: no matching unique or primary key for this column-list
+```
 
 > Si creas `pedidos` antes que `clientes` y `productos`, fallarán las FK.
 

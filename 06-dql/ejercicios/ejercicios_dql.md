@@ -14,6 +14,14 @@ SELECT nombre, precio
 FROM productos;
 ```
 
+Resultado:
+| nombre | precio |
+|--------|--------|
+| Laptop Pro | 1220.00 |
+| Ratón Inalámbrico | 45.50 |
+| Sofá de Cuero | 405.00 |
+| Lámpara LED | 40.50 |
+
 </details>
 
 ---
@@ -33,6 +41,8 @@ WHERE fecha_pedido >= DATE '2024-01-01'
   AND total > 100;
 ```
 
+Resultado: no rows selected (la tabla `pedidos` aún no tiene datos en este punto del curso; se poblará en el Tema 09).
+
 </details>
 
 ---
@@ -50,6 +60,16 @@ FROM productos
 ORDER BY precio DESC
 FETCH FIRST 5 ROWS ONLY;
 ```
+
+Resultado:
+| id_producto | nombre | precio |
+|-------------|--------|--------|
+| 10 | Laptop Pro | 1220.00 |
+| 12 | Sofá de Cuero | 405.00 |
+| 11 | Ratón Inalámbrico | 45.50 |
+| 13 | Lámpara LED | 40.50 |
+
+> 💡 Solo hay 4 productos en este punto del curso, así que `FETCH FIRST 5` devuelve los 4.
 
 </details>
 

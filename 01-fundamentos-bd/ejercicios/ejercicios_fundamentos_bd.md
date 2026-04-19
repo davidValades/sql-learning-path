@@ -18,6 +18,14 @@
 - PostgreSQL → **SGBDR**
 - Conjunto de tablas relacionadas → **BD relacional**
 
+Salida esperada (clasificación):
+| Elemento | Tipo |
+|----------|------|
+| Oracle Database | SGBDR |
+| Archivo `.csv` | Archivo de datos (no SGBD) |
+| PostgreSQL | SGBDR |
+| Conjunto de tablas relacionadas | BD relacional |
+
 </details>
 
 ---
@@ -35,6 +43,13 @@
 1. Hay **4 columnas**.
 2. Una fila representa **un empleado**.
 3. `id_empleado` es la mejor candidata a **PRIMARY KEY**.
+
+Salida esperada:
+| Pregunta | Respuesta |
+|----------|-----------|
+| ¿Cuántas columnas? | 4 (id_empleado, nombre, salario, fecha_ingreso) |
+| ¿Qué representa una fila? | Un empleado individual |
+| ¿Candidata a PK? | `id_empleado` (identificador único numérico) |
 
 </details>
 
@@ -66,6 +81,21 @@ CREATE TABLE pedidos (
     FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente)
 );
 ```
+
+Salida esperada al ejecutar en Oracle:
+```
+Table created.
+Table created.
+```
+
+Estructura resultante:
+| Tabla | Columna | Tipo de clave/restricción |
+|-------|---------|--------------------------|
+| clientes | id_cliente | PRIMARY KEY |
+| clientes | email | UNIQUE |
+| pedidos | id_pedido | PRIMARY KEY |
+| pedidos | id_cliente | FOREIGN KEY → clientes(id_cliente) |
+| pedidos | total | CHECK (total >= 0) |
 
 </details>
 

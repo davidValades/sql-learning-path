@@ -18,6 +18,21 @@ QUOTA 50M ON users;
 GRANT CREATE SESSION TO analista_reportes;
 ```
 
+Salida esperada:
+```
+User created.
+Grant succeeded.
+```
+
+Verificación:
+```sql
+SELECT username, default_tablespace, account_status
+FROM dba_users WHERE username = 'ANALISTA_REPORTES';
+```
+| username | default_tablespace | account_status |
+|----------|-------------------|----------------|
+| ANALISTA_REPORTES | USERS | OPEN |
+
 </details>
 
 ---
@@ -33,6 +48,14 @@ GRANT CREATE SESSION TO analista_reportes;
 GRANT SELECT ON ventas_mensuales TO analista_reportes;
 REVOKE SELECT ON ventas_mensuales FROM analista_reportes;
 ```
+
+Salida esperada:
+```
+Grant succeeded.
+Revoke succeeded.
+```
+
+> 💡 Tras el REVOKE, si `analista_reportes` intenta `SELECT * FROM ventas_mensuales`, obtendrá: `ORA-00942: table or view does not exist`.
 
 </details>
 
@@ -51,6 +74,24 @@ GRANT SELECT ON clientes TO rol_soporte_lectura;
 GRANT SELECT ON pedidos TO rol_soporte_lectura;
 GRANT rol_soporte_lectura TO usuario_soporte;
 ```
+
+Salida esperada:
+```
+Role created.
+Grant succeeded.
+Grant succeeded.
+Grant succeeded.
+```
+
+Verificación:
+```sql
+SELECT * FROM dba_role_privs WHERE grantee = 'USUARIO_SOPORTE';
+```
+| grantee | granted_role | admin_option |
+|---------|-------------|-------------|
+| USUARIO_SOPORTE | ROL_SOPORTE_LECTURA | NO |
+
+> 💡 Ahora `usuario_soporte` puede hacer SELECT sobre `clientes` y `pedidos`, pero no INSERT, UPDATE ni DELETE.
 
 </details>
 
