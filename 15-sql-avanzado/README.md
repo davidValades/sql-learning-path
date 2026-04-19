@@ -750,6 +750,6 @@ JOIN citas c ON m.id_medico = c.id_medico;
 
 <div align="center">
 
-⬅️ [**Tema 14: DCL y Seguridad**](../14-dcl-seguridad) · 🏠 [**Índice del Curso**](../README.md) · [**Tema 16: PL/SQL →**](../16-plsql)
+⬅️ [**🏆 Proyecto del Tema 14**](../14-dcl-seguridad/proyectos/proyecto_dcl_seguridad.md) · 🏠 [**Índice del Curso**](../README.md) · [**📝 Ejercicios del Tema 15 →**](ejercicios/ejercicios_sql_avanzado.md)
 
 </div>

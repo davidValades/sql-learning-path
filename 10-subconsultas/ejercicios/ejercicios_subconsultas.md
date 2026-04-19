@@ -343,6 +343,6 @@ Resultado:
 
 <div align="center">
 
-⬅️ [**Volver al Tema 10**](../README.md) · 🏠 [**Índice del Curso**](../../README.md) · [**Proyecto Subconsultas →**](../proyectos/proyecto_subconsultas.md)
+⬅️ [**Tema 10: Subconsultas**](../README.md) · 🏠 [**Índice del Curso**](../../README.md) · [**🏆 Proyecto del Tema 10 →**](../proyectos/proyecto_subconsultas.md)
 
 </div>

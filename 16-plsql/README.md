@@ -38,6 +38,6 @@ PL/SQL (Procedural Language/SQL) es el lenguaje de programación procedural de O
 
 <div align="center">
 
-⬅️ [**Tema 15: SQL Avanzado**](../15-sql-avanzado) · 🏠 [**Índice del Curso**](../README.md) · [**Tema 17: Optimización de Consultas →**](../17-optimizacion)
+⬅️ [**🏆 Proyecto del Tema 15**](../15-sql-avanzado/proyectos/proyecto_sql_avanzado.md) · 🏠 [**Índice del Curso**](../README.md) · [**📝 Ejercicios del Tema 16 →**](ejercicios/ejercicios_plsql.md)
 
 </div>

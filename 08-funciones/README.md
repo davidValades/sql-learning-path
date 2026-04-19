@@ -593,6 +593,6 @@ Cat 2 (Hogar) no supera 5000: (405*0) + (40.50*30) = 0 + 1215 = 1215.00
 
 <div align="center">
 
-⬅️ [**Tema 07: Operadores Lógicos y Filtros**](../07-operadores) · 🏠 [**Índice del Curso**](../README.md) · [**Tema 09 →**](../09-joins)
+⬅️ [**🏆 Proyecto del Tema 07**](../07-operadores/proyectos/proyecto_operadores.md) · 🏠 [**Índice del Curso**](../README.md) · [**📝 Ejercicios del Tema 08 →**](ejercicios/ejercicios_funciones.md)
 
 </div>

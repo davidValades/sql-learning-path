@@ -79,6 +79,6 @@ Comparación multiplataforma:
 
 <div align="center">
 
-⬅️ [**Tema 18**](../README.md) · 🏠 [**Índice del Curso**](../../README.md) · [**🏆 Proyecto del Tema 18 →**](../proyectos/proyecto_ecosistema_sql.md)
+⬅️ [**Tema 18: Ecosistema SQL**](../README.md) · 🏠 [**Índice del Curso**](../../README.md) · [**🏆 Proyecto del Tema 18 →**](../proyectos/proyecto_ecosistema_sql.md)
 
 </div>

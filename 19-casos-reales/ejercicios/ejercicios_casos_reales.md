@@ -103,6 +103,6 @@ Resultado:
 
 <div align="center">
 
-⬅️ [**Tema 19**](../README.md) · 🏠 [**Índice del Curso**](../../README.md) · [**🏆 Proyecto Final del Tema 19 →**](../proyectos/proyecto_casos_reales.md)
+⬅️ [**Tema 19: Casos Reales y Proyectos Finales**](../README.md) · 🏠 [**Índice del Curso**](../../README.md) · [**🏆 Proyecto del Tema 19 →**](../proyectos/proyecto_casos_reales.md)
 
 </div>

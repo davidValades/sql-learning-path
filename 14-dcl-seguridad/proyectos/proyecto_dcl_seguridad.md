@@ -40,6 +40,6 @@ Genera consultas sobre vistas de diccionario (`DBA_SYS_PRIVS`, `DBA_TAB_PRIVS`, 
 
 <div align="center">
 
-⬅️ [**🏋️ Ejercicios del Tema 14**](../ejercicios/ejercicios_dcl_seguridad.md) · 🏠 [**Tema 14**](../README.md) · [**Tema 15: SQL Avanzado →**](../../15-sql-avanzado)
+⬅️ [**📝 Ejercicios del Tema 14**](../ejercicios/ejercicios_dcl_seguridad.md) · 🏠 [**Índice del Curso**](../../README.md) · [**Tema 15: SQL Avanzado (Window Functions y CTEs) →**](../../15-sql-avanzado/README.md)
 
 </div>

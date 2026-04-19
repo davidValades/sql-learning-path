@@ -370,6 +370,6 @@ COMMIT;
 
 <div align="center">
 
-⬅️ [**Volver al Tema 13**](../README.md) · 🏠 [**Índice del Curso**](../../README.md) · [**Proyecto Transacciones →**](../proyectos/proyecto_transacciones.md)
+⬅️ [**Tema 13: Transacciones y Propiedades ACID**](../README.md) · 🏠 [**Índice del Curso**](../../README.md) · [**🏆 Proyecto del Tema 13 →**](../proyectos/proyecto_transacciones.md)
 
 </div>

@@ -48,6 +48,6 @@
 
 <div align="center">
 
-⬅️ [**Tema 13: Transacciones y Propiedades ACID**](../13-transacciones-acid) · 🏠 [**Índice del Curso**](../README.md) · [**Tema 15: SQL Avanzado →**](../15-sql-avanzado)
+⬅️ [**📝 Ejercicios ACID del Tema 13**](../13-transacciones-acid/ejercicios/ejercicios_acid.md) · 🏠 [**Índice del Curso**](../README.md) · [**📝 Ejercicios del Tema 14 →**](ejercicios/ejercicios_dcl_seguridad.md)
 
 </div>

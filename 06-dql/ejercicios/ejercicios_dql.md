@@ -77,6 +77,6 @@ Resultado:
 
 <div align="center">
 
-⬅️ [**Tema 06**](../README.md) · 🏠 [**Índice del Curso**](../../README.md) · [**🏆 Proyectos del Tema 06 →**](../proyectos/proyecto_dql_basico.md)
+⬅️ [**Tema 06: DQL Básico (Data Query Language)**](../README.md) · 🏠 [**Índice del Curso**](../../README.md) · [**🏆 Siguiente Proyecto →**](../proyectos/proyecto_dql_basico.md)
 
 </div>

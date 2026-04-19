@@ -657,6 +657,6 @@ Si A ejecuta primero (sin COMMIT), ¿qué le pasa a B? ¿Cuál es el estado fina
 
 <div align="center">
 
-⬅️ [**Tema 12: Indexación**](../12-indexacion) · 🏠 [**Índice del Curso**](../README.md) · [**Tema 14: DCL y Seguridad →**](../14-dcl-seguridad)
+⬅️ [**🏆 Proyecto del Tema 12**](../12-indexacion/proyectos/proyecto_indexacion.md) · 🏠 [**Índice del Curso**](../README.md) · [**📝 Ejercicios del Tema 13 →**](ejercicios/ejercicios_transacciones.md)
 
 </div>

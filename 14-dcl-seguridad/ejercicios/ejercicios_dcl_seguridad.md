@@ -99,6 +99,6 @@ SELECT * FROM dba_role_privs WHERE grantee = 'USUARIO_SOPORTE';
 
 <div align="center">
 
-⬅️ [**Tema 14**](../README.md) · 🏠 [**Índice del Curso**](../../README.md) · [**🏆 Proyecto del Tema 14 →**](../proyectos/proyecto_dcl_seguridad.md)
+⬅️ [**Tema 14: DCL y Seguridad**](../README.md) · 🏠 [**Índice del Curso**](../../README.md) · [**🏆 Proyecto del Tema 14 →**](../proyectos/proyecto_dcl_seguridad.md)
 
 </div>

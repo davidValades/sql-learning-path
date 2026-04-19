@@ -270,6 +270,6 @@ WHERE distancia_total_km = (SELECT MAX(distancia_total_km) FROM flota);
 
 <div align="center">
 
-⬅️ [**Ejercicios Vistas**](../ejercicios/ejercicios_vistas.md) · 🏠 [**Volver al Tema 11**](../README.md) · [**Tema 12: Indexación →**](../../12-indexacion)
+⬅️ [**📝 Ejercicios del Tema 11**](../ejercicios/ejercicios_vistas.md) · 🏠 [**Índice del Curso**](../../README.md) · [**Tema 12: Indexación →**](../../12-indexacion/README.md)
 
 </div>

@@ -785,6 +785,6 @@ Resultado:
 
 <div align="center">
 
-⬅️ [**Tema 08: Funciones Nativas de Oracle**](../08-funciones) · 🏠 [**Índice del Curso**](../README.md) · [**Tema 10: Subconsultas →**](../10-subconsultas)
+⬅️ [**🏆 Proyecto del Tema 08**](../08-funciones/proyectos/proyecto_funciones.md) · 🏠 [**Índice del Curso**](../README.md) · [**📝 Ejercicios del Tema 09 →**](ejercicios/ejercicios_joins.md)
 
 </div>

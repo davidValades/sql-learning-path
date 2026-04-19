@@ -104,6 +104,6 @@ COMMIT;
 
 <div align="center">
 
-⬅️ [**Volver al Temario**](../README.md) · 🏠 [**Índice del Curso**](../../README.md) · [**Siguiente Proyecto →**](./proyecto_DML_parte2.md)
+⬅️ [**📝 Ejercicios del Tema 05**](../ejercicios/ejercicios_dml.md) · 🏠 [**Índice del Curso**](../../README.md) · [**🏆 Siguiente Proyecto →**](proyecto_DML_parte2.md)
 
 </div>

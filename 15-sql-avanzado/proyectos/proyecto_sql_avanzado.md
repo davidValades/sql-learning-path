@@ -82,6 +82,6 @@ Casos mínimos a cargar:
 
 <div align="center">
 
-⬅️ [**🏋️ Ejercicios del Tema 15**](../ejercicios/ejercicios_sql_avanzado.md) · 🏠 [**Tema 15**](../README.md) · [**Tema 16: PL/SQL →**](../../16-plsql/README.md)
+⬅️ [**📝 Ejercicios del Tema 15**](../ejercicios/ejercicios_sql_avanzado.md) · 🏠 [**Índice del Curso**](../../README.md) · [**Tema 16: PL/SQL →**](../../16-plsql/README.md)
 
 </div>

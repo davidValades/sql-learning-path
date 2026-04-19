@@ -591,6 +591,6 @@ SELECT * FROM pacientes;
 
 <div align="center">
 
-⬅️ [**Tema 10: Subconsultas**](../10-subconsultas) · 🏠 [**Índice del Curso**](../README.md) · [**Tema 12: Indexación →**](../12-indexacion)
+⬅️ [**🏆 Proyecto del Tema 10**](../10-subconsultas/proyectos/proyecto_subconsultas.md) · 🏠 [**Índice del Curso**](../README.md) · [**📝 Ejercicios del Tema 11 →**](ejercicios/ejercicios_vistas.md)
 
 </div>

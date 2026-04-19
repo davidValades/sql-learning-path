@@ -78,8 +78,6 @@ COMMIT;
 
 <div align="center">
 
-### ✅ ¡Has completado los proyectos del Tema 05!
-
-⬅️ [**Proyecto Anterior**](./proyecto_triatlon_dml.md) · 🏠 [**Índice del Curso**](../../README.md) · [**Tema 06: DQL Básico (Data Query Language) →**](../../06-dql)
+⬅️ [**🏆 Proyecto Anterior**](proyecto_triatlon_dml.md) · 🏠 [**Índice del Curso**](../../README.md) · [**Tema 06: DQL Básico (Data Query Language) →**](../../06-dql/README.md)
 
 </div>

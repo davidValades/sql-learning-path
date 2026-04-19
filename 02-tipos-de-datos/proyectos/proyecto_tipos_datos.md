@@ -43,6 +43,6 @@ Inserta:
 
 <div align="center">
 
-⬅️ [**🏋️ Ejercicios del Tema 02**](../ejercicios/ejercicios_tipos_datos.md) · 🏠 [**Tema 02**](../README.md) · [**Tema 03: Normalización y Modelado ER →**](../../03-normalizacion)
+⬅️ [**📝 Ejercicios del Tema 02**](../ejercicios/ejercicios_tipos_datos.md) · 🏠 [**Índice del Curso**](../../README.md) · [**Tema 03: Normalización y Modelado ER →**](../../03-normalizacion/README.md)
 
 </div>

@@ -210,6 +210,6 @@ ALTER INDEX idx_pedidos_producto REBUILD;
 
 <div align="center">
 
-⬅️ [**Volver al Tema 12**](../README.md) · 🏠 [**Índice del Curso**](../../README.md) · [**Tema 13: Transacciones y Propiedades ACID →**](../../13-transacciones-acid)
+⬅️ [**Tema 12: Indexación**](../README.md) · 🏠 [**Índice del Curso**](../../README.md) · [**🏆 Proyecto del Tema 12 →**](../proyectos/proyecto_indexacion.md)
 
 </div>

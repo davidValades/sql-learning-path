@@ -805,6 +805,6 @@ Paso 6: Normalizar
 
 <div align="center">
 
-⬅️ [**Tema 02: Tipos de Datos**](../02-tipos-de-datos) · 🏠 [**Índice del Curso**](../README.md) · [**Tema 04: DDL →**](../04-ddl)
+⬅️ [**🏆 Proyecto del Tema 02**](../02-tipos-de-datos/proyectos/proyecto_tipos_datos.md) · 🏠 [**Índice del Curso**](../README.md) · [**📝 Ejercicios del Tema 03 →**](ejercicios/ejercicios_normalizacion.md)
 
 </div>

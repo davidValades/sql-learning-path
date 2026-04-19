@@ -269,6 +269,6 @@ Resultado:
 
 <div align="center">
 
-⬅️ [**Volver al Tema 11**](../README.md) · 🏠 [**Índice del Curso**](../../README.md) · [**Proyecto Vistas →**](../proyectos/proyecto_vistas.md)
+⬅️ [**Tema 11: Vistas y Objetos de BD**](../README.md) · 🏠 [**Índice del Curso**](../../README.md) · [**🏆 Proyecto del Tema 11 →**](../proyectos/proyecto_vistas.md)
 
 </div>

@@ -612,6 +612,6 @@ Resultado:
 
 <div align="center">
 
-⬅️ [**Tema 06: DQL**](../06-dql) · 🏠 [**Índice del Curso**](../README.md) · [**Tema 08 →**](../08-funciones)
+⬅️ [**🏆 Proyecto Anterior**](../06-dql/proyectos/proyecto_dql_medio.md) · 🏠 [**Índice del Curso**](../README.md) · [**📝 Ejercicios del Tema 07 →**](ejercicios/ejercicios_operadores.md)
 
 </div>

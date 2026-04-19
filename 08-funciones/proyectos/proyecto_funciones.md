@@ -350,6 +350,6 @@ Resultado (en 2025):
 
 <div align="center">
 
-⬅️ [**Volver a Ejercicios**](../ejercicios/ejercicios_funciones.md) · 🏠 [**Índice del Curso**](../../README.md) · [**Tema 09 →**](../../09-joins)
+⬅️ [**📝 Ejercicios del Tema 08**](../ejercicios/ejercicios_funciones.md) · 🏠 [**Índice del Curso**](../../README.md) · [**Tema 09: Relaciones y JOINs →**](../../09-joins/README.md)
 
 </div>

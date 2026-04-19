@@ -47,6 +47,6 @@ Especifica 5 reglas mínimas:
 
 <div align="center">
 
-⬅️ [**🏋️ Ejercicios del Tema 01**](../ejercicios/ejercicios_fundamentos_bd.md) · 🏠 [**Tema 01**](../README.md) · [**Tema 02: Tipos de Datos →**](../../02-tipos-de-datos)
+⬅️ [**📝 Ejercicios del Tema 01**](../ejercicios/ejercicios_fundamentos_bd.md) · 🏠 [**Índice del Curso**](../../README.md) · [**Tema 02: Tipos de Datos (Oracle) →**](../../02-tipos-de-datos/README.md)
 
 </div>

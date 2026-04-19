@@ -265,13 +265,14 @@ SELECT COUNT(*) FROM logs_sistema;
 | # | Paso | Recurso |
 |:-:|------|---------|
 | 1️⃣ | Estudiar el temario | 📖 _Estás aquí_ |
-| 2️⃣ | Completar los proyectos | 🏆 [Ir a Proyectos →](./proyectos) |
-| 3️⃣ | Avanzar al siguiente tema | ➡️ [Tema 05: DML (Data Manipulation Language)](../05-dml) |
+| 2️⃣ | Practicar ejercicios | 📝 [Ejercicios de DDL](./ejercicios/ejercicios.md) |
+| 3️⃣ | Completar los proyectos | 🏆 [Proyecto 1: E-Commerce](./proyectos/proyecto_ecommerce_ddl.md) |
+| 4️⃣ | Avanzar al siguiente tema | ➡️ [Tema 05: DML (Data Manipulation Language)](../05-dml) |
 
 ---
 
 <div align="center">
 
-⬅️ [**Tema 03: Normalización y Modelado ER**](../03-normalizacion) · 🏠 [**Índice del Curso**](../README.md) · [**🏆 Proyectos →**](./proyectos/proyecto_ecommerce_ddl.md)
+⬅️ [**🏆 Proyecto del Tema 03**](../03-normalizacion/proyectos/proyecto_normalizacion.md) · 🏠 [**Índice del Curso**](../README.md) · [**📝 Ejercicios del Tema 04 →**](ejercicios/ejercicios.md)
 
 </div>

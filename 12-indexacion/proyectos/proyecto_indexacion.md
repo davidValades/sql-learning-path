@@ -39,6 +39,6 @@ Para cada consulta:
 
 <div align="center">
 
-⬅️ [**🏋️ Ejercicios de Indexación**](../ejercicios/ejercicios_indexacion.md) · 🏠 [**Tema 12**](../README.md) · [**Tema 13: Transacciones y Propiedades ACID →**](../../13-transacciones-acid)
+⬅️ [**📝 Ejercicios del Tema 12**](../ejercicios/ejercicios_indexacion.md) · 🏠 [**Índice del Curso**](../../README.md) · [**Tema 13: Transacciones y Propiedades ACID →**](../../13-transacciones-acid/README.md)
 
 </div>

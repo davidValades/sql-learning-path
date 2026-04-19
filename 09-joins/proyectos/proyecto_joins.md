@@ -321,6 +321,6 @@ Resultado:
 
 <div align="center">
 
-⬅️ [**Ejercicios JOINs**](../ejercicios/ejercicios_joins.md) · 🏠 [**Volver al Tema 09**](../README.md) · [**Tema 10: Subconsultas →**](../../10-subconsultas)
+⬅️ [**📝 Ejercicios del Tema 09**](../ejercicios/ejercicios_joins.md) · 🏠 [**Índice del Curso**](../../README.md) · [**Tema 10: Subconsultas →**](../../10-subconsultas/README.md)
 
 </div>

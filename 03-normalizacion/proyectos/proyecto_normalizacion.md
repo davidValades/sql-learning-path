@@ -81,6 +81,6 @@ A partir de este punto:
 
 <div align="center">
 
-⬅️ [**🏋️ Ejercicios del Tema 03**](../ejercicios/ejercicios_normalizacion.md) · 🏠 [**Tema 03**](../README.md) · [**Tema 04: DDL →**](../../04-ddl/README.md)
+⬅️ [**📝 Ejercicios del Tema 03**](../ejercicios/ejercicios_normalizacion.md) · 🏠 [**Índice del Curso**](../../README.md) · [**Tema 04: DDL (Data Definition Language) →**](../../04-ddl/README.md)
 
 </div>

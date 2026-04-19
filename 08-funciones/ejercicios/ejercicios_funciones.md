@@ -422,6 +422,6 @@ Resultado:
 
 <div align="center">
 
-⬅️ [**Volver al Temario**](../README.md) · 🏠 [**Índice del Curso**](../../README.md) · [**🏆 Proyecto →**](../proyectos/proyecto_funciones.md)
+⬅️ [**Tema 08: Funciones Nativas de Oracle**](../README.md) · 🏠 [**Índice del Curso**](../../README.md) · [**🏆 Proyecto del Tema 08 →**](../proyectos/proyecto_funciones.md)
 
 </div>

@@ -40,6 +40,6 @@ Una empresa de retail-hospitalidad fusiona tres sistemas legados y necesita:
 
 <div align="center">
 
-⬅️ [**🏋️ Ejercicios del Tema 19**](../ejercicios/ejercicios_casos_reales.md) · 🏠 [**Tema 19**](../README.md) · [**Índice del Curso**](../../README.md)
+⬅️ [**📝 Ejercicios del Tema 19**](../ejercicios/ejercicios_casos_reales.md) · 🏠 [**Índice del Curso**](../../README.md)
 
 </div>
