@@ -111,6 +111,6 @@ Comparación:
 
 <div align="center">
 
-⬅️ [**Tema 17**](../README.md) · 🏠 [**Índice del Curso**](../../README.md) · [**🏆 Proyecto del Tema 17 →**](../proyectos/proyecto_optimizacion.md)
+⬅️ [**Tema 17: Optimización de Consultas**](../README.md) · 🏠 [**Índice del Curso**](../../README.md) · [**🏆 Proyecto del Tema 17 →**](../proyectos/proyecto_optimizacion.md)
 
 </div>

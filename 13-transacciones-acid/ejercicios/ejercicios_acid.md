@@ -302,6 +302,6 @@ COMMIT; -- Liberar la transacción SERIALIZABLE
 
 <div align="center">
 
-⬅️ [**Volver al Tema 13**](../README.md) · 🏠 [**Índice del Curso**](../../README.md)
+⬅️ [**🏆 Proyecto del Tema 13**](../proyectos/proyecto_transacciones.md) · 🏠 [**Índice del Curso**](../../README.md) · [**Tema 14: DCL y Seguridad →**](../../14-dcl-seguridad/README.md)
 
 </div>

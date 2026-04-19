@@ -187,6 +187,6 @@ Respuesta esperada:
 
 <div align="center">
 
-⬅️ [**Tema 01: Fundamentos de Bases de Datos**](../01-fundamentos-bd) · 🏠 [**Índice del Curso**](../README.md) · [**Tema 03: Normalización y Modelado ER →**](../03-normalizacion)
+⬅️ [**🏆 Proyecto del Tema 01**](../01-fundamentos-bd/proyectos/proyecto_fundamentos_bd.md) · 🏠 [**Índice del Curso**](../README.md) · [**📝 Ejercicios del Tema 02 →**](ejercicios/ejercicios_tipos_datos.md)
 
 </div>

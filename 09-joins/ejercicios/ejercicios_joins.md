@@ -427,6 +427,6 @@ Resultado:
 
 <div align="center">
 
-⬅️ [**Volver al Tema 09**](../README.md) · 🏠 [**Índice del Curso**](../../README.md) · [**Proyecto JOINs →**](../proyectos/proyecto_joins.md)
+⬅️ [**Tema 09: Relaciones y JOINs**](../README.md) · 🏠 [**Índice del Curso**](../../README.md) · [**🏆 Proyecto del Tema 09 →**](../proyectos/proyecto_joins.md)
 
 </div>

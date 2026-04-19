@@ -58,6 +58,6 @@ ORDER BY anio_fabricacion ASC;
 
 <div align="center">
 
-⬅️ [**Volver al Temario**](../README.md) · 🏠 [**Índice del Curso**](../../README.md) · [**Siguiente Proyecto →**](./proyecto_dql_medio.md)
+⬅️ [**📝 Ejercicios del Tema 06**](../ejercicios/ejercicios_dql.md) · 🏠 [**Índice del Curso**](../../README.md) · [**🏆 Siguiente Proyecto →**](proyecto_dql_medio.md)
 
 </div>

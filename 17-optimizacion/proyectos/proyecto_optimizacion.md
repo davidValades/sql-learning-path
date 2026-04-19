@@ -38,6 +38,6 @@ Entrega comparativa antes/después con:
 
 <div align="center">
 
-⬅️ [**🏋️ Ejercicios del Tema 17**](../ejercicios/ejercicios_optimizacion.md) · 🏠 [**Tema 17**](../README.md) · [**Tema 18: Ecosistema SQL →**](../../18-ecosistema-sql)
+⬅️ [**📝 Ejercicios del Tema 17**](../ejercicios/ejercicios_optimizacion.md) · 🏠 [**Índice del Curso**](../../README.md) · [**Tema 18: Ecosistema SQL →**](../../18-ecosistema-sql/README.md)
 
 </div>

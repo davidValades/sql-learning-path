@@ -103,6 +103,6 @@ Estructura resultante:
 
 <div align="center">
 
-⬅️ [**Tema 01**](../README.md) · 🏠 [**Índice del Curso**](../../README.md) · [**🏆 Proyecto del Tema 01 →**](../proyectos/proyecto_fundamentos_bd.md)
+⬅️ [**Tema 01: Fundamentos de Bases de Datos**](../README.md) · 🏠 [**Índice del Curso**](../../README.md) · [**🏆 Proyecto del Tema 01 →**](../proyectos/proyecto_fundamentos_bd.md)
 
 </div>

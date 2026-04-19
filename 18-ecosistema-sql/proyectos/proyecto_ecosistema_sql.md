@@ -41,6 +41,6 @@ Incluye validaciones:
 
 <div align="center">
 
-⬅️ [**🏋️ Ejercicios del Tema 18**](../ejercicios/ejercicios_ecosistema_sql.md) · 🏠 [**Tema 18**](../README.md) · [**Tema 19: Casos Reales y Proyectos Finales →**](../../19-casos-reales)
+⬅️ [**📝 Ejercicios del Tema 18**](../ejercicios/ejercicios_ecosistema_sql.md) · 🏠 [**Índice del Curso**](../../README.md) · [**Tema 19: Casos Reales y Proyectos Finales →**](../../19-casos-reales/README.md)
 
 </div>

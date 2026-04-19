@@ -76,8 +76,6 @@ TRUNCATE TABLE vuelos_prueba_sistema;
 
 <div align="center">
 
-### ✅ ¡Has completado los proyectos del Tema 04!
-
-⬅️ [**Proyecto Anterior**](./proyecto_hospital_ddl.md) · 🏠 [**Índice del Curso**](../../README.md) · [**Tema 05: DML (Data Manipulation Language) →**](../../05-dml)
+⬅️ [**🏆 Proyecto Anterior**](proyecto_hospital_ddl.md) · 🏠 [**Índice del Curso**](../../README.md) · [**Tema 05: DML (Data Manipulation Language) →**](../../05-dml/README.md)
 
 </div>

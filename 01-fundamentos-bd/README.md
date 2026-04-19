@@ -478,6 +478,6 @@ Respuesta esperada:
 
 <div align="center">
 
-🏠 [**Índice del Curso**](../README.md) · [**Tema 02: Tipos de Datos (Oracle) →**](../02-tipos-de-datos)
+🏠 [**Índice del Curso**](../README.md) · [**📝 Ejercicios del Tema 01 →**](ejercicios/ejercicios_fundamentos_bd.md)
 
 </div>

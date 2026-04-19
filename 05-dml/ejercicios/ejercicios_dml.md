@@ -88,6 +88,6 @@ El conteo es el mismo que antes del DELETE, confirmando que el ROLLBACK deshizo 
 
 <div align="center">
 
-⬅️ [**Tema 05**](../README.md) · 🏠 [**Índice del Curso**](../../README.md) · [**🏆 Proyectos del Tema 05 →**](../proyectos/proyecto_triatlon_dml.md)
+⬅️ [**Tema 05: DML (Data Manipulation Language)**](../README.md) · 🏠 [**Índice del Curso**](../../README.md) · [**🏆 Siguiente Proyecto →**](../proyectos/proyecto_triatlon_dml.md)
 
 </div>

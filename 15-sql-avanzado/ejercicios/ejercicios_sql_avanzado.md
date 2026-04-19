@@ -178,6 +178,6 @@ Resultado: no rows selected.
 
 <div align="center">
 
-⬅️ [**Tema 15: SQL Avanzado**](../README.md) · 🏠 [**Índice del Curso**](../../README.md) · [**🏆 Proyecto del Tema 15 →**](../proyectos/proyecto_sql_avanzado.md)
+⬅️ [**Tema 15: SQL Avanzado (Window Functions y CTEs)**](../README.md) · 🏠 [**Índice del Curso**](../../README.md) · [**🏆 Proyecto del Tema 15 →**](../proyectos/proyecto_sql_avanzado.md)
 
 </div>

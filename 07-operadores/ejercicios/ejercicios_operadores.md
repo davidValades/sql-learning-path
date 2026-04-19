@@ -253,6 +253,6 @@ Resultado: BCNCDG (BCN, 830), BCNFCO (BCN, 850), MADLHR (MAD, 1350), MADFRA (MAD
 
 <div align="center">
 
-⬅️ [**Volver al Temario**](../README.md) · 🏠 [**Índice del Curso**](../../README.md) · [**🏆 Proyecto →**](../proyectos/proyecto_operadores.md)
+⬅️ [**Tema 07: Operadores Lógicos y Filtros**](../README.md) · 🏠 [**Índice del Curso**](../../README.md) · [**🏆 Proyecto del Tema 07 →**](../proyectos/proyecto_operadores.md)
 
 </div>

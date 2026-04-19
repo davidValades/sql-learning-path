@@ -90,6 +90,6 @@ Estructura resultante:
 
 <div align="center">
 
-⬅️ [**Tema 02**](../README.md) · 🏠 [**Índice del Curso**](../../README.md) · [**🏆 Proyecto del Tema 02 →**](../proyectos/proyecto_tipos_datos.md)
+⬅️ [**Tema 02: Tipos de Datos (Oracle)**](../README.md) · 🏠 [**Índice del Curso**](../../README.md) · [**🏆 Proyecto del Tema 02 →**](../proyectos/proyecto_tipos_datos.md)
 
 </div>

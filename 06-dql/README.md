@@ -198,13 +198,13 @@ Resultado:
 |:-:|------|---------|
 | 1️⃣ | Estudiar el temario | 📖 _Estás aquí_ |
 | 2️⃣ | Practicar ejercicios | 📝 [Ejercicios de DQL](./ejercicios/ejercicios_dql.md) |
-| 3️⃣ | Completar los proyectos | 🏆 [Ir a Proyectos →](./proyectos) |
+| 3️⃣ | Completar los proyectos | 🏆 [Proyecto 1: DQL Básico](./proyectos/proyecto_dql_basico.md) |
 | 4️⃣ | Avanzar al siguiente tema | ➡️ [Tema 07: Operadores Lógicos y Filtros](../07-operadores) |
 
 ---
 
 <div align="center">
 
-⬅️ [**Tema 05: DML (Data Manipulation Language)**](../05-dml) · 🏠 [**Índice del Curso**](../README.md) · [**🏆 Proyectos →**](./proyectos/proyecto_dql_basico.md)
+⬅️ [**🏆 Proyecto Anterior**](../05-dml/proyectos/proyecto_DML_parte2.md) · 🏠 [**Índice del Curso**](../README.md) · [**📝 Ejercicios del Tema 06 →**](ejercicios/ejercicios_dql.md)
 
 </div>

@@ -417,6 +417,6 @@ Resultado:
 
 <div align="center">
 
-⬅️ [**Ejercicios Subconsultas**](../ejercicios/ejercicios_subconsultas.md) · 🏠 [**Volver al Tema 10**](../README.md) · [**Tema 11: Vistas →**](../../11-vistas)
+⬅️ [**📝 Ejercicios del Tema 10**](../ejercicios/ejercicios_subconsultas.md) · 🏠 [**Índice del Curso**](../../README.md) · [**Tema 11: Vistas y Objetos de BD →**](../../11-vistas/README.md)
 
 </div>

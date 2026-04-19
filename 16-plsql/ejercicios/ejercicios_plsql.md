@@ -99,6 +99,6 @@ Teclado Mecánico - 75
 
 <div align="center">
 
-⬅️ [**Tema 16**](../README.md) · 🏠 [**Índice del Curso**](../../README.md) · [**🏆 Proyecto del Tema 16 →**](../proyectos/proyecto_plsql.md)
+⬅️ [**Tema 16: PL/SQL**](../README.md) · 🏠 [**Índice del Curso**](../../README.md) · [**🏆 Proyecto del Tema 16 →**](../proyectos/proyecto_plsql.md)
 
 </div>

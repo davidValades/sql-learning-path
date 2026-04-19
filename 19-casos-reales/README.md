@@ -32,6 +32,6 @@ Desafíos complejos que simulan el día a día de un Data Engineer y un DBA en p
 
 <div align="center">
 
-⬅️ [**Tema 18: Ecosistema SQL**](../18-ecosistema-sql) · 🏠 [**Índice del Curso**](../README.md)
+⬅️ [**🏆 Proyecto del Tema 18**](../18-ecosistema-sql/proyectos/proyecto_ecosistema_sql.md) · 🏠 [**Índice del Curso**](../README.md) · [**📝 Ejercicios del Tema 19 →**](ejercicios/ejercicios_casos_reales.md)
 
 </div>

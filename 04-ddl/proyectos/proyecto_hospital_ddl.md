@@ -86,6 +86,6 @@ DROP TABLE registro_visitas_old;
 
 <div align="center">
 
-⬅️ [**Proyecto Anterior**](./proyecto_ecommerce_ddl.md) · 🏠 [**Índice del Curso**](../../README.md) · [**Siguiente Proyecto →**](./proyecto_aerolinea_ddl.md)
+⬅️ [**🏆 Proyecto Anterior**](proyecto_ecommerce_ddl.md) · 🏠 [**Índice del Curso**](../../README.md) · [**🏆 Siguiente Proyecto →**](proyecto_aerolinea_ddl.md)
 
 </div>

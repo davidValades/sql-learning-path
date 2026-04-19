@@ -593,6 +593,6 @@ Resultado:
 
 <div align="center">
 
-⬅️ [**Tema 09: Relaciones y JOINs**](../09-joins) · 🏠 [**Índice del Curso**](../README.md) · [**Tema 11: Vistas y Objetos de BD →**](../11-vistas)
+⬅️ [**🏆 Proyecto del Tema 09**](../09-joins/proyectos/proyecto_joins.md) · 🏠 [**Índice del Curso**](../README.md) · [**📝 Ejercicios del Tema 10 →**](ejercicios/ejercicios_subconsultas.md)
 
 </div>

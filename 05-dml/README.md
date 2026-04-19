@@ -241,13 +241,13 @@ Resultado: no rows selected (la ruta fantasma ha sido eliminada permanentemente)
 |:-:|------|---------|
 | 1️⃣ | Estudiar el temario | 📖 _Estás aquí_ |
 | 2️⃣ | Practicar ejercicios | 📝 [Ejercicios de DML](./ejercicios/ejercicios_dml.md) |
-| 3️⃣ | Completar los proyectos | 🏆 [Ir a Proyectos →](./proyectos) |
+| 3️⃣ | Completar los proyectos | 🏆 [Proyecto 1: Triatlón DML](./proyectos/proyecto_triatlon_dml.md) |
 | 4️⃣ | Avanzar al siguiente tema | ➡️ [Tema 06: DQL Básico (Data Query Language)](../06-dql) |
 
 ---
 
 <div align="center">
 
-⬅️ [**Tema 04: DDL (Data Definition Language)**](../04-ddl) · 🏠 [**Índice del Curso**](../README.md) · [**🏆 Proyectos →**](./proyectos/proyecto_triatlon_dml.md)
+⬅️ [**🏆 Proyecto Anterior**](../04-ddl/proyectos/proyecto_aerolinea_ddl.md) · 🏠 [**Índice del Curso**](../README.md) · [**📝 Ejercicios del Tema 05 →**](ejercicios/ejercicios_dml.md)
 
 </div>

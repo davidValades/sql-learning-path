@@ -77,6 +77,6 @@ drop TABLE categorias_backup;
 
 <div align="center">
 
-⬅️ [**Volver al Temario**](../README.md) · 🏠 [**Índice del Curso**](../../README.md) · [**Siguiente Proyecto →**](./proyecto_hospital_ddl.md)
+⬅️ [**📝 Ejercicios del Tema 04**](../ejercicios/ejercicios.md) · 🏠 [**Índice del Curso**](../../README.md) · [**🏆 Siguiente Proyecto →**](proyecto_hospital_ddl.md)
 
 </div>

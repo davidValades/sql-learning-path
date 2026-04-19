@@ -256,6 +256,6 @@ Resultado:
 
 <div align="center">
 
-⬅️ [**Volver a Ejercicios**](../ejercicios/ejercicios_operadores.md) · 🏠 [**Índice del Curso**](../../README.md) · [**Tema 08 →**](../../08-funciones)
+⬅️ [**📝 Ejercicios del Tema 07**](../ejercicios/ejercicios_operadores.md) · 🏠 [**Índice del Curso**](../../README.md) · [**Tema 08: Funciones Nativas de Oracle →**](../../08-funciones/README.md)
 
 </div>

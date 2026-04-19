@@ -537,6 +537,6 @@ ALTER INDEX idx_citas_fecha REBUILD;
 
 <div align="center">
 
-⬅️ [**Tema 11: Vistas y Objetos de BD**](../11-vistas) · 🏠 [**Índice del Curso**](../README.md) · [**Tema 13: Transacciones y Propiedades ACID →**](../13-transacciones-acid)
+⬅️ [**🏆 Proyecto del Tema 11**](../11-vistas/proyectos/proyecto_vistas.md) · 🏠 [**Índice del Curso**](../README.md) · [**📝 Ejercicios del Tema 12 →**](ejercicios/ejercicios_indexacion.md)
 
 </div>

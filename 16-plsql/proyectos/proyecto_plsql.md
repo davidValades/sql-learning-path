@@ -33,6 +33,6 @@ Añade bloque `EXCEPTION` en ambos procedimientos y registra fallos en tabla de 
 
 <div align="center">
 
-⬅️ [**🏋️ Ejercicios del Tema 16**](../ejercicios/ejercicios_plsql.md) · 🏠 [**Tema 16**](../README.md) · [**Tema 17: Optimización de Consultas →**](../../17-optimizacion)
+⬅️ [**📝 Ejercicios del Tema 16**](../ejercicios/ejercicios_plsql.md) · 🏠 [**Índice del Curso**](../../README.md) · [**Tema 17: Optimización de Consultas →**](../../17-optimizacion/README.md)
 
 </div>

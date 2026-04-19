@@ -33,6 +33,6 @@ Diferencias entre motores (Oracle, PostgreSQL, SQL Server, MySQL) y herramientas
 
 <div align="center">
 
-⬅️ [**Tema 17: Optimización de Consultas**](../17-optimizacion) · 🏠 [**Índice del Curso**](../README.md) · [**Tema 19: Casos Reales y Proyectos Finales →**](../19-casos-reales)
+⬅️ [**🏆 Proyecto del Tema 17**](../17-optimizacion/proyectos/proyecto_optimizacion.md) · 🏠 [**Índice del Curso**](../README.md) · [**📝 Ejercicios del Tema 18 →**](ejercicios/ejercicios_ecosistema_sql.md)
 
 </div>

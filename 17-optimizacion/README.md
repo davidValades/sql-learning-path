@@ -33,6 +33,6 @@ Planes de ejecución (Explain Plan), cuellos de botella y mejores prácticas par
 
 <div align="center">
 
-⬅️ [**Tema 16: PL/SQL**](../16-plsql) · 🏠 [**Índice del Curso**](../README.md) · [**Tema 18: Ecosistema SQL →**](../18-ecosistema-sql)
+⬅️ [**🏆 Proyecto del Tema 16**](../16-plsql/proyectos/proyecto_plsql.md) · 🏠 [**Índice del Curso**](../README.md) · [**📝 Ejercicios del Tema 17 →**](ejercicios/ejercicios_optimizacion.md)
 
 </div>
