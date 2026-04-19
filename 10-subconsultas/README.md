@@ -55,7 +55,7 @@ WHERE salario_base > (SELECT AVG(salario_base) FROM medicos);
 -- Resultado: Dra. Sarah Adams (4000), Dra. Marta López (4500)
 
 -- Aerolínea: vuelos en la ruta más larga (subconsulta en WHERE)
-SELECT v.id_vuelo, v.id_ruta, v.fecha_hora_salida
+SELECT v.id_vuelo, v.id_ruta, v.fecha_salida
 FROM vuelos v
 INNER JOIN rutas r ON v.id_ruta = r.id_ruta
 WHERE r.distancia_km = (SELECT MAX(distancia_km) FROM rutas);
@@ -151,7 +151,7 @@ WHERE id_avion NOT IN (
     SELECT v.id_avion
     FROM vuelos v
     INNER JOIN rutas r ON v.id_ruta = r.id_ruta
-    WHERE r.origen = 'MAD'
+    WHERE r.aeropuerto_origen = 'MAD'
 );
 -- Resultado: Boeing 737 (sin vuelos), Embraer E195 (solo BCN)
 ```
@@ -254,7 +254,7 @@ Encuentra los **vuelos cuya ruta tiene una distancia mayor al promedio de distan
 <summary>👉 Haz clic aquí SOLO cuando tengas tu respuesta</summary>
 
 ```sql
-SELECT v.id_vuelo, r.origen || ' → ' || r.destino AS ruta, r.distancia_km
+SELECT v.id_vuelo, r.aeropuerto_origen || ' → ' || r.aeropuerto_destino AS ruta, r.distancia_km
 FROM vuelos v
 INNER JOIN rutas r ON v.id_ruta = r.id_ruta
 WHERE r.distancia_km > (SELECT AVG(distancia_km) FROM rutas);
@@ -434,10 +434,10 @@ WHERE precio > ALL (
 -- Resultado: Laptop Pro(1220), Sofá(405), Monitor(350), Ratón no(45.50)
 
 -- Aerolínea: rutas con distancia mayor que ALGUNA ruta desde Madrid
-SELECT id_ruta, origen || ' → ' || destino AS ruta, distancia_km
+SELECT id_ruta, aeropuerto_origen || ' → ' || aeropuerto_destino AS ruta, distancia_km
 FROM rutas
 WHERE distancia_km > ANY (
-    SELECT distancia_km FROM rutas WHERE origen = 'MAD'
+    SELECT distancia_km FROM rutas WHERE aeropuerto_origen = 'MAD'
 );
 -- Rutas desde MAD: 1350, 1420. > ANY = > 1350
 -- Resultado: JFKLAX(4000), MADFRA(1420)

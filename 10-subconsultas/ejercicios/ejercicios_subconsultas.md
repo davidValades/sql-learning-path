@@ -209,7 +209,7 @@ Muestra: `id_ruta`, `origen`, `destino`, `distancia_km`.
 <summary>👉 Haz clic aquí SOLO cuando tengas tu respuesta</summary>
 
 ```sql
-SELECT r.id_ruta, r.origen, r.destino, r.distancia_km
+SELECT r.id_ruta, r.aeropuerto_origen, r.aeropuerto_destino, r.distancia_km
 FROM rutas r
 WHERE NOT EXISTS (
     SELECT 1
@@ -305,14 +305,14 @@ Resultado:
 
 **Enunciado:** Genera un informe que muestre cada avión con su **número de vuelos y distancia total**, pero solo para aviones que cubren una **distancia total mayor a 2000 km**. Usa una inline view para el cálculo y luego cruza con la tabla `aviones` para obtener detalles.
 
-Muestra: `modelo`, `capacidad`, `anio_fabricacion`, `num_vuelos`, `distancia_total_km`.
+Muestra: `modelo`, `capacidad_pasajeros`, `anio_fabricacion`, `num_vuelos`, `distancia_total_km`.
 
 <details>
 <summary>👉 Haz clic aquí SOLO cuando tengas tu respuesta</summary>
 
 ```sql
 SELECT a.modelo,
-       a.capacidad,
+       a.capacidad_pasajeros,
        a.anio_fabricacion,
        stats.num_vuelos,
        stats.distancia_total_km
@@ -330,7 +330,7 @@ ORDER BY stats.distancia_total_km DESC;
 ```
 
 Resultado:
-| modelo | capacidad | anio_fabricacion | num_vuelos | distancia_total_km |
+| modelo | capacidad_pasajeros | anio_fabricacion | num_vuelos | distancia_total_km |
 |--------|-----------|-----------------|-----------|-------------------|
 | Boeing 777 | 350 | 2016 | 2 | 5350 |
 | Airbus A350 | 300 | 2022 | 2 | 2770 |

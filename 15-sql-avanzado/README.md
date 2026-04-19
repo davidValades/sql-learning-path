@@ -107,7 +107,7 @@ WITH vuelos_por_ruta AS (
     FROM vuelos
     GROUP BY id_ruta
 )
-SELECT r.origen, r.destino, r.distancia_km,
+SELECT r.aeropuerto_origen, r.aeropuerto_destino, r.distancia_km,
        vpr.total_vuelos, vpr.precio_medio
 FROM rutas r
 JOIN vuelos_por_ruta vpr ON r.id_ruta = vpr.id_ruta
@@ -205,7 +205,7 @@ FROM medicos m
 JOIN especialidades e ON m.id_especialidad = e.id_especialidad;
 
 -- Ejemplo aerolínea: cada vuelo con el precio promedio de su ruta
-SELECT v.id_vuelo, r.origen, r.destino, v.precio,
+SELECT v.id_vuelo, r.aeropuerto_origen, r.aeropuerto_destino, v.precio,
        ROUND(AVG(v.precio) OVER (PARTITION BY v.id_ruta), 2) AS avg_precio_ruta
 FROM vuelos v
 JOIN rutas r ON v.id_ruta = r.id_ruta;
@@ -290,12 +290,12 @@ WHERE rn = 1;
 
 -- Aerolínea: el vuelo más barato de cada ruta
 WITH vuelos_rank AS (
-    SELECT v.id_vuelo, r.origen, r.destino, v.precio, v.fecha_salida,
+    SELECT v.id_vuelo, r.aeropuerto_origen, r.aeropuerto_destino, v.precio, v.fecha_salida,
            ROW_NUMBER() OVER (PARTITION BY v.id_ruta ORDER BY v.precio ASC) AS rn
     FROM vuelos v
     JOIN rutas r ON v.id_ruta = r.id_ruta
 )
-SELECT id_vuelo, origen, destino, precio, fecha_salida
+SELECT id_vuelo, aeropuerto_origen, aeropuerto_destino, precio, fecha_salida
 FROM vuelos_rank
 WHERE rn = 1;
 
@@ -381,7 +381,7 @@ FROM medicos m
 JOIN especialidades e ON m.id_especialidad = e.id_especialidad;
 
 -- Aerolínea: ranking de vuelos por precio (los más baratos primero)
-SELECT v.id_vuelo, r.origen, r.destino, v.precio,
+SELECT v.id_vuelo, r.aeropuerto_origen, r.aeropuerto_destino, v.precio,
        DENSE_RANK() OVER (ORDER BY v.precio ASC) AS ranking_precio
 FROM vuelos v
 JOIN rutas r ON v.id_ruta = r.id_ruta;
@@ -471,13 +471,13 @@ FROM pedidos
 ORDER BY fecha_pedido;
 
 -- Aerolínea: comparar vuelos consecutivos en la misma ruta
-SELECT v.id_vuelo, r.origen, r.destino, v.fecha_salida, v.precio,
+SELECT v.id_vuelo, r.aeropuerto_origen, r.aeropuerto_destino, v.fecha_salida, v.precio,
        LAG(v.precio) OVER (PARTITION BY v.id_ruta ORDER BY v.fecha_salida) AS precio_vuelo_anterior,
        LEAD(v.precio) OVER (PARTITION BY v.id_ruta ORDER BY v.fecha_salida) AS precio_vuelo_siguiente,
        v.precio - LAG(v.precio, 1, v.precio) OVER (PARTITION BY v.id_ruta ORDER BY v.fecha_salida) AS cambio_precio
 FROM vuelos v
 JOIN rutas r ON v.id_ruta = r.id_ruta
-ORDER BY r.origen, r.destino, v.fecha_salida;
+ORDER BY r.aeropuerto_origen, r.aeropuerto_destino, v.fecha_salida;
 
 -- Hospital: diferencia de días entre citas consecutivas de un paciente
 SELECT c.id_cita, p.nombre_completo, c.fecha_cita,
@@ -508,7 +508,7 @@ Escribe una consulta que para cada vuelo muestre el precio y la diferencia porce
 <summary>👉 Haz clic aquí SOLO cuando tengas tu respuesta</summary>
 
 ```sql
-SELECT v.id_vuelo, r.origen, r.destino, v.precio,
+SELECT v.id_vuelo, r.aeropuerto_origen, r.aeropuerto_destino, v.precio,
        LAG(v.precio) OVER (PARTITION BY v.id_ruta ORDER BY v.fecha_salida) AS precio_anterior,
        CASE 
            WHEN LAG(v.precio) OVER (PARTITION BY v.id_ruta ORDER BY v.fecha_salida) IS NULL THEN 'N/A'
@@ -578,7 +578,7 @@ FROM citas
 ORDER BY fecha_cita;
 
 -- Aerolínea: precio de cada vuelo vs promedio de su ruta
-SELECT v.id_vuelo, r.origen, r.destino, v.precio,
+SELECT v.id_vuelo, r.aeropuerto_origen, r.aeropuerto_destino, v.precio,
        ROUND(AVG(v.precio) OVER (PARTITION BY v.id_ruta), 2) AS avg_ruta,
        v.precio - ROUND(AVG(v.precio) OVER (PARTITION BY v.id_ruta), 2) AS vs_promedio
 FROM vuelos v
@@ -663,9 +663,9 @@ Piensa en dos **listas de invitados** para una fiesta:
 -- UNION: todas las ciudades mencionadas (clientes + rutas)
 SELECT ciudad AS lugar FROM clientes
 UNION
-SELECT origen FROM rutas
+SELECT aeropuerto_origen FROM rutas
 UNION
-SELECT destino FROM rutas
+SELECT aeropuerto_destino FROM rutas
 ORDER BY lugar;
 
 -- UNION ALL: combinar registros de todas las bases (para un log unificado)
@@ -675,13 +675,13 @@ UNION ALL
 SELECT 'Hospital', nombre_completo, telefono
 FROM pacientes
 UNION ALL
-SELECT 'Aerolínea', modelo, TO_CHAR(capacidad)
+SELECT 'Aerolínea', modelo, TO_CHAR(capacidad_pasajeros)
 FROM aviones;
 
 -- INTERSECT: ciudades que son origen Y destino de algún vuelo
-SELECT origen AS ciudad FROM rutas
+SELECT aeropuerto_origen AS ciudad FROM rutas
 INTERSECT
-SELECT destino FROM rutas;
+SELECT aeropuerto_destino FROM rutas;
 
 -- MINUS: clientes que NO tienen pedidos
 SELECT id_cliente, nombre_completo FROM clientes
@@ -698,9 +698,9 @@ FROM pacientes p
 JOIN citas ci ON p.id_paciente = ci.id_paciente;
 
 -- Aplicación práctica: rutas sin vuelos programados
-SELECT id_ruta, origen, destino FROM rutas
+SELECT id_ruta, aeropuerto_origen, aeropuerto_destino FROM rutas
 MINUS
-SELECT r.id_ruta, r.origen, r.destino
+SELECT r.id_ruta, r.aeropuerto_origen, r.aeropuerto_destino
 FROM rutas r
 JOIN vuelos v ON r.id_ruta = v.id_ruta;
 ```
