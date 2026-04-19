@@ -142,7 +142,7 @@ Muestra: `medico`, `especialidad`, `total_citas`, `completadas`, `pendientes`, `
 
 ```sql
 SELECT m.nombre_completo AS medico,
-       e.nombre AS especialidad,
+       e.nombre_especialidad AS especialidad,
        COUNT(ci.id_cita) AS total_citas,
        COUNT(CASE WHEN ci.estado = 'C' THEN 1 END) AS completadas,
        COUNT(CASE WHEN ci.estado = 'P' THEN 1 END) AS pendientes,
@@ -150,7 +150,7 @@ SELECT m.nombre_completo AS medico,
 FROM medicos m
 INNER JOIN especialidades e ON m.id_especialidad = e.id_especialidad
 LEFT JOIN citas ci ON m.id_medico = ci.id_medico
-GROUP BY m.nombre_completo, e.nombre
+GROUP BY m.nombre_completo, e.nombre_especialidad
 ORDER BY total_citas DESC;
 ```
 
@@ -175,17 +175,17 @@ Muestra: `paciente`, `dni`, `medico`, `especialidad`, `fecha_cita`, `estado`. Or
 <summary>👉 Haz clic aquí SOLO cuando tengas tu respuesta</summary>
 
 ```sql
-SELECT pa.nombre_completo AS paciente,
+SELECT pa.nombre AS paciente,
        pa.dni,
        m.nombre_completo AS medico,
-       e.nombre AS especialidad,
-       TO_CHAR(ci.fecha_hora, 'DD/MM/YYYY HH24:MI') AS fecha_cita,
+       e.nombre_especialidad AS especialidad,
+       TO_CHAR(ci.fecha_hora_cita, 'DD/MM/YYYY HH24:MI') AS fecha_cita,
        DECODE(ci.estado, 'C', 'Completada', 'P', 'Pendiente', 'X', 'Cancelada') AS estado
 FROM citas ci
 INNER JOIN pacientes pa ON ci.id_paciente = pa.id_paciente
 INNER JOIN medicos m ON ci.id_medico = m.id_medico
 INNER JOIN especialidades e ON m.id_especialidad = e.id_especialidad
-ORDER BY pa.nombre_completo, ci.fecha_hora;
+ORDER BY pa.nombre, ci.fecha_hora_cita;
 ```
 
 Resultado:
