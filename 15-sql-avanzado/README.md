@@ -91,11 +91,11 @@ WITH
         GROUP BY id_medico
     ),
     medicos_con_esp AS (
-        SELECT m.id_medico, m.nombre_completo, e.nombre AS especialidad, m.salario
+        SELECT m.id_medico, m.nombre_completo, e.nombre_especialidad AS especialidad, m.salario_base
         FROM medicos m
         JOIN especialidades e ON m.id_especialidad = e.id_especialidad
     )
-SELECT mce.nombre_completo, mce.especialidad, mce.salario,
+SELECT mce.nombre_completo, mce.especialidad, mce.salario_base,
        NVL(cpm.total_citas, 0) AS total_citas
 FROM medicos_con_esp mce
 LEFT JOIN citas_por_medico cpm ON mce.id_medico = cpm.id_medico
@@ -103,12 +103,12 @@ ORDER BY total_citas DESC;
 
 -- CTE con la aerolínea: rutas más populares
 WITH vuelos_por_ruta AS (
-    SELECT id_ruta, COUNT(*) AS total_vuelos, ROUND(AVG(precio), 2) AS precio_medio
+    SELECT id_ruta, COUNT(*) AS total_vuelos
     FROM vuelos
     GROUP BY id_ruta
 )
 SELECT r.aeropuerto_origen, r.aeropuerto_destino, r.distancia_km,
-       vpr.total_vuelos, vpr.precio_medio
+       vpr.total_vuelos
 FROM rutas r
 JOIN vuelos_por_ruta vpr ON r.id_ruta = vpr.id_ruta
 ORDER BY vpr.total_vuelos DESC;
@@ -134,7 +134,7 @@ WITH
         SELECT AVG(gasto_total) AS avg_gasto
         FROM gasto_por_cliente
     )
-SELECT c.nombre_completo, gc.total_pedidos, gc.gasto_total
+SELECT c.nombre, gc.total_pedidos, gc.gasto_total
 FROM clientes c
 JOIN gasto_por_cliente gc ON c.id_cliente = gc.id_cliente
 CROSS JOIN promedio_general pg
@@ -199,8 +199,8 @@ FROM productos;
 -- Resultado: 8 filas (una por producto) con datos extra por categoría
 
 -- Ejemplo hospital: cada médico con el promedio salarial de su especialidad
-SELECT m.nombre_completo, e.nombre AS especialidad, m.salario,
-       ROUND(AVG(m.salario) OVER (PARTITION BY m.id_especialidad), 2) AS avg_salario_esp
+SELECT m.nombre_completo, e.nombre_especialidad AS especialidad, m.salario_base,
+       ROUND(AVG(m.salario_base) OVER (PARTITION BY m.id_especialidad), 2) AS avg_salario_esp
 FROM medicos m
 JOIN especialidades e ON m.id_especialidad = e.id_especialidad;
 
@@ -279,12 +279,12 @@ WHERE rn = 1;
 
 -- Hospital: el médico mejor pagado de cada especialidad
 WITH ranking_medicos AS (
-    SELECT m.nombre_completo, e.nombre AS especialidad, m.salario,
-           ROW_NUMBER() OVER (PARTITION BY m.id_especialidad ORDER BY m.salario DESC) AS rn
+    SELECT m.nombre_completo, e.nombre_especialidad AS especialidad, m.salario_base,
+           ROW_NUMBER() OVER (PARTITION BY m.id_especialidad ORDER BY m.salario_base DESC) AS rn
     FROM medicos m
     JOIN especialidades e ON m.id_especialidad = e.id_especialidad
 )
-SELECT nombre_completo, especialidad, salario
+SELECT nombre_completo, especialidad, salario_base
 FROM ranking_medicos
 WHERE rn = 1;
 
@@ -323,13 +323,13 @@ WITH pedidos_rank AS (
            ROW_NUMBER() OVER (PARTITION BY p.id_cliente ORDER BY p.fecha_pedido DESC) AS rn
     FROM pedidos p
 )
-SELECT c.nombre_completo, pr.nombre AS producto, 
+SELECT c.nombre, pr.nombre AS producto, 
        pr2.fecha_pedido, pr2.total
 FROM pedidos_rank pr2
 JOIN clientes c ON pr2.id_cliente = c.id_cliente
 JOIN productos pr ON pr2.id_producto = pr.id_producto
 WHERE pr2.rn <= 2
-ORDER BY c.nombre_completo, pr2.rn;
+ORDER BY c.nombre, pr2.rn;
 ```
 
 </details>
@@ -374,9 +374,9 @@ SELECT nombre, precio,
 FROM productos;
 
 -- Hospital: ranking de médicos por salario dentro de cada especialidad
-SELECT m.nombre_completo, e.nombre AS especialidad, m.salario,
-       RANK() OVER (PARTITION BY m.id_especialidad ORDER BY m.salario DESC) AS rank_salario,
-       DENSE_RANK() OVER (PARTITION BY m.id_especialidad ORDER BY m.salario DESC) AS dense_rank_salario
+SELECT m.nombre_completo, e.nombre_especialidad AS especialidad, m.salario_base,
+       RANK() OVER (PARTITION BY m.id_especialidad ORDER BY m.salario_base DESC) AS rank_salario,
+       DENSE_RANK() OVER (PARTITION BY m.id_especialidad ORDER BY m.salario_base DESC) AS dense_rank_salario
 FROM medicos m
 JOIN especialidades e ON m.id_especialidad = e.id_especialidad;
 
@@ -413,11 +413,11 @@ Para un "Top 3 salarios" incluyendo todos los empatados, usa **DENSE_RANK**:
 
 ```sql
 WITH ranking AS (
-    SELECT nombre_completo, salario,
-           DENSE_RANK() OVER (ORDER BY salario DESC) AS dr
+    SELECT nombre_completo, salario_base,
+           DENSE_RANK() OVER (ORDER BY salario_base DESC) AS dr
     FROM medicos
 )
-SELECT nombre_completo, salario, dr
+SELECT nombre_completo, salario_base, dr
 FROM ranking
 WHERE dr <= 3;
 -- Si 3 médicos empatan en el 1er puesto, los 3 aparecen + los del 2do y 3er puesto
@@ -480,12 +480,12 @@ JOIN rutas r ON v.id_ruta = r.id_ruta
 ORDER BY r.aeropuerto_origen, r.aeropuerto_destino, v.fecha_salida;
 
 -- Hospital: diferencia de días entre citas consecutivas de un paciente
-SELECT c.id_cita, p.nombre_completo, c.fecha_cita,
-       LAG(c.fecha_cita) OVER (PARTITION BY c.id_paciente ORDER BY c.fecha_cita) AS cita_anterior,
-       ROUND(c.fecha_cita - LAG(c.fecha_cita) OVER (PARTITION BY c.id_paciente ORDER BY c.fecha_cita)) AS dias_entre_citas
+SELECT c.id_cita, p.nombre, c.fecha_hora_cita,
+       LAG(c.fecha_hora_cita) OVER (PARTITION BY c.id_paciente ORDER BY c.fecha_hora_cita) AS cita_anterior,
+       ROUND(c.fecha_hora_cita - LAG(c.fecha_hora_cita) OVER (PARTITION BY c.id_paciente ORDER BY c.fecha_hora_cita)) AS dias_entre_citas
 FROM citas c
 JOIN pacientes p ON c.id_paciente = p.id_paciente
-ORDER BY p.nombre_completo, c.fecha_cita;
+ORDER BY p.nombre, c.fecha_hora_cita;
 
 -- E-commerce: tendencia de precios (si tuviéramos historial)
 -- Simular con productos ordenados por id
@@ -571,11 +571,11 @@ SELECT nombre, precio, id_categoria,
 FROM productos;
 
 -- Hospital: conteo acumulado de citas por fecha
-SELECT id_cita, fecha_cita, estado,
-       COUNT(*) OVER (ORDER BY fecha_cita) AS citas_acumuladas,
+SELECT id_cita, fecha_hora_cita, estado,
+       COUNT(*) OVER (ORDER BY fecha_hora_cita) AS citas_acumuladas,
        COUNT(*) OVER () AS total_citas
 FROM citas
-ORDER BY fecha_cita;
+ORDER BY fecha_hora_cita;
 
 -- Aerolínea: precio de cada vuelo vs promedio de su ruta
 SELECT v.id_vuelo, r.aeropuerto_origen, r.aeropuerto_destino, v.precio,
@@ -606,14 +606,14 @@ Escribe una consulta que muestre para cada médico: su salario, el salario acumu
 <summary>👉 Haz clic aquí SOLO cuando tengas tu respuesta</summary>
 
 ```sql
-SELECT m.nombre_completo, e.nombre AS especialidad, m.salario,
-       SUM(m.salario) OVER (PARTITION BY m.id_especialidad ORDER BY m.salario DESC) AS salario_acumulado,
-       SUM(m.salario) OVER (PARTITION BY m.id_especialidad) AS total_especialidad,
-       ROUND(SUM(m.salario) OVER (PARTITION BY m.id_especialidad ORDER BY m.salario DESC) 
-             / SUM(m.salario) OVER (PARTITION BY m.id_especialidad) * 100, 1) AS pct_acumulado
+SELECT m.nombre_completo, e.nombre_especialidad AS especialidad, m.salario_base,
+       SUM(m.salario_base) OVER (PARTITION BY m.id_especialidad ORDER BY m.salario_base DESC) AS salario_acumulado,
+       SUM(m.salario_base) OVER (PARTITION BY m.id_especialidad) AS total_especialidad,
+       ROUND(SUM(m.salario_base) OVER (PARTITION BY m.id_especialidad ORDER BY m.salario_base DESC) 
+             / SUM(m.salario_base) OVER (PARTITION BY m.id_especialidad) * 100, 1) AS pct_acumulado
 FROM medicos m
 JOIN especialidades e ON m.id_especialidad = e.id_especialidad
-ORDER BY e.nombre, m.salario DESC;
+ORDER BY e.nombre_especialidad, m.salario_base DESC;
 ```
 
 </details>
@@ -630,7 +630,7 @@ Los **operadores de conjuntos** combinan los resultados de dos o más consultas 
 
 | Operador | Resultado | Duplicados | Ejemplo |
 |----------|-----------|:----------:|---------|
-| `UNION` | Filas de A **o** B | Eliminados | Todas las ciudades únicas de clientes y rutas |
+| `UNION` | Filas de A **o** B | Eliminados | Todos los aeropuertos únicos (origen + destino) |
 | `UNION ALL` | Filas de A **y** B | Conservados | Todos los registros combinados (más rápido) |
 | `INTERSECT` | Filas en A **y** en B | Eliminados | Ciudades que son origen Y destino de vuelos |
 | `MINUS` | Filas en A **pero no** en B | Eliminados | Clientes que nunca han hecho pedidos |
@@ -660,19 +660,17 @@ Piensa en dos **listas de invitados** para una fiesta:
 ### 💻 El Código
 
 ```sql
--- UNION: todas las ciudades mencionadas (clientes + rutas)
-SELECT ciudad AS lugar FROM clientes
-UNION
-SELECT aeropuerto_origen FROM rutas
+-- UNION: todos los aeropuertos únicos (origen + destino)
+SELECT aeropuerto_origen AS lugar FROM rutas
 UNION
 SELECT aeropuerto_destino FROM rutas
 ORDER BY lugar;
 
 -- UNION ALL: combinar registros de todas las bases (para un log unificado)
-SELECT 'E-commerce' AS sistema, nombre_completo AS persona, ciudad AS info
+SELECT 'E-commerce' AS sistema, nombre AS persona, email AS info
 FROM clientes
 UNION ALL
-SELECT 'Hospital', nombre_completo, telefono
+SELECT 'Hospital', nombre, telefono
 FROM pacientes
 UNION ALL
 SELECT 'Aerolínea', modelo, TO_CHAR(capacidad_pasajeros)
@@ -684,16 +682,16 @@ INTERSECT
 SELECT aeropuerto_destino FROM rutas;
 
 -- MINUS: clientes que NO tienen pedidos
-SELECT id_cliente, nombre_completo FROM clientes
+SELECT id_cliente, nombre FROM clientes
 MINUS
-SELECT c.id_cliente, c.nombre_completo 
+SELECT c.id_cliente, c.nombre 
 FROM clientes c
 JOIN pedidos p ON c.id_cliente = p.id_cliente;
 
 -- MINUS: pacientes sin citas
-SELECT id_paciente, nombre_completo FROM pacientes
+SELECT id_paciente, nombre FROM pacientes
 MINUS
-SELECT p.id_paciente, p.nombre_completo
+SELECT p.id_paciente, p.nombre
 FROM pacientes p
 JOIN citas ci ON p.id_paciente = ci.id_paciente;
 
@@ -714,12 +712,12 @@ Usando operadores de conjuntos, escribe una consulta que muestre las especialida
 
 ```sql
 -- Especialidades con médicos
-SELECT DISTINCT e.nombre
+SELECT DISTINCT e.nombre_especialidad
 FROM especialidades e
 JOIN medicos m ON e.id_especialidad = m.id_especialidad
 MINUS
 -- Especialidades con citas
-SELECT DISTINCT e.nombre
+SELECT DISTINCT e.nombre_especialidad
 FROM especialidades e
 JOIN medicos m ON e.id_especialidad = m.id_especialidad
 JOIN citas c ON m.id_medico = c.id_medico;

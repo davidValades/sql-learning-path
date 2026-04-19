@@ -147,7 +147,7 @@ Muestra: `medico`, `especialidad`, `citas_completadas`.
 
 ```sql
 SELECT m.nombre_completo AS medico,
-       e.nombre AS especialidad,
+       e.nombre_especialidad AS especialidad,
        (SELECT COUNT(*) FROM citas ci WHERE ci.id_medico = m.id_medico AND ci.estado = 'C') AS citas_completadas
 FROM medicos m
 INNER JOIN especialidades e ON m.id_especialidad = e.id_especialidad
@@ -186,14 +186,14 @@ SELECT resumen.paciente,
        resumen.num_especialidades,
        resumen.especialidades
 FROM (
-    SELECT pa.nombre_completo AS paciente,
+    SELECT pa.nombre AS paciente,
            COUNT(DISTINCT m.id_especialidad) AS num_especialidades,
-           LISTAGG(DISTINCT e.nombre, ', ') WITHIN GROUP (ORDER BY e.nombre) AS especialidades
+           LISTAGG(DISTINCT e.nombre_especialidad, ', ') WITHIN GROUP (ORDER BY e.nombre_especialidad) AS especialidades
     FROM citas ci
     INNER JOIN pacientes pa ON ci.id_paciente = pa.id_paciente
     INNER JOIN medicos m ON ci.id_medico = m.id_medico
     INNER JOIN especialidades e ON m.id_especialidad = e.id_especialidad
-    GROUP BY pa.nombre_completo
+    GROUP BY pa.nombre
 ) resumen
 WHERE resumen.num_especialidades > 1
 ORDER BY resumen.num_especialidades DESC;
@@ -219,7 +219,7 @@ Muestra: `especialidad`, `total_citas`, `clasificacion` (`'Más demandada'` / `'
 <summary>👉 Haz clic aquí SOLO cuando tengas tu respuesta</summary>
 
 ```sql
-SELECT e.nombre AS especialidad,
+SELECT e.nombre_especialidad AS especialidad,
        COUNT(ci.id_cita) AS total_citas,
        CASE
            WHEN COUNT(ci.id_cita) >= ALL (
@@ -238,7 +238,7 @@ SELECT e.nombre AS especialidad,
 FROM citas ci
 INNER JOIN medicos m ON ci.id_medico = m.id_medico
 INNER JOIN especialidades e ON m.id_especialidad = e.id_especialidad
-GROUP BY e.nombre
+GROUP BY e.nombre_especialidad
 HAVING COUNT(ci.id_cita) >= ALL (
     SELECT COUNT(ci2.id_cita)
     FROM citas ci2

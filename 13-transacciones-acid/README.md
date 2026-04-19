@@ -69,7 +69,7 @@ COMMIT;
 
 -- Limpiar el ejemplo para mantener el estado original
 DELETE FROM pedidos WHERE id_pedido = 50;
-UPDATE productos SET stock = 100 WHERE id_producto = 11;
+UPDATE productos SET stock = 200 WHERE id_producto = 11;
 COMMIT;
 ```
 
@@ -78,7 +78,7 @@ COMMIT;
 ¿Qué pasa si ejecutas estas sentencias en orden?
 
 ```sql
-INSERT INTO pacientes (id_paciente, nombre_completo, telefono) VALUES (10, 'Test', '000');
+INSERT INTO pacientes (id_paciente, dni, nombre, telefono) VALUES (10, '99999999Z', 'Test', '000');
 CREATE TABLE prueba (id NUMBER);    -- ← sentencia DDL
 ROLLBACK;
 SELECT * FROM pacientes WHERE id_paciente = 10;
@@ -230,21 +230,21 @@ ROLLBACK;
 ```sql
 -- E-commerce: un pedido que sale mal
 -- Verificar estado inicial
-SELECT stock FROM productos WHERE id_producto = 12;
+SELECT stock FROM productos WHERE id_producto = 16;
 -- Resultado: 25
 
 -- Inicio de transacción implícita
 INSERT INTO pedidos (id_pedido, id_cliente, id_producto, cantidad, fecha_pedido, total)
-VALUES (60, 2, 12, 1, SYSDATE, 350.00);
+VALUES (60, 2, 16, 1, SYSDATE, 350.00);
 
-UPDATE productos SET stock = stock - 1 WHERE id_producto = 12;
+UPDATE productos SET stock = stock - 1 WHERE id_producto = 16;
 
 -- ¡Detectamos un error! El cliente 2 tiene la tarjeta rechazada
 -- Revertir todo
 ROLLBACK;
 
 -- Verificar: el stock no cambió
-SELECT stock FROM productos WHERE id_producto = 12;
+SELECT stock FROM productos WHERE id_producto = 16;
 -- Resultado: 25 (sin cambios)
 
 -- El pedido 60 tampoco existe
@@ -352,21 +352,21 @@ Imagina que estás escalando una montaña y vas clavando **banderines de segurid
 
 -- Pedido 1: exitoso
 INSERT INTO pedidos (id_pedido, id_cliente, id_producto, cantidad, fecha_pedido, total)
-VALUES (70, 1, 16, 3, SYSDATE, 59.97);
-UPDATE productos SET stock = stock - 3 WHERE id_producto = 16;
+VALUES (70, 1, 14, 3, SYSDATE, 59.97);
+UPDATE productos SET stock = stock - 3 WHERE id_producto = 14;
 
 SAVEPOINT pedido1_ok;
 
 -- Pedido 2: exitoso
 INSERT INTO pedidos (id_pedido, id_cliente, id_producto, cantidad, fecha_pedido, total)
-VALUES (71, 2, 17, 1, SYSDATE, 89.50);
-UPDATE productos SET stock = stock - 1 WHERE id_producto = 17;
+VALUES (71, 2, 15, 1, SYSDATE, 89.50);
+UPDATE productos SET stock = stock - 1 WHERE id_producto = 15;
 
 SAVEPOINT pedido2_ok;
 
 -- Pedido 3: ¡falla! (stock insuficiente para Sofá de Cuero)
 INSERT INTO pedidos (id_pedido, id_cliente, id_producto, cantidad, fecha_pedido, total)
-VALUES (72, 3, 14, 1, SYSDATE, 405.00);
+VALUES (72, 3, 12, 1, SYSDATE, 405.00);
 -- Sofá tiene stock = 0, no deberíamos haberlo vendido
 
 -- Revertir SOLO el pedido 3, mantener pedidos 1 y 2
@@ -378,8 +378,8 @@ COMMIT;
 
 -- Limpiar ejemplo
 DELETE FROM pedidos WHERE id_pedido IN (70, 71);
-UPDATE productos SET stock = 500 WHERE id_producto = 16;
-UPDATE productos SET stock = 75 WHERE id_producto = 17;
+UPDATE productos SET stock = 100 WHERE id_producto = 14;
+UPDATE productos SET stock = 45 WHERE id_producto = 15;
 COMMIT;
 
 -- Hospital: registro de citas con savepoint

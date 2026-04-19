@@ -368,8 +368,8 @@ GROUP BY id_categoria
 HAVING SUM(precio * 1.21) > 100;
 ```
 Resultado:
-- Cat 1: 4 productos, suma IVA = 2041.41
-- Cat 2: 2 productos, suma IVA = 539.07
+- Cat 1: 4 productos, suma IVA = 2045.51
+- Cat 2: 2 productos, suma IVA = 537.46
 - Cat 3: 2 productos, suma IVA = 132.48 (supera 100, así que entra)
 
 **b) Hospital:**

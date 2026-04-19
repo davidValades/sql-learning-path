@@ -252,7 +252,7 @@ SELECT * FROM medicos WHERE UPPER(nombre_completo) = 'DRA. SARAH ADAMS';
 
 1. `aviones.modelo` (4 valores distintos en 4 filas)
 2. `pedidos.total` (valores únicos, rango amplio)
-3. `pacientes.nombre_completo` (búsquedas frecuentes con `LIKE UPPER(...)`)
+3. `pacientes.nombre` (búsquedas frecuentes con `LIKE UPPER(...)`)
 
 <details>
 <summary>👉 Haz clic aquí SOLO cuando tengas tu respuesta</summary>
@@ -261,7 +261,7 @@ SELECT * FROM medicos WHERE UPPER(nombre_completo) = 'DRA. SARAH ADAMS';
 
 2. **B-Tree** — Valores numéricos con alta cardinalidad y consultas de rango (`WHERE total > 500`). Es el caso ideal para B-Tree.
 
-3. **Function-Based** — `CREATE INDEX idx_pac_nombre ON pacientes(UPPER(nombre_completo));` para que consultas como `WHERE UPPER(nombre_completo) LIKE 'LAURA%'` usen el índice.
+3. **Function-Based** — `CREATE INDEX idx_pac_nombre ON pacientes(UPPER(nombre));` para que consultas como `WHERE UPPER(nombre) LIKE 'LAURA%'` usen el índice.
 
 > 💡 El tipo de índice depende de la cardinalidad de la columna, el tamaño de la tabla y el tipo de consultas que se ejecutan.
 

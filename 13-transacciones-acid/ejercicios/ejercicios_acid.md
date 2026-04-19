@@ -35,9 +35,9 @@
 **Enunciado:** El departamento de logística necesita procesar 3 pedidos en una sola transacción. Pero el segundo pedido tiene un error (producto con stock insuficiente). Usa SAVEPOINT para confirmar los pedidos correctos y revertir solo el erróneo.
 
 Pedidos a procesar:
-1. Cliente Ana García (id 1) compra 1 Laptop Pro (id 10) → total 1200.00 (id_pedido = 93)
-2. Cliente Pedro Ruiz (id 2) compra 999 Camiseta Básica (id 16) → ¡stock insuficiente! (id_pedido = 94)
-3. Cliente María López (id 3) compra 2 Zapatillas Running (id 17) → total 179.00 (id_pedido = 95)
+1. Cliente Ana López (id 1) compra 1 Laptop Pro (id 10) → total 1220.00 (id_pedido = 93)
+2. Cliente Pedro Ruiz (id 2) compra 999 Camiseta Básica (id 14) → ¡stock insuficiente! (id_pedido = 94)
+3. Cliente María García (id 3) compra 2 Zapatillas Running (id 15) → total 179.00 (id_pedido = 95)
 
 Escribe la transacción completa con SAVEPOINT, ROLLBACK TO y COMMIT. Verifica el estado final.
 
@@ -47,24 +47,24 @@ Escribe la transacción completa con SAVEPOINT, ROLLBACK TO y COMMIT. Verifica e
 ```sql
 -- Pedido 1: correcto ✅
 INSERT INTO pedidos (id_pedido, id_cliente, id_producto, cantidad, fecha_pedido, total)
-VALUES (93, 1, 10, 1, SYSDATE, 1200.00);
+VALUES (93, 1, 10, 1, SYSDATE, 1220.00);
 UPDATE productos SET stock = stock - 1 WHERE id_producto = 10;
 
 SAVEPOINT despues_pedido1;
 
--- Pedido 2: ¡error! 999 unidades > stock disponible (500) ❌
+-- Pedido 2: ¡error! 999 unidades > stock disponible (100) ❌
 INSERT INTO pedidos (id_pedido, id_cliente, id_producto, cantidad, fecha_pedido, total)
-VALUES (94, 2, 16, 999, SYSDATE, 19990.01);
-UPDATE productos SET stock = stock - 999 WHERE id_producto = 16;
--- stock quedaría en -499 → detectamos el error
+VALUES (94, 2, 14, 999, SYSDATE, 19970.01);
+UPDATE productos SET stock = stock - 999 WHERE id_producto = 14;
+-- stock quedaría en -899 → detectamos el error
 
 -- Revertir solo el pedido 2
 ROLLBACK TO SAVEPOINT despues_pedido1;
 
 -- Pedido 3: correcto ✅
 INSERT INTO pedidos (id_pedido, id_cliente, id_producto, cantidad, fecha_pedido, total)
-VALUES (95, 3, 17, 2, SYSDATE, 179.00);
-UPDATE productos SET stock = stock - 2 WHERE id_producto = 17;
+VALUES (95, 3, 15, 2, SYSDATE, 179.00);
+UPDATE productos SET stock = stock - 2 WHERE id_producto = 15;
 
 COMMIT;
 
@@ -72,10 +72,10 @@ COMMIT;
 SELECT id_pedido, id_cliente, total FROM pedidos WHERE id_pedido IN (93, 94, 95);
 -- Resultado: pedidos 93 y 95 existen; pedido 94 NO existe
 
-SELECT nombre, stock FROM productos WHERE id_producto IN (10, 16, 17);
--- Laptop Pro: 99 (100-1)
--- Camiseta Básica: 500 (sin cambios — se revirtió)
--- Zapatillas Running: 498 (500-2)
+SELECT nombre, stock FROM productos WHERE id_producto IN (10, 14, 15);
+-- Laptop Pro: 49 (50-1)
+-- Camiseta Básica: 100 (sin cambios — se revirtió)
+-- Zapatillas Running: 43 (45-2)
 ```
 
 > 💡 La atomicidad parcial con SAVEPOINT nos permitió salvar los pedidos buenos sin perder toda la transacción.
@@ -83,8 +83,8 @@ SELECT nombre, stock FROM productos WHERE id_producto IN (10, 16, 17);
 ```sql
 -- Limpiar
 DELETE FROM pedidos WHERE id_pedido IN (93, 95);
-UPDATE productos SET stock = 100 WHERE id_producto = 10;
-UPDATE productos SET stock = 500 WHERE id_producto = 17;
+UPDATE productos SET stock = 50 WHERE id_producto = 10;
+UPDATE productos SET stock = 45 WHERE id_producto = 15;
 COMMIT;
 ```
 
@@ -98,22 +98,22 @@ COMMIT;
 
 ```sql
 -- Operación A
-INSERT INTO citas (id_cita, id_paciente, id_medico, fecha_cita, estado) 
-VALUES (70, 1, 1, TO_DATE('2024-10-01 09:00', 'YYYY-MM-DD HH24:MI'), 'P');
+INSERT INTO citas (id_cita, id_paciente, id_medico, fecha_hora_cita, estado) 
+VALUES (70, 1, 2, TO_DATE('2024-10-01 09:00', 'YYYY-MM-DD HH24:MI'), 'P');
 
 -- Operación B
-INSERT INTO citas (id_cita, id_paciente, id_medico, fecha_cita, estado) 
+INSERT INTO citas (id_cita, id_paciente, id_medico, fecha_hora_cita, estado) 
 VALUES (70, 2, 2, TO_DATE('2024-10-02 10:00', 'YYYY-MM-DD HH24:MI'), 'P');
 
 -- Operación C
-DELETE FROM especialidades WHERE id_especialidad = 1;
+DELETE FROM especialidades WHERE id_especialidad = 100;
 
 -- Operación D
-INSERT INTO medicos (id_medico, nombre_completo, id_especialidad, salario) 
+INSERT INTO medicos (id_medico, nombre_completo, id_especialidad, salario_base) 
 VALUES (20, 'Dr. Nuevo', 99, 3000);
 
 -- Operación E
-UPDATE pacientes SET nombre_completo = NULL WHERE id_paciente = 1;
+UPDATE pacientes SET nombre = NULL WHERE id_paciente = 1;
 ```
 
 <details>
@@ -121,11 +121,11 @@ UPDATE pacientes SET nombre_completo = NULL WHERE id_paciente = 1;
 
 | Operación | Resultado | Constraint | Explicación |
 |-----------|-----------|------------|-------------|
-| **A** | ✅ Éxito | — | Todos los valores son válidos: paciente 1 y médico 1 existen. |
+| **A** | ✅ Éxito | — | Todos los valores son válidos: paciente 1 y médico 2 existen. |
 | **B** | ❌ Error | `PRIMARY KEY` | El `id_cita = 70` ya fue insertado por la operación A. ORA-00001: unique constraint violated. |
-| **C** | ❌ Error | `FOREIGN KEY` | Hay médicos que referencian la especialidad 1. ORA-02292: integrity constraint violated - child record found. |
+| **C** | ❌ Error | `FOREIGN KEY` | Hay médicos que referencian la especialidad 100 (Traumatología). ORA-02292: integrity constraint violated - child record found. |
 | **D** | ❌ Error | `FOREIGN KEY` | La especialidad 99 no existe en la tabla especialidades. ORA-02291: parent key not found. |
-| **E** | ❌ Error | `NOT NULL` | El campo nombre_completo no permite valores nulos. ORA-01407: cannot update to NULL. |
+| **E** | ❌ Error | `NOT NULL` | El campo nombre no permite valores nulos. ORA-01407: cannot update to NULL. |
 
 > 💡 De las 5 operaciones, solo la A tiene éxito. Las constraints protegen la **consistencia** de la base de datos impidiendo 4 estados inválidos diferentes.
 
@@ -184,8 +184,8 @@ T5      SELECT plazas_disponibles
 
 ```sql
 -- 10:00 AM
-INSERT INTO clientes (id_cliente, nombre_completo, email, ciudad) 
-VALUES (10, 'Roberto Test', 'roberto@test.com', 'Valencia');
+INSERT INTO clientes (id_cliente, nombre, email) 
+VALUES (10, 'Roberto Test', 'roberto@test.com');
 COMMIT;  -- ✅ Confirmado
 
 -- 10:05 AM
@@ -194,7 +194,7 @@ VALUES (96, 10, 11, 1, SYSDATE, 45.50);
 COMMIT;  -- ✅ Confirmado
 
 -- 10:10 AM
-UPDATE clientes SET ciudad = 'Sevilla' WHERE id_cliente = 10;
+UPDATE clientes SET email = 'roberto@nuevo.com' WHERE id_cliente = 10;
 -- ⚠️ NO se hizo COMMIT
 
 -- 10:11 AM
@@ -207,7 +207,7 @@ VALUES (97, 10, 12, 2, SYSDATE, 150.00);
 
 Preguntas:
 1. ¿Existe el cliente Roberto Test después del reinicio?
-2. ¿En qué ciudad aparece?
+2. ¿Qué email tiene?
 3. ¿Cuántos pedidos tiene Roberto?
 4. ¿Qué pedidos son?
 
@@ -217,7 +217,7 @@ Preguntas:
 **Estado tras la recuperación:**
 
 1. ✅ **Sí existe** el cliente Roberto Test — se insertó con COMMIT a las 10:00.
-2. Ciudad: **Valencia** — el UPDATE a 'Sevilla' no tenía COMMIT → se revierte (durabilidad protege solo lo confirmado).
+2. Email: **roberto@test.com** — el UPDATE a 'roberto@nuevo.com' no tenía COMMIT → se revierte (durabilidad protege solo lo confirmado).
 3. **1 pedido** — solo el pedido 96 tenía COMMIT.
 4. **Pedido 96** (producto 11, cantidad 1, total 45.50) — el pedido 97 no tenía COMMIT → se revierte.
 
@@ -229,7 +229,7 @@ Roll Forward (redo): re-aplica los cambios confirmados
   ✅ INSERT pedido 96 (COMMIT a las 10:05)
 
 Roll Back (undo): revierte los cambios sin confirmar
-  ❌ UPDATE ciudad a 'Sevilla' (sin COMMIT)
+  ❌ UPDATE email a 'roberto@nuevo.com' (sin COMMIT)
   ❌ INSERT pedido 97 (sin COMMIT)
 ```
 
@@ -277,15 +277,15 @@ SELECT COUNT(*) AS total_pacientes FROM pacientes;
 -- Consulta 2: total de citas del mes actual
 SELECT COUNT(*) AS citas_mes
 FROM citas
-WHERE fecha_cita >= TRUNC(SYSDATE, 'MM')
-  AND fecha_cita < ADD_MONTHS(TRUNC(SYSDATE, 'MM'), 1);
+WHERE fecha_hora_cita >= TRUNC(SYSDATE, 'MM')
+  AND fecha_hora_cita < ADD_MONTHS(TRUNC(SYSDATE, 'MM'), 1);
 
 -- Consulta 3: promedio de citas por médico
 SELECT m.nombre_completo, COUNT(c.id_cita) AS citas
 FROM medicos m
 LEFT JOIN citas c ON m.id_medico = c.id_medico
-  AND c.fecha_cita >= TRUNC(SYSDATE, 'MM')
-  AND c.fecha_cita < ADD_MONTHS(TRUNC(SYSDATE, 'MM'), 1)
+  AND c.fecha_hora_cita >= TRUNC(SYSDATE, 'MM')
+  AND c.fecha_hora_cita < ADD_MONTHS(TRUNC(SYSDATE, 'MM'), 1)
 GROUP BY m.nombre_completo
 ORDER BY citas DESC;
 

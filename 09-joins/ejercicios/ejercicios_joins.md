@@ -49,11 +49,11 @@ Muestra: `nombre_completo`, `especialidad`, `salario_base`.
 
 ```sql
 SELECT m.nombre_completo,
-       e.nombre AS especialidad,
+       e.nombre_especialidad AS especialidad,
        m.salario_base
 FROM medicos m
 INNER JOIN especialidades e ON m.id_especialidad = e.id_especialidad
-ORDER BY e.nombre, m.salario_base DESC;
+ORDER BY e.nombre_especialidad, m.salario_base DESC;
 ```
 
 Resultado:
@@ -263,20 +263,20 @@ Muestra: `id_cita`, `paciente`, `medico`, `especialidad`, `fecha_hora`, `estado_
 
 ```sql
 SELECT ci.id_cita,
-       pa.nombre_completo AS paciente,
+       pa.nombre AS paciente,
        m.nombre_completo AS medico,
-       e.nombre AS especialidad,
-       ci.fecha_hora,
+       e.nombre_especialidad AS especialidad,
+       ci.fecha_hora_cita,
        DECODE(ci.estado, 'C', 'Completada', 'P', 'Pendiente', 'X', 'Cancelada') AS estado_texto
 FROM citas ci
 INNER JOIN pacientes pa ON ci.id_paciente = pa.id_paciente
 INNER JOIN medicos m ON ci.id_medico = m.id_medico
 INNER JOIN especialidades e ON m.id_especialidad = e.id_especialidad
-ORDER BY ci.fecha_hora;
+ORDER BY ci.fecha_hora_cita;
 ```
 
 Resultado:
-| id_cita | paciente | medico | especialidad | fecha_hora | estado_texto |
+| id_cita | paciente | medico | especialidad | fecha_hora_cita | estado_texto |
 |---------|----------|--------|-------------|------------|-------------|
 | 1 | Laura Martinez | Dra. Sarah Adams | Neurología | 2025-01-10 09:00 | Completada |
 | 2 | Carlos Gomez | Dra. Elena Ruiz | Traumatología | 2025-01-10 10:30 | Completada |
@@ -341,13 +341,13 @@ Muestra: `medico_1`, `medico_2`, `especialidad`.
 ```sql
 SELECT m1.nombre_completo AS medico_1,
        m2.nombre_completo AS medico_2,
-       e.nombre AS especialidad
+       e.nombre_especialidad AS especialidad
 FROM medicos m1
 INNER JOIN medicos m2
     ON m1.id_especialidad = m2.id_especialidad
    AND m1.id_medico < m2.id_medico
 INNER JOIN especialidades e ON m1.id_especialidad = e.id_especialidad
-ORDER BY e.nombre;
+ORDER BY e.nombre_especialidad;
 ```
 
 Resultado:

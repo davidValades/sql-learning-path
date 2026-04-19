@@ -6,7 +6,7 @@
 
 ## Ejercicio 1 — E-commerce · COMMIT Básico
 
-**Enunciado:** Escribe una transacción que procese un nuevo pedido: el cliente Pedro Ruiz (id 2) compra 2 unidades de Camiseta Básica (id 16, precio 19.99). La transacción debe:
+**Enunciado:** Escribe una transacción que procese un nuevo pedido: el cliente Pedro Ruiz (id 2) compra 2 unidades de Camiseta Básica (id 14, precio 19.99). La transacción debe:
 
 1. Insertar el pedido (id_pedido = 80, total = 39.98).
 2. Reducir el stock del producto en 2 unidades.
@@ -20,18 +20,18 @@ Luego escribe la verificación.
 ```sql
 -- Transacción: nuevo pedido
 INSERT INTO pedidos (id_pedido, id_cliente, id_producto, cantidad, fecha_pedido, total)
-VALUES (80, 2, 16, 2, SYSDATE, 39.98);
+VALUES (80, 2, 14, 2, SYSDATE, 39.98);
 
-UPDATE productos SET stock = stock - 2 WHERE id_producto = 16;
+UPDATE productos SET stock = stock - 2 WHERE id_producto = 14;
 
 COMMIT;
 
 -- Verificación
 SELECT * FROM pedidos WHERE id_pedido = 80;
--- Resultado: id 80, cliente 2, producto 16, cantidad 2, total 39.98
+-- Resultado: id 80, cliente 2, producto 14, cantidad 2, total 39.98
 
-SELECT nombre, stock FROM productos WHERE id_producto = 16;
--- Resultado: Camiseta Básica, 498 (era 500, ahora 500-2)
+SELECT nombre, stock FROM productos WHERE id_producto = 14;
+-- Resultado: Camiseta Básica, 98 (era 100, ahora 100-2)
 ```
 
 > 💡 Si el `UPDATE` fallara (por ejemplo, el producto no existe), deberíamos hacer `ROLLBACK` para que el `INSERT` del pedido también se revierta.
@@ -39,7 +39,7 @@ SELECT nombre, stock FROM productos WHERE id_producto = 16;
 ```sql
 -- Limpiar
 DELETE FROM pedidos WHERE id_pedido = 80;
-UPDATE productos SET stock = 500 WHERE id_producto = 16;
+UPDATE productos SET stock = 100 WHERE id_producto = 14;
 COMMIT;
 ```
 
@@ -132,16 +132,16 @@ COMMIT;
 
 ## Ejercicio 4 — E-commerce · Múltiples SAVEPOINT
 
-**Enunciado:** Predice el estado final del stock del Monitor 4K (id 12, stock inicial = 25) después de estas operaciones:
+**Enunciado:** Predice el estado final del stock del Monitor 4K (id 16, stock inicial = 25) después de estas operaciones:
 
 ```sql
-UPDATE productos SET stock = 20 WHERE id_producto = 12;
+UPDATE productos SET stock = 20 WHERE id_producto = 16;
 SAVEPOINT sp1;
-UPDATE productos SET stock = 15 WHERE id_producto = 12;
+UPDATE productos SET stock = 15 WHERE id_producto = 16;
 SAVEPOINT sp2;
-UPDATE productos SET stock = 10 WHERE id_producto = 12;
+UPDATE productos SET stock = 10 WHERE id_producto = 16;
 SAVEPOINT sp3;
-UPDATE productos SET stock = 5 WHERE id_producto = 12;
+UPDATE productos SET stock = 5 WHERE id_producto = 16;
 ROLLBACK TO SAVEPOINT sp2;
 COMMIT;
 ```
@@ -165,7 +165,7 @@ Paso a paso:
 
 ```sql
 -- Restaurar
-UPDATE productos SET stock = 25 WHERE id_producto = 12;
+UPDATE productos SET stock = 25 WHERE id_producto = 16;
 COMMIT;
 ```
 
@@ -314,7 +314,7 @@ COMMIT;
 
 **Enunciado:** Escribe una transacción completa para este escenario:
 
-> Ana López (id 1) compra un Monitor 4K (id 12) y paga con un descuento del 10%. Además, se le actualiza el email a 'ana.lopez@premium.com'. Use SAVEPOINT para poder revertir solo la actualización del email si falla la validación.
+> Ana López (id 1) compra un Monitor 4K (id 16) y paga con un descuento del 10%. Además, se le actualiza el email a 'ana.lopez@premium.com'. Use SAVEPOINT para poder revertir solo la actualización del email si falla la validación.
 
 1. Insertar pedido (id 85, cantidad 1, total = 350 × 0.90 = 315.00).
 2. Reducir stock del Monitor 4K en 1.
@@ -328,10 +328,10 @@ COMMIT;
 ```sql
 -- Paso 1: insertar pedido con descuento
 INSERT INTO pedidos (id_pedido, id_cliente, id_producto, cantidad, fecha_pedido, total)
-VALUES (85, 1, 12, 1, SYSDATE, 315.00);
+VALUES (85, 1, 16, 1, SYSDATE, 315.00);
 
 -- Paso 2: reducir stock
-UPDATE productos SET stock = stock - 1 WHERE id_producto = 12;
+UPDATE productos SET stock = stock - 1 WHERE id_producto = 16;
 
 -- Paso 3: punto de control
 SAVEPOINT pedido_ok;
@@ -350,14 +350,14 @@ COMMIT;
 
 -- Verificación
 SELECT * FROM pedidos WHERE id_pedido = 85;
-SELECT stock FROM productos WHERE id_producto = 12;
+SELECT stock FROM productos WHERE id_producto = 16;
 SELECT email FROM clientes WHERE id_cliente = 1;
 ```
 
 ```sql
 -- Limpiar
 DELETE FROM pedidos WHERE id_pedido = 85;
-UPDATE productos SET stock = 25 WHERE id_producto = 12;
+UPDATE productos SET stock = 25 WHERE id_producto = 16;
 UPDATE clientes SET email = 'ana@email.com' WHERE id_cliente = 1;
 COMMIT;
 ```

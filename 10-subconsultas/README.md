@@ -321,7 +321,7 @@ WHERE NOT EXISTS (
 -- Resultado: Sofá de Cuero (405.00)
 
 -- Hospital: especialidades que tienen al menos una cita completada
-SELECT e.nombre AS especialidad
+SELECT e.nombre_especialidad AS especialidad
 FROM especialidades e
 WHERE EXISTS (
     SELECT 1
@@ -350,7 +350,7 @@ Encuentra los **pacientes que NO tienen ninguna cita cancelada** (estado `'X'`).
 <summary>👉 Haz clic aquí SOLO cuando tengas tu respuesta</summary>
 
 ```sql
-SELECT pa.nombre_completo
+SELECT pa.nombre
 FROM pacientes pa
 WHERE NOT EXISTS (
     SELECT 1 FROM citas ci
@@ -516,13 +516,13 @@ WHERE resumen.gasto_total > 300;
 -- Hospital: especialidades con más de 1 cita completada
 SELECT esp_resumen.especialidad, esp_resumen.citas_completadas
 FROM (
-    SELECT e.nombre AS especialidad,
+    SELECT e.nombre_especialidad AS especialidad,
            COUNT(*) AS citas_completadas
     FROM citas ci
     INNER JOIN medicos m ON ci.id_medico = m.id_medico
     INNER JOIN especialidades e ON m.id_especialidad = e.id_especialidad
     WHERE ci.estado = 'C'
-    GROUP BY e.nombre
+    GROUP BY e.nombre_especialidad
 ) esp_resumen
 WHERE esp_resumen.citas_completadas > 1;
 -- Resultado: Neurología (2), Traumatología (2)

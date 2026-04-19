@@ -75,7 +75,6 @@ Resultado:
 | producto   | precio  | stock | alerta    |
 |------------|---------|-------|-----------|
 | Sofá de Cuero | 405.00 | 0   | SIN STOCK |
-| Laptop Pro    | 1220.00 | 15  | BAJO      |
 | Monitor 4K    | 350.00  | 25  | BAJO      |
 
 </details>
@@ -103,8 +102,8 @@ INSERT INTO log_alertas (id_alerta, producto, alerta, fecha_registro)
 SELECT seq_alertas.NEXTVAL, producto, alerta, SYSDATE
 FROM v_inventario_critico;
 
--- Resultado: 3 filas insertadas (Sofá, Laptop Pro, Monitor 4K)
--- con id_alerta = 1, 2, 3
+-- Resultado: 2 filas insertadas (Sofá de Cuero, Monitor 4K)
+-- con id_alerta = 1, 2
 ```
 
 > 💡 Este patrón (vista + secuencia + INSERT...SELECT) es muy común en sistemas de monitoreo y alertas automatizadas.
@@ -165,7 +164,7 @@ Crea una vista `v_historial_pacientes` que muestre cada paciente con su número 
 
 ```sql
 CREATE OR REPLACE VIEW v_historial_pacientes AS
-SELECT pa.nombre_completo AS paciente,
+SELECT pa.nombre AS paciente,
        pa.telefono,
        COUNT(ci.id_cita) AS num_citas,
        MAX(ci.fecha_hora_cita) AS ultima_cita,
@@ -176,7 +175,7 @@ SELECT pa.nombre_completo AS paciente,
        END AS necesita_seguimiento
 FROM pacientes pa
 LEFT JOIN citas ci ON pa.id_paciente = ci.id_paciente
-GROUP BY pa.nombre_completo, pa.telefono;
+GROUP BY pa.nombre, pa.telefono;
 
 SELECT * FROM v_historial_pacientes ORDER BY num_citas DESC;
 ```
