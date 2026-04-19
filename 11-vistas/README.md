@@ -71,7 +71,7 @@ WHERE nombre_categoria = 'Electrónica' AND precio < 100;
 
 -- Hospital: agenda médica completa
 CREATE OR REPLACE VIEW v_agenda_medica AS
-SELECT ci.id_cita, pa.nombre_completo AS paciente, m.nombre_completo AS medico,
+SELECT ci.id_cita, pa.nombre AS paciente, m.nombre_completo AS medico,
        e.nombre_especialidad AS especialidad, ci.fecha_hora_cita, ci.estado
 FROM citas ci
 JOIN pacientes pa ON ci.id_paciente = pa.id_paciente
@@ -257,7 +257,7 @@ WITH CHECK OPTION;
 SELECT * FROM v_pacientes_con_telefono;
 
 -- Intentar insertar sin teléfono:
--- INSERT INTO v_pacientes_con_telefono (id_paciente, nombre_completo, telefono)
+-- INSERT INTO v_pacientes_con_telefono (id_paciente, nombre, telefono)
 -- VALUES (6, 'Test Sin Tel', NULL);
 -- ORA-01402: view WITH CHECK OPTION where-clause violation
 ```

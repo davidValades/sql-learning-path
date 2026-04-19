@@ -165,7 +165,7 @@ Crea una vista `v_historial_pacientes` que muestre cada paciente con su número 
 
 ```sql
 CREATE OR REPLACE VIEW v_historial_pacientes AS
-SELECT pa.nombre_completo AS paciente,
+SELECT pa.nombre AS paciente,
        pa.telefono,
        COUNT(ci.id_cita) AS num_citas,
        MAX(ci.fecha_hora_cita) AS ultima_cita,
@@ -176,7 +176,7 @@ SELECT pa.nombre_completo AS paciente,
        END AS necesita_seguimiento
 FROM pacientes pa
 LEFT JOIN citas ci ON pa.id_paciente = ci.id_paciente
-GROUP BY pa.nombre_completo, pa.telefono;
+GROUP BY pa.nombre, pa.telefono;
 
 SELECT * FROM v_historial_pacientes ORDER BY num_citas DESC;
 ```

@@ -69,7 +69,7 @@ COMMIT;
 
 -- Limpiar el ejemplo para mantener el estado original
 DELETE FROM pedidos WHERE id_pedido = 50;
-UPDATE productos SET stock = 100 WHERE id_producto = 11;
+UPDATE productos SET stock = 200 WHERE id_producto = 11;
 COMMIT;
 ```
 
@@ -78,7 +78,7 @@ COMMIT;
 ¿Qué pasa si ejecutas estas sentencias en orden?
 
 ```sql
-INSERT INTO pacientes (id_paciente, nombre_completo, telefono) VALUES (10, 'Test', '000');
+INSERT INTO pacientes (id_paciente, nombre, telefono) VALUES (10, 'Test', '000');
 CREATE TABLE prueba (id NUMBER);    -- ← sentencia DDL
 ROLLBACK;
 SELECT * FROM pacientes WHERE id_paciente = 10;

@@ -112,7 +112,7 @@ INNER JOIN categorias c ON p.id_categoria = c.id_categoria;
 
 -- Hospital: médicos con el nombre de su especialidad
 SELECT m.nombre_completo AS medico,
-       e.nombre AS especialidad,
+       e.nombre_especialidad AS especialidad,
        m.salario_base
 FROM medicos m
 INNER JOIN especialidades e ON m.id_especialidad = e.id_especialidad;
@@ -237,7 +237,7 @@ El gerente del hospital quiere saber qué **pacientes NO tienen citas programada
 <summary>👉 Haz clic aquí SOLO cuando tengas tu respuesta</summary>
 
 ```sql
-SELECT pa.nombre_completo AS paciente,
+SELECT pa.nombre AS paciente,
        pa.telefono
 FROM pacientes pa
 LEFT JOIN citas ci ON pa.id_paciente = ci.id_paciente
@@ -302,7 +302,7 @@ ORDER BY pr.nombre;
 
 -- Hospital: TODAS las especialidades (derecha), con sus médicos
 SELECT m.nombre_completo AS medico,
-       e.nombre AS especialidad
+       e.nombre_especialidad AS especialidad
 FROM medicos m
 RIGHT JOIN especialidades e ON m.id_especialidad = e.id_especialidad;
 -- Todas las especialidades aparecen; si alguna no tuviera médicos,
@@ -628,12 +628,12 @@ FROM aviones a
 LEFT JOIN vuelos v ON a.id_avion = v.id_avion;
 
 -- ❌ SINTAXIS ANTIGUA: RIGHT JOIN
-SELECT m.nombre_completo, e.nombre
+SELECT m.nombre_completo, e.nombre_especialidad
 FROM medicos m, especialidades e
 WHERE m.id_especialidad(+) = e.id_especialidad;
 
 -- ✅ EQUIVALENTE ANSI
-SELECT m.nombre_completo, e.nombre
+SELECT m.nombre_completo, e.nombre_especialidad
 FROM medicos m
 RIGHT JOIN especialidades e ON m.id_especialidad = e.id_especialidad;
 ```
@@ -711,16 +711,16 @@ ORDER BY pe.fecha_pedido;
 
 -- Hospital: historial completo de citas (4 tablas)
 SELECT ci.id_cita,
-       pa.nombre_completo AS paciente,
+       pa.nombre AS paciente,
        m.nombre_completo AS medico,
-       e.nombre AS especialidad,
-       ci.fecha_hora,
+       e.nombre_especialidad AS especialidad,
+       ci.fecha_hora_cita,
        DECODE(ci.estado, 'C', 'Completada', 'P', 'Pendiente', 'X', 'Cancelada') AS estado
 FROM citas ci
 INNER JOIN pacientes pa ON ci.id_paciente = pa.id_paciente
 INNER JOIN medicos m ON ci.id_medico = m.id_medico
 INNER JOIN especialidades e ON m.id_especialidad = e.id_especialidad
-ORDER BY ci.fecha_hora;
+ORDER BY ci.fecha_hora_cita;
 
 -- Aerolínea: panel de vuelos completo (3 tablas)
 SELECT v.id_vuelo,

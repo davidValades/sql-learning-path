@@ -91,11 +91,11 @@ WITH
         GROUP BY id_medico
     ),
     medicos_con_esp AS (
-        SELECT m.id_medico, m.nombre_completo, e.nombre AS especialidad, m.salario
+        SELECT m.id_medico, m.nombre_completo, e.nombre_especialidad AS especialidad, m.salario_base
         FROM medicos m
         JOIN especialidades e ON m.id_especialidad = e.id_especialidad
     )
-SELECT mce.nombre_completo, mce.especialidad, mce.salario,
+SELECT mce.nombre_completo, mce.especialidad, mce.salario_base,
        NVL(cpm.total_citas, 0) AS total_citas
 FROM medicos_con_esp mce
 LEFT JOIN citas_por_medico cpm ON mce.id_medico = cpm.id_medico
@@ -199,8 +199,8 @@ FROM productos;
 -- Resultado: 8 filas (una por producto) con datos extra por categoría
 
 -- Ejemplo hospital: cada médico con el promedio salarial de su especialidad
-SELECT m.nombre_completo, e.nombre AS especialidad, m.salario,
-       ROUND(AVG(m.salario) OVER (PARTITION BY m.id_especialidad), 2) AS avg_salario_esp
+SELECT m.nombre_completo, e.nombre_especialidad AS especialidad, m.salario_base,
+       ROUND(AVG(m.salario_base) OVER (PARTITION BY m.id_especialidad), 2) AS avg_salario_esp
 FROM medicos m
 JOIN especialidades e ON m.id_especialidad = e.id_especialidad;
 
@@ -279,12 +279,12 @@ WHERE rn = 1;
 
 -- Hospital: el médico mejor pagado de cada especialidad
 WITH ranking_medicos AS (
-    SELECT m.nombre_completo, e.nombre AS especialidad, m.salario,
-           ROW_NUMBER() OVER (PARTITION BY m.id_especialidad ORDER BY m.salario DESC) AS rn
+    SELECT m.nombre_completo, e.nombre_especialidad AS especialidad, m.salario_base,
+           ROW_NUMBER() OVER (PARTITION BY m.id_especialidad ORDER BY m.salario_base DESC) AS rn
     FROM medicos m
     JOIN especialidades e ON m.id_especialidad = e.id_especialidad
 )
-SELECT nombre_completo, especialidad, salario
+SELECT nombre_completo, especialidad, salario_base
 FROM ranking_medicos
 WHERE rn = 1;
 
@@ -374,9 +374,9 @@ SELECT nombre, precio,
 FROM productos;
 
 -- Hospital: ranking de médicos por salario dentro de cada especialidad
-SELECT m.nombre_completo, e.nombre AS especialidad, m.salario,
-       RANK() OVER (PARTITION BY m.id_especialidad ORDER BY m.salario DESC) AS rank_salario,
-       DENSE_RANK() OVER (PARTITION BY m.id_especialidad ORDER BY m.salario DESC) AS dense_rank_salario
+SELECT m.nombre_completo, e.nombre_especialidad AS especialidad, m.salario_base,
+       RANK() OVER (PARTITION BY m.id_especialidad ORDER BY m.salario_base DESC) AS rank_salario,
+       DENSE_RANK() OVER (PARTITION BY m.id_especialidad ORDER BY m.salario_base DESC) AS dense_rank_salario
 FROM medicos m
 JOIN especialidades e ON m.id_especialidad = e.id_especialidad;
 
@@ -480,12 +480,12 @@ JOIN rutas r ON v.id_ruta = r.id_ruta
 ORDER BY r.aeropuerto_origen, r.aeropuerto_destino, v.fecha_salida;
 
 -- Hospital: diferencia de días entre citas consecutivas de un paciente
-SELECT c.id_cita, p.nombre_completo, c.fecha_cita,
-       LAG(c.fecha_cita) OVER (PARTITION BY c.id_paciente ORDER BY c.fecha_cita) AS cita_anterior,
-       ROUND(c.fecha_cita - LAG(c.fecha_cita) OVER (PARTITION BY c.id_paciente ORDER BY c.fecha_cita)) AS dias_entre_citas
+SELECT c.id_cita, p.nombre, c.fecha_hora_cita,
+       LAG(c.fecha_hora_cita) OVER (PARTITION BY c.id_paciente ORDER BY c.fecha_hora_cita) AS cita_anterior,
+       ROUND(c.fecha_hora_cita - LAG(c.fecha_hora_cita) OVER (PARTITION BY c.id_paciente ORDER BY c.fecha_hora_cita)) AS dias_entre_citas
 FROM citas c
 JOIN pacientes p ON c.id_paciente = p.id_paciente
-ORDER BY p.nombre_completo, c.fecha_cita;
+ORDER BY p.nombre, c.fecha_hora_cita;
 
 -- E-commerce: tendencia de precios (si tuviéramos historial)
 -- Simular con productos ordenados por id
@@ -571,11 +571,11 @@ SELECT nombre, precio, id_categoria,
 FROM productos;
 
 -- Hospital: conteo acumulado de citas por fecha
-SELECT id_cita, fecha_cita, estado,
-       COUNT(*) OVER (ORDER BY fecha_cita) AS citas_acumuladas,
+SELECT id_cita, fecha_hora_cita, estado,
+       COUNT(*) OVER (ORDER BY fecha_hora_cita) AS citas_acumuladas,
        COUNT(*) OVER () AS total_citas
 FROM citas
-ORDER BY fecha_cita;
+ORDER BY fecha_hora_cita;
 
 -- Aerolínea: precio de cada vuelo vs promedio de su ruta
 SELECT v.id_vuelo, r.aeropuerto_origen, r.aeropuerto_destino, v.precio,
@@ -606,14 +606,14 @@ Escribe una consulta que muestre para cada médico: su salario, el salario acumu
 <summary>👉 Haz clic aquí SOLO cuando tengas tu respuesta</summary>
 
 ```sql
-SELECT m.nombre_completo, e.nombre AS especialidad, m.salario,
-       SUM(m.salario) OVER (PARTITION BY m.id_especialidad ORDER BY m.salario DESC) AS salario_acumulado,
-       SUM(m.salario) OVER (PARTITION BY m.id_especialidad) AS total_especialidad,
-       ROUND(SUM(m.salario) OVER (PARTITION BY m.id_especialidad ORDER BY m.salario DESC) 
-             / SUM(m.salario) OVER (PARTITION BY m.id_especialidad) * 100, 1) AS pct_acumulado
+SELECT m.nombre_completo, e.nombre_especialidad AS especialidad, m.salario_base,
+       SUM(m.salario_base) OVER (PARTITION BY m.id_especialidad ORDER BY m.salario_base DESC) AS salario_acumulado,
+       SUM(m.salario_base) OVER (PARTITION BY m.id_especialidad) AS total_especialidad,
+       ROUND(SUM(m.salario_base) OVER (PARTITION BY m.id_especialidad ORDER BY m.salario_base DESC) 
+             / SUM(m.salario_base) OVER (PARTITION BY m.id_especialidad) * 100, 1) AS pct_acumulado
 FROM medicos m
 JOIN especialidades e ON m.id_especialidad = e.id_especialidad
-ORDER BY e.nombre, m.salario DESC;
+ORDER BY e.nombre_especialidad, m.salario_base DESC;
 ```
 
 </details>
@@ -691,9 +691,9 @@ FROM clientes c
 JOIN pedidos p ON c.id_cliente = p.id_cliente;
 
 -- MINUS: pacientes sin citas
-SELECT id_paciente, nombre_completo FROM pacientes
+SELECT id_paciente, nombre FROM pacientes
 MINUS
-SELECT p.id_paciente, p.nombre_completo
+SELECT p.id_paciente, p.nombre
 FROM pacientes p
 JOIN citas ci ON p.id_paciente = ci.id_paciente;
 
@@ -714,12 +714,12 @@ Usando operadores de conjuntos, escribe una consulta que muestre las especialida
 
 ```sql
 -- Especialidades con médicos
-SELECT DISTINCT e.nombre
+SELECT DISTINCT e.nombre_especialidad
 FROM especialidades e
 JOIN medicos m ON e.id_especialidad = m.id_especialidad
 MINUS
 -- Especialidades con citas
-SELECT DISTINCT e.nombre
+SELECT DISTINCT e.nombre_especialidad
 FROM especialidades e
 JOIN medicos m ON e.id_especialidad = m.id_especialidad
 JOIN citas c ON m.id_medico = c.id_medico;
