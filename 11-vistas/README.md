@@ -248,7 +248,7 @@ Crea una vista actualizable `v_pacientes_con_telefono` que muestre solo los paci
 
 ```sql
 CREATE OR REPLACE VIEW v_pacientes_con_telefono AS
-SELECT id_paciente, nombre_completo, telefono
+SELECT id_paciente, nombre, telefono
 FROM pacientes
 WHERE telefono IS NOT NULL
 WITH CHECK OPTION;

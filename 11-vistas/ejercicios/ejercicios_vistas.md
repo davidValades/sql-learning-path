@@ -96,6 +96,7 @@ Resultado:
 | Boeing 777   | 350                 | 2          | 5350               |
 | Airbus A350  | 300                 | 2          | 2770               |
 | Embraer E195 | 120                 | 2          | 1680               |
+| Airbus A320  | 150                 | 0          | 0                  |
 | Boeing 737   | 180                 | 0          | 0                  |
 
 </details>

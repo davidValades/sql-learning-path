@@ -103,12 +103,12 @@ ORDER BY total_citas DESC;
 
 -- CTE con la aerolínea: rutas más populares
 WITH vuelos_por_ruta AS (
-    SELECT id_ruta, COUNT(*) AS total_vuelos, ROUND(AVG(precio), 2) AS precio_medio
+    SELECT id_ruta, COUNT(*) AS total_vuelos
     FROM vuelos
     GROUP BY id_ruta
 )
 SELECT r.aeropuerto_origen, r.aeropuerto_destino, r.distancia_km,
-       vpr.total_vuelos, vpr.precio_medio
+       vpr.total_vuelos
 FROM rutas r
 JOIN vuelos_por_ruta vpr ON r.id_ruta = vpr.id_ruta
 ORDER BY vpr.total_vuelos DESC;
@@ -134,7 +134,7 @@ WITH
         SELECT AVG(gasto_total) AS avg_gasto
         FROM gasto_por_cliente
     )
-SELECT c.nombre_completo, gc.total_pedidos, gc.gasto_total
+SELECT c.nombre, gc.total_pedidos, gc.gasto_total
 FROM clientes c
 JOIN gasto_por_cliente gc ON c.id_cliente = gc.id_cliente
 CROSS JOIN promedio_general pg
@@ -323,13 +323,13 @@ WITH pedidos_rank AS (
            ROW_NUMBER() OVER (PARTITION BY p.id_cliente ORDER BY p.fecha_pedido DESC) AS rn
     FROM pedidos p
 )
-SELECT c.nombre_completo, pr.nombre AS producto, 
+SELECT c.nombre, pr.nombre AS producto, 
        pr2.fecha_pedido, pr2.total
 FROM pedidos_rank pr2
 JOIN clientes c ON pr2.id_cliente = c.id_cliente
 JOIN productos pr ON pr2.id_producto = pr.id_producto
 WHERE pr2.rn <= 2
-ORDER BY c.nombre_completo, pr2.rn;
+ORDER BY c.nombre, pr2.rn;
 ```
 
 </details>
@@ -413,11 +413,11 @@ Para un "Top 3 salarios" incluyendo todos los empatados, usa **DENSE_RANK**:
 
 ```sql
 WITH ranking AS (
-    SELECT nombre_completo, salario,
-           DENSE_RANK() OVER (ORDER BY salario DESC) AS dr
+    SELECT nombre_completo, salario_base,
+           DENSE_RANK() OVER (ORDER BY salario_base DESC) AS dr
     FROM medicos
 )
-SELECT nombre_completo, salario, dr
+SELECT nombre_completo, salario_base, dr
 FROM ranking
 WHERE dr <= 3;
 -- Si 3 médicos empatan en el 1er puesto, los 3 aparecen + los del 2do y 3er puesto
@@ -630,7 +630,7 @@ Los **operadores de conjuntos** combinan los resultados de dos o más consultas 
 
 | Operador | Resultado | Duplicados | Ejemplo |
 |----------|-----------|:----------:|---------|
-| `UNION` | Filas de A **o** B | Eliminados | Todas las ciudades únicas de clientes y rutas |
+| `UNION` | Filas de A **o** B | Eliminados | Todos los aeropuertos únicos (origen + destino) |
 | `UNION ALL` | Filas de A **y** B | Conservados | Todos los registros combinados (más rápido) |
 | `INTERSECT` | Filas en A **y** en B | Eliminados | Ciudades que son origen Y destino de vuelos |
 | `MINUS` | Filas en A **pero no** en B | Eliminados | Clientes que nunca han hecho pedidos |
@@ -660,19 +660,17 @@ Piensa en dos **listas de invitados** para una fiesta:
 ### 💻 El Código
 
 ```sql
--- UNION: todas las ciudades mencionadas (clientes + rutas)
-SELECT ciudad AS lugar FROM clientes
-UNION
-SELECT aeropuerto_origen FROM rutas
+-- UNION: todos los aeropuertos únicos (origen + destino)
+SELECT aeropuerto_origen AS lugar FROM rutas
 UNION
 SELECT aeropuerto_destino FROM rutas
 ORDER BY lugar;
 
 -- UNION ALL: combinar registros de todas las bases (para un log unificado)
-SELECT 'E-commerce' AS sistema, nombre_completo AS persona, ciudad AS info
+SELECT 'E-commerce' AS sistema, nombre AS persona, email AS info
 FROM clientes
 UNION ALL
-SELECT 'Hospital', nombre_completo, telefono
+SELECT 'Hospital', nombre, telefono
 FROM pacientes
 UNION ALL
 SELECT 'Aerolínea', modelo, TO_CHAR(capacidad_pasajeros)
@@ -684,9 +682,9 @@ INTERSECT
 SELECT aeropuerto_destino FROM rutas;
 
 -- MINUS: clientes que NO tienen pedidos
-SELECT id_cliente, nombre_completo FROM clientes
+SELECT id_cliente, nombre FROM clientes
 MINUS
-SELECT c.id_cliente, c.nombre_completo 
+SELECT c.id_cliente, c.nombre 
 FROM clientes c
 JOIN pedidos p ON c.id_cliente = p.id_cliente;
 
