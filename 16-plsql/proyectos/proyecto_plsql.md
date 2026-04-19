@@ -26,7 +26,7 @@ Crea una tabla `log_procesos_plsql` para registrar la ejecución de todos los pr
 Columnas:
 - id_log: NUMBER autogenerado (PK)
 - nombre_proceso: VARCHAR2(100) NOT NULL
-- estado: VARCHAR2(20) CHECK ('OK', 'ERROR') 
+- estado: VARCHAR2(20) CHECK (estado IN ('OK', 'ERROR')) 
 - mensaje: VARCHAR2(500)
 - filas_afectadas: NUMBER
 - fecha_ejecucion: DATE DEFAULT SYSDATE

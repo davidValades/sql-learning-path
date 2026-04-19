@@ -6,7 +6,7 @@
 
 ## Ejercicio 1 — Bloque anónimo con variables
 
-**Enunciado:** Declara una variable `v_total_pedidos` usando `%TYPE` referenciando la tabla `pedidos`, cuenta los pedidos existentes y muestra el resultado con `DBMS_OUTPUT` en formato: `'Total pedidos en el sistema: X'`.
+**Enunciado:** Declara una variable `v_total_pedidos` de tipo `NUMBER`, cuenta los pedidos existentes en la tabla `pedidos` y muestra el resultado con `DBMS_OUTPUT` en formato: `'Total pedidos en el sistema: X'`.
 
 <details>
 <summary>👉 Ver solución</summary>
