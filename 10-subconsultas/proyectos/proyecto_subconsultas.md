@@ -274,14 +274,14 @@ El director de operaciones necesita análisis profundos de la utilización de la
 
 Encuentra los **aviones cuyos vuelos TODOS tienen rutas con distancia inferior a 1000 km**. Usa `NOT EXISTS` para verificar que no hay ningún vuelo con ruta >= 1000 km.
 
-Muestra: `modelo`, `capacidad`, `num_vuelos`.
+Muestra: `modelo`, `capacidad_pasajeros`, `num_vuelos`.
 
 <details>
 <summary>👉 Haz clic aquí SOLO cuando tengas tu respuesta</summary>
 
 ```sql
 SELECT a.modelo,
-       a.capacidad,
+       a.capacidad_pasajeros,
        (SELECT COUNT(*) FROM vuelos v WHERE v.id_avion = a.id_avion) AS num_vuelos
 FROM aviones a
 WHERE EXISTS (
@@ -301,7 +301,7 @@ Rutas del Airbus A350 (id=30): MADLHR (1350km) y MADFRA (1420km) → ambas >= 10
 Rutas del Boeing 777 (id=50): JFKLAX (4000km) y MADLHR (1350km) → ambas >= 1000.
 
 Resultado:
-| modelo | capacidad | num_vuelos |
+| modelo | capacidad_pasajeros | num_vuelos |
 |--------|-----------|-----------|
 | Embraer E195 | 120 | 2 |
 
@@ -323,18 +323,18 @@ SELECT ruta_cap.ruta,
        ruta_cap.num_vuelos,
        ruta_cap.capacidad_total_pasajeros
 FROM (
-    SELECT r.origen || ' → ' || r.destino AS ruta,
+    SELECT r.aeropuerto_origen || ' → ' || r.aeropuerto_destino AS ruta,
            COUNT(v.id_vuelo) AS num_vuelos,
-           SUM(a.capacidad) AS capacidad_total_pasajeros
+           SUM(a.capacidad_pasajeros) AS capacidad_total_pasajeros
     FROM vuelos v
     INNER JOIN rutas r ON v.id_ruta = r.id_ruta
     INNER JOIN aviones a ON v.id_avion = a.id_avion
-    GROUP BY r.origen, r.destino
+    GROUP BY r.aeropuerto_origen, r.aeropuerto_destino
 ) ruta_cap
 WHERE ruta_cap.capacidad_total_pasajeros = (
     SELECT MAX(cap_total)
     FROM (
-        SELECT SUM(a.capacidad) AS cap_total
+        SELECT SUM(a.capacidad_pasajeros) AS cap_total
         FROM vuelos v
         INNER JOIN aviones a ON v.id_avion = a.id_avion
         GROUP BY v.id_ruta

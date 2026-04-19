@@ -119,9 +119,9 @@ INNER JOIN especialidades e ON m.id_especialidad = e.id_especialidad;
 
 -- Aerolínea: vuelos con detalle de ruta y avión
 SELECT v.id_vuelo,
-       r.origen || ' → ' || r.destino AS ruta,
+       r.aeropuerto_origen || ' → ' || r.aeropuerto_destino AS ruta,
        a.modelo AS avion,
-       v.fecha_hora_salida
+       v.fecha_salida
 FROM vuelos v
 INNER JOIN rutas r ON v.id_ruta = r.id_ruta
 INNER JOIN aviones a ON v.id_avion = a.id_avion;
@@ -198,9 +198,9 @@ Eres el profesor que pasa lista. Tienes la lista completa de alumnos (tabla izqu
 ```sql
 -- Aerolínea: TODOS los aviones, tengan o no vuelos asignados
 SELECT a.modelo,
-       a.capacidad,
+       a.capacidad_pasajeros,
        v.id_vuelo,
-       v.fecha_hora_salida
+       v.fecha_salida
 FROM aviones a
 LEFT JOIN vuelos v ON a.id_avion = v.id_avion
 ORDER BY a.modelo;
@@ -318,16 +318,16 @@ Usando `RIGHT JOIN`, muestra **todas las rutas de la aerolínea** con la informa
 
 ```sql
 SELECT r.id_ruta,
-       r.origen || ' → ' || r.destino AS ruta,
+       r.aeropuerto_origen || ' → ' || r.aeropuerto_destino AS ruta,
        v.id_vuelo,
-       v.fecha_hora_salida
+       v.fecha_salida
 FROM vuelos v
 RIGHT JOIN rutas r ON v.id_ruta = r.id_ruta
 ORDER BY r.id_ruta;
 ```
 
 Resultado:
-| id_ruta | ruta | id_vuelo | fecha_hora_salida |
+| id_ruta | ruta | id_vuelo | fecha_salida |
 |---------|------|----------|-------------------|
 | BCNCDG | BCN → CDG | 1003 | 2025-03-02 06:00 |
 | BCNFCO | BCN → FCO | 1006 | 2025-03-04 09:00 |
@@ -383,7 +383,7 @@ Imagina dos equipos de fútbol que se fusionan. Tienes la lista de jugadores del
 -- Rutas sin vuelo aparecerían con NULL en avión (si existieran)
 SELECT a.modelo AS avion,
        v.id_vuelo,
-       r.origen || ' → ' || r.destino AS ruta
+       r.aeropuerto_origen || ' → ' || r.aeropuerto_destino AS ruta
 FROM aviones a
 FULL OUTER JOIN vuelos v ON a.id_avion = v.id_avion
 FULL OUTER JOIN rutas r ON v.id_ruta = r.id_ruta
@@ -409,9 +409,9 @@ El director de TI necesita un informe que muestre la relación completa entre **
 
 ```sql
 SELECT a.modelo,
-       a.capacidad,
+       a.capacidad_pasajeros,
        v.id_vuelo,
-       v.fecha_hora_salida,
+       v.fecha_salida,
        CASE
            WHEN v.id_vuelo IS NULL THEN 'Sin vuelos'
            ELSE 'Asignado'
@@ -422,7 +422,7 @@ ORDER BY a.modelo, v.id_vuelo;
 ```
 
 Resultado:
-| modelo | capacidad | id_vuelo | fecha_hora_salida | estado |
+| modelo | capacidad_pasajeros | id_vuelo | fecha_salida | estado |
 |--------|-----------|----------|-------------------|--------|
 | Airbus A350 | 300 | 1001 | 2025-03-01 07:30 | Asignado |
 | Airbus A350 | 300 | 1004 | 2025-03-02 11:15 | Asignado |
@@ -471,7 +471,7 @@ ORDER BY cl.nombre, ca.nombre_categoria;
 -- Aerolínea: todas las combinaciones posibles de avión × ruta
 SELECT a.modelo,
        r.id_ruta,
-       r.origen || ' → ' || r.destino AS ruta
+       r.aeropuerto_origen || ' → ' || r.aeropuerto_destino AS ruta
 FROM aviones a
 CROSS JOIN rutas r
 ORDER BY a.modelo, r.id_ruta;
@@ -724,16 +724,16 @@ ORDER BY ci.fecha_hora;
 
 -- Aerolínea: panel de vuelos completo (3 tablas)
 SELECT v.id_vuelo,
-       r.origen || ' → ' || r.destino AS ruta,
+       r.aeropuerto_origen || ' → ' || r.aeropuerto_destino AS ruta,
        r.distancia_km,
        a.modelo AS avion,
-       a.capacidad,
-       v.fecha_hora_salida,
+       a.capacidad_pasajeros,
+       v.fecha_salida,
        v.puerta_embarque
 FROM vuelos v
 INNER JOIN rutas r ON v.id_ruta = r.id_ruta
 INNER JOIN aviones a ON v.id_avion = a.id_avion
-ORDER BY v.fecha_hora_salida;
+ORDER BY v.fecha_salida;
 ```
 
 ### 🧠 El Reto

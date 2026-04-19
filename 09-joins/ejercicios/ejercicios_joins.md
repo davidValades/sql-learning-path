@@ -73,7 +73,7 @@ Resultado:
 
 **Enunciado:** Muestra **TODOS los aviones** y, para los que tengan vuelos, el número de vuelos asignados. El Boeing 737 debería aparecer con `0` vuelos.
 
-Muestra: `modelo`, `capacidad`, `num_vuelos`.
+Muestra: `modelo`, `capacidad_pasajeros`, `num_vuelos`.
 
 Pista: Usa `LEFT JOIN` y `COUNT(v.id_vuelo)` que ignora NULLs.
 
@@ -82,16 +82,16 @@ Pista: Usa `LEFT JOIN` y `COUNT(v.id_vuelo)` que ignora NULLs.
 
 ```sql
 SELECT a.modelo,
-       a.capacidad,
+       a.capacidad_pasajeros,
        COUNT(v.id_vuelo) AS num_vuelos
 FROM aviones a
 LEFT JOIN vuelos v ON a.id_avion = v.id_avion
-GROUP BY a.modelo, a.capacidad
+GROUP BY a.modelo, a.capacidad_pasajeros
 ORDER BY num_vuelos DESC;
 ```
 
 Resultado:
-| modelo | capacidad | num_vuelos |
+| modelo | capacidad_pasajeros | num_vuelos |
 |--------|-----------|-----------|
 | Airbus A350 | 300 | 2 |
 | Boeing 777 | 350 | 2 |
@@ -294,27 +294,27 @@ Resultado:
 
 **Enunciado:** Genera el **panel de vuelos** completo cruzando `vuelos`, `rutas` y `aviones`. Muestra la ruta formateada como `"MAD → LHR"`.
 
-Muestra: `id_vuelo`, `ruta`, `distancia_km`, `avion`, `capacidad`, `fecha_hora_salida`, `puerta_embarque`.
+Muestra: `id_vuelo`, `ruta`, `distancia_km`, `avion`, `capacidad_pasajeros`, `fecha_salida`, `puerta_embarque`.
 
 <details>
 <summary>👉 Haz clic aquí SOLO cuando tengas tu respuesta</summary>
 
 ```sql
 SELECT v.id_vuelo,
-       r.origen || ' → ' || r.destino AS ruta,
+       r.aeropuerto_origen || ' → ' || r.aeropuerto_destino AS ruta,
        r.distancia_km,
        a.modelo AS avion,
-       a.capacidad,
-       v.fecha_hora_salida,
+       a.capacidad_pasajeros,
+       v.fecha_salida,
        v.puerta_embarque
 FROM vuelos v
 INNER JOIN rutas r ON v.id_ruta = r.id_ruta
 INNER JOIN aviones a ON v.id_avion = a.id_avion
-ORDER BY v.fecha_hora_salida;
+ORDER BY v.fecha_salida;
 ```
 
 Resultado:
-| id_vuelo | ruta | distancia_km | avion | capacidad | fecha_hora_salida | puerta_embarque |
+| id_vuelo | ruta | distancia_km | avion | capacidad_pasajeros | fecha_salida | puerta_embarque |
 |----------|------|-------------|-------|-----------|-------------------|----------------|
 | 1001 | MAD → LHR | 1350 | Airbus A350 | 300 | 2025-03-01 07:30 | T4-A1 |
 | 1002 | JFK → LAX | 4000 | Boeing 777 | 350 | 2025-03-01 14:00 | B-22 |

@@ -693,13 +693,13 @@ CREATE TABLE dashboard_rutas (
 -- Poblar/actualizar (ejecutar periódicamente, ej: cada hora):
 MERGE INTO dashboard_rutas d
 USING (
-    SELECT r.id_ruta, r.origen, r.destino,
+    SELECT r.id_ruta, r.aeropuerto_origen, r.aeropuerto_destino,
            COUNT(v.id_vuelo) AS total_vuelos,
            ROUND(AVG(v.plazas_disponibles), 2) AS avg_ocupacion,
            ROUND(AVG(v.precio), 2) AS avg_precio
     FROM rutas r
     LEFT JOIN vuelos v ON r.id_ruta = v.id_ruta
-    GROUP BY r.id_ruta, r.origen, r.destino
+    GROUP BY r.id_ruta, r.aeropuerto_origen, r.aeropuerto_destino
 ) src ON (d.id_ruta = src.id_ruta)
 WHEN MATCHED THEN UPDATE SET
     d.total_vuelos = src.total_vuelos,
@@ -707,7 +707,7 @@ WHEN MATCHED THEN UPDATE SET
     d.avg_precio = src.avg_precio,
     d.ultima_actualizacion = SYSDATE
 WHEN NOT MATCHED THEN INSERT VALUES (
-    src.id_ruta, src.origen, src.destino,
+    src.id_ruta, src.aeropuerto_origen, src.aeropuerto_destino,
     src.total_vuelos, src.avg_ocupacion, src.avg_precio, SYSDATE
 );
 COMMIT;
