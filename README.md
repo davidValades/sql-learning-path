@@ -1,5 +1,9 @@
 # 🚀 SQL Learning Path: De Cero a DBA (Oracle SQL)
 
+[← Volver al índice principal de aprendizaje](https://github.com/davidValades/professional-learning-path)
+
+Este repositorio forma parte de **Professional Learning Path** y contiene el temario, los ejercicios y los proyectos de SQL. El índice principal reúne el resumen de progreso y los logros de las distintas formaciones. También puedes consultar el [curso de C#](https://github.com/davidValades/csharp-learning-path).
+
 <div align="center">
 
 ![Estado](https://img.shields.io/badge/Estado-En_Proceso-blue?style=for-the-badge)
